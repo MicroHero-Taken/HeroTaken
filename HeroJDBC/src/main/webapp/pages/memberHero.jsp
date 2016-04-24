@@ -15,17 +15,20 @@
             <input id="r_2" type="radio" name="p" class="sel_page_2" style="display: none" />
             <input id="r_3" type="radio" name="p" class="sel_page_3" style="display: none" />
             <input id="r_4" type="radio" name="p" class="sel_page_4" style="display: none" />
+            <input id="r_5" type="radio" name="p" class="sel_page_5" style="display: none" />
+            <input id="r_6" type="radio" name="p" class="sel_page_6" style="display: none" />
 
             <label for="r_1" class="pss_contr c1"></label> <!-- controls -->
             <label for="r_2" class="pss_contr c2"></label>
             <label for="r_3" class="pss_contr c3"></label>
             <label for="r_4" class="pss_contr c4"></label>
-
+            <label for="r_5" class="pss_contr c5"></label> 
+            <label for="r_6" class="pss_contr c6"></label>
+          
             <div class="pss_slides">
                 <div class="pss_background"></div>
                 <ul> <!-- slides -->
                     <li><img src="../images/image1.jpg" alt="image01" />
-                        
                         <div>Name:  </br > </br >
                         <input type="button" style="width: 100px"  value="Replace" id="replace"/>
                         </div>
@@ -44,7 +47,16 @@
                           <div>Name:   </br > </br >
                         <input type="button" style="width: 100px"  value="Replace" id="replace"/>
                         </div>
-              
+                      </li>
+                    <li><img src="../images/image5.jpg" alt="image05" />
+                         <div>Name:   </br > </br >
+                       <input type="button" style="width: 100px"  value="Replace" id="replace"/>
+                        </div>
+                    </li>
+                    <li><img src="../images/image6.jpg" alt="image06" />
+                         <div>Name:   </br > </br >
+                       <input type="button" style="width: 100px"  value="Replace" id="replace"/>
+                        </div>
                     </li>
                     
                 </ul>
