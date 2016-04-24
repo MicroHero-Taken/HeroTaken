@@ -49,6 +49,12 @@
 <c:if test="${not empty message2}">
 	<script type="text/javascript">alert("餘 額 不 足 ! ");</script>
 </c:if>
+<c:if test="${not empty message3}">
+	<script type="text/javascript">alert("已擁有此英雄 ! ");</script>
+</c:if>
+<c:if test="${not empty message4}">
+	<script type="text/javascript">alert("此英雄未上架 ! ");</script>
+</c:if>
 		<center><h1>Hero <span>Shopping Mall</span></h1></center>
 		<!--<div class="description">Click on the thumbs or the large image</div>-->
 <div id="im_wrapper" class="im_wrapper">

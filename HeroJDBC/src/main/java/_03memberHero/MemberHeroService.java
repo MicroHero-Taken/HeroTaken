@@ -10,7 +10,7 @@ public class MemberHeroService {
 	private MemberHeroDAO memberHeroDAO = new MemberHeroDAO_JDBC();
 //	=========================================MAIN===============================================================
 	public static void main(String[] args){
-	
+		
 	}
 //	============================================================================================================
 	public List<MemberHeroBean> select(int memberNo){

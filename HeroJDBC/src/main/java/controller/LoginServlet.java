@@ -56,8 +56,6 @@ public class LoginServlet extends HttpServlet {
 					
 					HttpSession sessionLogin =request.getSession();
 					sessionLogin.setAttribute("Login", LoginBean);
-					//
-					request.setAttribute("Login", LoginBean);
 					
 					String path = request.getContextPath();
 					response.sendRedirect(path + "/index1.jsp");
