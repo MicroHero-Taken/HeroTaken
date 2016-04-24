@@ -21,8 +21,8 @@
 
 <style type="text/css">
     #title {
-        font-size: 15px;
-        color:	#770077;
+        font-size:1.05em;
+        color:	#FF4794;
         text-align:left;
         font-weight:bold;
         }

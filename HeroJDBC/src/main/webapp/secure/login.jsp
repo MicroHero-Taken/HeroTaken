@@ -6,18 +6,19 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Login</title>
+
 </head>
 <style>
-body {overflow:hidden;}
+body {overflow:hidden;font-weight:bold;font-size:20px;}
 div {margin:2px;}
 #A img {position: absolute;}
-#B img {position: absolute;}
+#B img {position: absolute;}       
 #C img {position: absolute;}
 #D img {position: absolute;}
 #E img {position: absolute;}
 #F img {position: absolute;}
 #G img {position: absolute;}
-#H img {position: absolute;}
+#H img {position: absolute;}  
 #I img {position: absolute;}
 
 #login {background:white;width:15%; height:34%;position:fixed;top:38%;left:42%;border:5px solid red;padding:2px solid blue;z-index:7;}
@@ -31,10 +32,10 @@ div {margin:2px;}
 #H {position:fixed;width:370px;height:370px;border:4px solid black;bottom:-5px;right:490px;float:right;z-index:3; }
 #I {position:fixed;width:190px;height:250px;border:4px solid black;bottom:4px;right:872px;float:right; }
 
-#signup {background:url(${pageContext.servletContext.contextPath}/Img/All_Might.png);position:fixed;width:500px;height:750px;top:-90%;left:37%;z-index:8;}
+#signup {background:url(${pageContext.servletContext.contextPath}/Img/All_Might.jpg);position:fixed;width:500px;height:750px;top:5%;left:37%;z-index:-1;border:3px solid black;}
 #close {background:url(${pageContext.servletContext.contextPath}/Img/x.png);position:absolute;width:100px;height:100px;top:0px;right:0px;float:right;z-index:8;}
-#page {width:80%;border:3px solid black;top:15px;}
-td {width:80%;font-size:27px;}
+
+
 </style>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -42,12 +43,20 @@ td {width:80%;font-size:27px;}
 <script type="text/javascript">
 $(function(){
 	$("#deco").click(function(){   
-		$("#signup").animate({ top:'10%'}, 200 ,'swing');
+	document.getElementById("signup").style.zIndex="8";
 	   });
 	$("#close").click(function(){   
-		$("#signup").animate({ top:'-90%'}, 200 ,'swing');
+		document.getElementById("signup").style.zIndex="-1"; 
 	   });
 });
+</script>
+<script>
+window.onload="up()"
+$(function up(){
+var x=window.location.toString(); 
+if(x=="http://localhost:8080/HeroJDBC/register/Register.do"){  
+	document.getElementById("signup").style.zIndex="8";}     
+	});
 </script>
 <body>                                                                          
 <div id="login">                                         
@@ -61,7 +70,7 @@ $(function(){
 			<input type="text"    name="password" value="${param.password}" placeholder="Password"><br>
 			<font  color='red'    size='-1'>${error.password}</font><br>
 			<input type="submit"  value="Sign in"><br><br>
-			<img src="${pageContext.servletContext.contextPath}/Img/deco1.png" width="35%" height="10%" id="deco">
+			<img href="#" src="${pageContext.servletContext.contextPath}/Img/deco1.png" width="35%" height="10%" id="deco">
 		</form>
 	</center>
 </div>
@@ -76,66 +85,37 @@ $(function(){
 <div id="H"><img src="${pageContext.servletContext.contextPath}/Img/LOGIN/H.jpg" ></div>
 <div id="I"><img src="${pageContext.servletContext.contextPath}/Img/LOGIN/I.jpg" ></div>
 </div>
+
 <div id="signup">
 <div id="close"></div>
 <div id="page">
 <form action="<c:url value="/register/Register.do" />" method="post">
-		<table>
-			<tr>
-				<td>帳號 :</td>
-				<td><input type="text" name="memberAccount"
-					value="${param.email}"></td>
-				<td>${error.email}</td></tr><tr>
-				
-				
-				<td>密碼 :</td>
-				<td><input type="text" name="password"
-					value="${param.password}"></td>
-				<td>${error.password}</td></tr><tr>
-				
-				
-				<td>姓名:</td>
-				<td><input type="text" name="memberName"
-					value="${param.memberName}"></td>
-				<td>${error.memberName}</td></tr><tr>
-				
-				
-				<td>暱稱 :</td>
-				<td><input type="text" name="nickName"
-					value="${param.nickName}"></td>
-				<td>${error.nickName}</td></tr><tr>
-				
-				
-				<td>性別 :</td>
-				<td><input type="text" name="gender" value="${param.gender}"></td>
-				<td>${error.gender}</td></tr><tr>
-				
-				
-			<td>身分證字號 :</td>
-				<td><input type="text" name="id" value="${param.id}"></td>
-				<td>${error.id}</td></tr><tr>
-				
-				
-			<td>信箱 :</td>
-				<td><input type="text" name="email" value="${param.email}"></td>
-				<td>${error.email}</td></tr><tr>
-				
-				
-				<td>電話號碼 :</td>
-				<td><input type="text" name="phone" value="${param.phone}"></td>
-				<td>${error.phone}</td></tr><tr>
-				
-				
-				<td>出生日 :</td>
-				<td><input type="text" name="birthday"
-					value="${param.birthday}"></td>
-				<td>${error.birthday}</td>
-			</tr><tr><td>
+<center>
+		<div>
+		       <h1>Sign Up</h1>
+			   <td>帳號 :<br><input type="text" name="memberAccount" value="${param.email}"></td><br>
+			   <td><font color='red'>${error.email}</font></td><br>
+			   <td>密碼 :<br><input type="text" name="password" value="${param.password}"></td><br>
+				<td><font color='red'>${error.password}</font></td><br>
+				<td>姓名:<br><input type="text" name="memberName"value="${param.memberName}"></td><br>
+				<td><font color='red'>${error.memberName}</font></td><br>
+				<td>暱稱 :<br><input type="text" name="nickName"value="${param.nickName}"></td><br>
+				<td><font color='red'>${error.nickName}</font></td><br>
+				<td>性別 :<br><input type="text" name="gender" value="${param.gender}"></td><br>
+				<td><font color='red'>${error.gender}</font></td><br>
+				<td>身分證字號 :<br><input type="text" name="id" value="${param.id}"></td><br>
+				<td><font color='red'>${error.id}</font></td><br>
+				<td>信箱 :<br><input type="text" name="email" value="${param.email}"></td><br>
+				<td><font color='red'>${error.email}</font></td><br>
+				<td>電話號碼 :<br><input type="text" name="phone" value="${param.phone}"></td><br>
+				<td><font color='red'>${error.phone}</font></td><br>
+				<td>出生日 :<br><input type="text" name="birthday"value="${param.birthday}"></td><br>
+				<td><font color='red'>${error.birthday}</font></td>
+			    <br>
 				<input type="reset" value="clear">
 				<input type="submit" value="register">
-				</td>
-			</tr>
-		</table>
+		 </div>
+		 </center>
 	</form>
 	</div>
 </div>

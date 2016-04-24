@@ -10,7 +10,7 @@
 <script src="js/mission.js"></script> <!--發布任務 -->
 <style type="text/css">
 *{-webkit-print-color-adjust:exact;}
-body {background:url(${pageContext.servletContext.contextPath}/Img/marvelQ.jpg);margin:0px;padding:0px;font-align:center;overflow:hidden;}
+body {background:url(${pageContext.servletContext.contextPath}/Img/marvelQ1.jpg);margin:0px;padding:0px;font-align:center;overflow:hidden;}
 .menuHolder {width:100px; height:100px; margin:0px 0 250px 0px; position:fiexd;z-index:4;}/*選單為網頁最上層*/
 .menuHolder ul {padding:0; margin:0; list-style:none; position:absolute; left:0; top:0; width:0; height:0;}
 .menuHolder ul li {border-radius:0 0 300px 0; width:0; height:0;}
@@ -26,8 +26,8 @@ transform-origin:0 0;
 .menuHolder ul.p3 {z-index:-1;}
 .menuHolder li.s1 > a {position:absolute; display:block; width:100px; height:100px; background:url(${pageContext.servletContext.contextPath}/Img/shield/Shield6.png); border-radius:0 0 100px 0;}
 .menuHolder li.s2 > a {position:absolute; display:block; width:100px; padding-left:100px; height:200px; background:#444444;/*灰*/ border-radius:0 0 200px 0;}
-.menuHolder ul.p3 li a {position:absolute; display:block; width:100px; padding-left:200px; height:300px; background:#FFB5B5; border-radius:0 0 300px 0;}
-.menuHolder ul ul {
+.menuHolder ul.p3 li a {position:absolute; display:block; width:100px; padding-left:200px; height:300px; background:#000088; border-radius:0 0 300px 0;}
+.menuHolder ul ul {                                                                                               /*藍色01*/
 -webkit-transform-origin:0 0;
 -moz-transform-origin:0 0;
 -ms-transform-origin:0 0;
@@ -80,15 +80,15 @@ transform:rotate(18deg);
 }
 /*-----------------------------------------------------------------------------*/
 
-.menuHolder .a6 li:nth-of-type(2) > a {background:#FF3333; /*懸賞任務*/
--webkit-transform:rotate(90deg);
+.menuHolder .a6 li:nth-of-type(2) > a {background:#0000AA; /*懸賞任務*/
+-webkit-transform:rotate(90deg);                 /*藍色02*/
 -moz-transform:rotateZ(90deg);
 -ms-transform:rotate(90deg);
 -o-transform:rotate(90deg);
 transform:rotate(90deg);
 }
 /*------------------------------------------------------------------------------*/
-.menuHolder .a5 li:nth-of-type(2) > a {background:#FF3333; /*商城*/
+.menuHolder .a5 li:nth-of-type(2) > a {background:#0000AA; /*商城*/
 -webkit-transform:rotate(22.5deg);
 -moz-transform:rotateZ(22.5deg);
 -ms-transform:rotate(22.5deg);
@@ -96,14 +96,14 @@ transform:rotate(90deg);
 transform:rotate(22.5deg);
 }
 /*------------------------------------------------------------------------------*/
-.menuHolder .a4 li:nth-of-type(3) > a {background:#FF3333; /*紅3*//*任務專區*/
+.menuHolder .a4 li:nth-of-type(3) > a {background:#0000CC; /*紅3*//*任務專區*/
 -webkit-transform:rotate(60deg);
 -moz-transform:rotateZ(60deg);
 -ms-transform:rotate(60deg);
 -o-transform:rotate(60deg);
 transform:rotate(60deg);
 }
-.menuHolder .a4 li:nth-of-type(2) > a {background:#CC0000; /*紅2*/
+.menuHolder .a4 li:nth-of-type(2) > a {background:#0000AA; /*紅2*/
 -webkit-transform:rotate(30deg);
 -moz-transform:rotateZ(30deg);
 -ms-transform:rotate(30deg);
@@ -111,28 +111,28 @@ transform:rotate(60deg);
 transform:rotate(30deg);
 }
 /*----------------------------------------------------------------------*/
-.menuHolder .a2 li:nth-of-type(2) > a {background:#bc4a17;/*5*//*名*/
+.menuHolder .a2 li:nth-of-type(2) > a {background:#0000AA;/*5*//*名*/
 -webkit-transform:rotate(18deg);
 -moz-transform:rotateZ(18deg);
 -ms-transform:rotate(18deg);
 -o-transform:rotate(18deg);
 transform:rotate(18deg);
 }
-.menuHolder .a2 li:nth-of-type(3) > a {background:#77ce55;/*4*//*名*/
+.menuHolder .a2 li:nth-of-type(3) > a {background:#0000CC;/*4*//*名*/
 -webkit-transform:rotate(36deg);
 -moz-transform:rotateZ(36deg);
 -ms-transform:rotate(36deg);
 -o-transform:rotate(36deg);
 transform:rotate(36deg);
 }
-.menuHolder .a2 li:nth-of-type(4) > a {background:#f7ea67;/*3*//*名*/
+.menuHolder .a2 li:nth-of-type(4) > a {background:#0000FF;/*3*//*名*/
 -webkit-transform:rotate(54deg);
 -moz-transform:rotateZ(54deg);
 -ms-transform:rotate(54deg);
 -o-transform:rotate(54deg);
 transform:rotate(54deg);
 }
-.menuHolder .a2 li:nth-of-type(5) > a {background:#bf75d7;/*2*//*名*/
+.menuHolder .a2 li:nth-of-type(5) > a {background:#5555FF;/*2*//*名*/
 -webkit-transform:rotate(72deg);
 -moz-transform:rotateZ(72deg);
 -ms-transform:rotate(72deg);
@@ -140,21 +140,21 @@ transform:rotate(54deg);
 transform:rotate(72deg);
 }
 /* 8888888888888888888888888888888888888888888888888888888888888888888888888888 */
-.menuHolder .a3 li:nth-of-type(1) > a {background:#FFB5B5;/*r1*//*會員*/
+.menuHolder .a3 li:nth-of-type(1) > a {background:#000088;/*r1*//*會員*/
 -webkit-transform:rotate(0deg);
 -moz-transform:rotateZ(0deg);
 -ms-transform:rotate(0deg);
 -o-transform:rotate(0deg);
 transform:rotate(0deg);
 }
-.menuHolder .a3 li:nth-of-type(2) > a {background:#CC0000;/*r3*//*會員*/
+.menuHolder .a3 li:nth-of-type(2) > a {background:#0000AA;/*r3*//*會員*/
 -webkit-transform:rotate(30deg);
 -moz-transform:rotateZ(30deg);
 -ms-transform:rotate(30deg);
 -o-transform:rotate(30deg);
 transform:rotate(30deg);
 }
-.menuHolder .a3 li:nth-of-type(3) > a {background:#FF3333;/*r2*/
+.menuHolder .a3 li:nth-of-type(3) > a {background:#0000CC;/*r2*/
 -webkit-transform:rotate(60deg);
 -moz-transform:rotateZ(60deg);
 -ms-transform:rotate(60deg);
@@ -176,13 +176,13 @@ transform:rotate(0deg);
 -o-transform:rotate(0deg);
 transform:rotate(0deg);
 }
-.menuHolder ul li:hover > a {background:url(${pageContext.servletContext.contextPath}/Img/shield/Shield6.png); color:#fff;} /*鼠標碰到後的顏色*/
-.menuHolder li.s2:hover > a {background:#00BB00; color:#fff;}
-.menuHolder .a6 li:hover > a {background:#01DFD7; color:#fff;}
-.menuHolder .a5 li:hover > a {background:#01DFD7; color:#fff;}
-.menuHolder .a4 li:hover > a {background:#01DFD7; color:#fff;}
-.menuHolder .a3 li:hover > a {background:#01DFD7; color:#fff;}/*color = 字的顏色*/
-
+.menuHolder ul li:hover > a {background:${pageContext.servletContext.contextPath}#FFD700; color:#fff;} /*鼠標碰到後的顏色*/
+.menuHolder li.s2:hover > a {background:#FF0000; color:#fff;}/*背景紅色 字體白色*/
+.menuHolder .a6 li:hover > a {background:#FFD700; color:#fff;}/**/
+.menuHolder .a5 li:hover > a {background:#FFD700; color:#fff;}
+.menuHolder .a4 li:hover > a {background:#FFD700; color:#fff;}
+.menuHolder .a3 li:hover > a {background:#FFD700; color:#fff;}/*color = 字的顏色*/
+.menuHolder .a2 li:hover > a {background:#FFD700; color:#fff;}
 .menuWindow {width:110px; height:110px; overflow:hidden; position:absolute; left:0; top:0; z-index:4;
 -webkit-transition:0s 1s;
 -moz-transition:0s 1s;
@@ -233,7 +233,7 @@ transform:rotate(5deg);
 }
 
 #hiden_door_left {     /*隱藏部分(左)*/
-	background:url(${pageContext.servletContext.contextPath}/Img/CaptainAmericaCivilWar02.jpg) no-repeat;
+	background:url(${pageContext.servletContext.contextPath}/Img/CaptainAmericaCivilWar03.jpg) no-repeat;
 	width:100%;
 	height:1600px;
 	z-index:5;
@@ -241,7 +241,7 @@ transform:rotate(5deg);
 }
 
 #hiden_door_right {    /*隱藏部分(右)*/
-    background:url(${pageContext.servletContext.contextPath}/Img/CaptainAmericaCivilWar08.jpg) no-repeat;
+    background:url(${pageContext.servletContext.contextPath}/Img/CaptainAmericaCivilWar07.jpg) no-repeat;
     float:right;
 	width:100%;
 	height:1600px;
@@ -272,8 +272,8 @@ transform:rotate(5deg);
 #ad {/*外*/
     position:absolute;
     top:-100%;
-    buttom:0px;
-    left:5%;
+    buttom:100px;
+    left:0%;
     right:0px;
     width:100%;
     height:100%;
@@ -334,7 +334,7 @@ a.now-tab, a.now-tab:hover{ background:url(images/tabBG_now.png); text-indent:1.
 /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  Google Map  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 #map {
 width:70%;
-height:1160px;
+height:900px;
 border:5px solid black ;
 position:fixed;
 top:20px;
@@ -487,7 +487,7 @@ map.setCenter(initialLocation);
 			
 //      		$("#ad").css('z-index','6');
      		
-     		$("#ad").animate({top:'200px'},2000,'swing');
+     		$("#ad").animate({top:'60px'},2000,'swing');
      		$("#X").animate({top:'0px'},2000,'swing');
      		$("#bk").animate({top:'0px'},2000,'swing');
  			
@@ -503,7 +503,7 @@ $(function(){
 			
 // 			$("#ad").css('z-index','6');
 			
-			$("#ad").animate({top:'200px'},2000,'swing');
+			$("#ad").animate({top:'60px'},2000,'swing');
 			$("#X").animate({top:'0px'},2000,'swing');
 			$("#bk").animate({top:'0px'},2000,'swing');
 			//把"那片"的width調成  負的原先值
@@ -562,21 +562,10 @@ window.onload=function(){
 };
 //************************************************************************************************************************************
 </script>
-<script type="text/javascript">
-$(function(){
-	$("#m").click(function(){ // 發布任務
-			$("#mission").animate({ top:'0%'}, 20 ,'swing');
-	});
-	$("#cat").click(function(){ // 關閉任務
-		$("#mission").animate({ top:'-110%'}, 20 ,'swing');
-});
-});
-</script>
+
 </head>
 <body onload="initialize()">
 
-<!-- width="70%" height="95%"  style="border:5px solid black ;position:fixed;top:20px;left:15%;" z-index="1" --><!-- css參考用 -->
-<!-- <div id="map" style="width:70%; height:880px;border:5px solid black ;margin-top:-330px; margin-left:547px"></div> --><!-- 原程式 -->
 <div id="map" ></div>
 <div class="menuHolder" >
 	<div class="menuWindow">
@@ -585,11 +574,11 @@ $(function(){
 				<ul class="p2">
 					<li class="s2"><a href="#"><span>首頁</span></a>
 					<ul class="p3 a2">
-							<li><a href="#">Name: ${nowMember.given_name}</a></li><!--名字 -->
-							<li><a href="#">$: ${nowMember.coin}</a></li>
-							<li><a href="#">Rating: ${nowMember.rating}</a></li>
+							<li><a href="#">Name: ${Login.memberName}</a></li><!--名字 -->
+							<li><a href="#">$: ${Login.coin}</a></li>
+							<li><a href="#">Rating: ${Login.rating}</a></li>
 							<li><a href="#">關於我們</a></li>
-							<li><a href="<c:url value='/secure/logOut.jsp' />">登出</a></li>
+							<li><a href="secure/logOut.jsp">登出</a></li>
 						</ul>
 					</li>
 					<li class="s2"><a href="#"><span>會員專區</span></a>
@@ -601,14 +590,14 @@ $(function(){
 					</li>
 					<li class="s2"><a href="#"><span>任務專區</span></a>
 					<ul class="p3 a4">
-							<li><a id="m" href="/HeroJDBC/pages/mission.jsp">發布任務</a></li>
+							<li><a id="m" href="#" onclick="window.open('http://localhost:8080/HeroJDBC/pages/mission.jsp', 'Mission', config='height=825,width=430',flowover=hidden);")>發布任務</a></li>
 							<li><a href="#">接收任務</a></li>
 							<li><a href="#">查詢任務</a></li>
 						</ul>
 					</li>
 					<li class="s2"><a href="#"><span>英雄商城</span></a>
 					<ul class="p3 a5">
-							<li><a href="<c:url value='/pages/shop.jsp' />">購買英雄</a></li>
+							<li><a href="pages/shop.jsp">購買英雄</a></li>
 						</ul>
 					</li>
 					<li class="s2"><a href="#url"><span>懸賞任務</span></a>
@@ -669,81 +658,6 @@ $(function(){
 </div>
 <div id="X" font-size:40px;>    點    擊   這    裡   關    閉    廣    告    </div>
 </div>
-<div id="mission">
-<div id="mipage">
-		<form action="<c:url value="/mission.do"/>" name="CodeForm" method="post" enctype="multipart/form-data"  >
-		<table>
-				<tr><td id="title">● 會員編號:</td></tr>
-				<tr><td><input type="text" id="memberNo" name="memberNo"  size=50% value="${user.memberNo}"  readonly="readonly"  /></td></tr>
-				<tr><td id="title">● 任務標題:</td></tr>
-				<tr><td><input type="text" id="missionTitle" name="missionTitle" size="50%" value="${param.missionTitle}"  placeholder="標題名稱"   /><br>
-	                    <font color='red' size='-1'>${ErrMsg.errTitle}</font></td></tr>
-				<tr><td id="title">● 任務描述:</td></tr>
-				<tr><td><textarea id="missionDesc" rows="7" cols="52"  name="missionDesc" ></textarea>
-	                    <br><font color='red' size='-1'>${ErrMsg.errDesc}</font></td></tr>
-	            <tr><td id="title" >● 任務執行時間:  (yyyy/MM/dd H:m)</td></tr>
-				<tr><td><input type="text" name="missionExcuteTime" size="50%"  >
-						<br><font color='red' size='-1'>${ErrMsg.errTime}</font></td></tr>
-				<tr><td id="title">● 任務地區:</td></tr>
-				<tr>
-				    <td><select name="type" size=1  onChange="Buildkey(this.options[this.options.selectedIndex].value);">
-								    <option value=0>請選擇縣市...</option>
-								    <option value="1" >臺北市</option>
-								    <option value="2" >基隆市</option>
-								    <option value="3" >新北市</option>
-								    <option value="4" >宜蘭縣</option>
-								    <option value="5" >新竹縣市</option>
-								    <option value="6" >桃園縣</option>
-								    <option value="7" >苗栗縣</option>
-								    <option value="8" >臺中市</option>
-								    <option value="9" >臺中縣</option>
-								    <option value="10" >彰化縣</option>
-								    <option value="11" >南投縣</option>
-								    <option value="12" >嘉義縣市</option>
-								    <option value="13" >雲林縣</option>
-								    <option value="14" >臺南市</option>
-								    <option value="15" >臺南縣</option>
-								    <option value="16" >高雄市</option>
-								    <option value="17" >高雄縣</option>
-								    <option value="18" >澎湖縣</option>
-								    <option value="19" >屏東縣</option>
-								    <option value="20" >臺東縣</option>
-								    <option value="21" >花蓮縣</option>
-								    <option value="22" >金門縣</option>
-								    <option value="23" >連江縣</option>
-								    <option value="24" >南海諸島</option>
-								    <option value="25" >釣魚台列嶼</option>
-						</select>
-					    <select name="subtype" size=1 >
-							<option value="">請選擇區域..</option>
-						</select><br><font color='red' size='-1'>${ErrMsg.errArea}</font></td></tr>
-						
-				<tr><td id="title">● 任務地址:</td></tr>
-				<tr><td><input type="text" id="address" name="address" size="50%" onblur="codeAddress()" value="${param.address}" /><br>
-	                    <font color='red' size='-1'>${ErrMsg.errAddress}</font></td></tr>    
-	              <tr><td id="title">● 緯經度:</td></tr>
-				<tr><td><input name="Latitude" type="text" id="Latitude" size="22%" readonly="readonly"/>
-						<input name="Longitude" type="text" id="Longitude" size="23%" readonly="readonly"/><br></td></tr>
-				<tr><td id="title">● 任務人數:</td></tr>
-				<tr><td><input type="NUMBER"  min="1" id="missionPeople" name="missionPeople" size="50%" value="${param.missionPeople}" /><br>
-	                    <font color='red' size='-1'>${ErrMsg.errPeople}</font></td></tr>
-				<tr><td id="title">● 獎金:</td></tr>
-				<tr><td><input type="text" id="rewardCoin" name="rewardCoin" size="50%" value="${param.rewardCoin}"   placeholder=" $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $"  /><br>
-	                 <font color='red' size='-1'>${ErrMsg.errCoin}${ErrMsg.errReward}</font></td></tr>
-				<tr><td id="title">● 禮物照片:</td></tr>
-				<tr><td><input type="file" name="myfile" id="imgInp" size="30" style="width: 200px;"/>
-						<img id="blah" src="#" alt="your image" width="80"/></td></tr>
-				<tr><td id="title">● 禮物說明:</td></tr>
-				<tr><td><textarea rows="3" cols="52" name="describe"></textarea></td></tr>
-				<tr><th>
-					<input type="submit" value="發佈" style="width:60px;height:22px">
-				</th></tr>
-				
-		</table>
-		</form>
-	<div id="miclose"></div>
-	</div>
-	<div id="cat"></div>
-</div>
+
 </body>
 </html>
