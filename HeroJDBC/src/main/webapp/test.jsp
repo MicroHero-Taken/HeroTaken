@@ -9,17 +9,7 @@
 </head>
 <body>
 
-		<img src="${pageContext.request.contextPath}/Garage?memberNo=1">
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	
