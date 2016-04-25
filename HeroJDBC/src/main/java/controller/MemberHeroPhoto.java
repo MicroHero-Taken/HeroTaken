@@ -40,10 +40,10 @@ public class MemberHeroPhoto  extends HttpServlet{
 	}
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
-		int memberNo = 0;
-		String memberNoStr = request.getParameter("memberNo");
-		if(memberNoStr != null && memberNoStr.trim().length() != 0){
-			memberNo = Integer.parseInt(memberNoStr);
+		int heroNo = 0;
+		String heroNoStr = request.getParameter("heroNo");
+		if(heroNoStr != null && heroNoStr.trim().length() != 0){
+			heroNo = Integer.parseInt(heroNoStr);
 		}
 		InputStream is =null;
 		Connection conn = null;
@@ -57,8 +57,8 @@ public class MemberHeroPhoto  extends HttpServlet{
 			pstmt = conn.prepareStatement("SELECT MemberHero.memberNo, MemberHero.HeroNo, Shop.heroSkin1"
 										+" FROM MemberHero INNER JOIN"
 										+" Shop ON MemberHero.HeroNo = Shop.heroNo"
-										+" WHERE memberNo = ?");
-			pstmt.setInt(1, memberNo);
+										+" WHERE MemberHero.heroNo = ?");
+			pstmt.setInt(1, heroNo);
 			rset = pstmt.executeQuery();
 			if(rset.next()){
 				is = rset.getBinaryStream("heroSkin1");
@@ -68,7 +68,7 @@ public class MemberHeroPhoto  extends HttpServlet{
 			response.setContentType("image/png");
 			OutputStream os = response.getOutputStream();
 			byte[] b = new byte[4*1024];
-			int len = is.read();
+			int len = is.read(b);
 			while(len != -1){
 				os.write(b,0,len);
 				len = is.read(b);
