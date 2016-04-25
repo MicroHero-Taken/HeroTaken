@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en" >
     <head>
     <title>Taken</title>
@@ -30,37 +33,13 @@
             <div class="pss_slides">
                 <div class="pss_background"></div>
                 <ul> <!-- slides -->
-                    <li><img src="../images/image1.jpg" alt="image01" />
-                        <div>Name:  </br > </br >
+                <c:forEach var="memberHero" items="${memberHero}">
+                	<li><img src="${pageContext.request.contextPath}/Garage?heroNo=${memberHero.heroNo}"  />
+                        <div>Name: ${memberHero.heroName} <br><br>
                         <input type="button" style="width: 100px"  value="Replace" id="replace"/>
                         </div>
                     </li>
-                    <li><img src="../images/image2.jpg" alt="image02" />
-                        <div>Name:   </br > </br >
-                        <input type="button" style="width: 100px"  value="Replace" id="replace"/>
-                        </div>
-                    </li>
-                    <li><img src="../images/image3.jpg" alt="image03" />
-                        <div>Name:  </br > </br >
-                        <input type="button" style="width: 100px"  value="Replace" id="replace"/>
-                        </div>
-                    </li>
-                    <li><img src="../images/image4.jpg" alt="image04" />
-                          <div>Name:   </br > </br >
-                        <input type="button" style="width: 100px"  value="Replace" id="replace"/>
-                        </div>
-                      </li>
-                    <li><img src="../images/image5.jpg" alt="image05" />
-                         <div>Name:   </br > </br >
-                       <input type="button" style="width: 100px"  value="Replace" id="replace"/>
-                        </div>
-                    </li>
-                    <li><img src="../images/image6.jpg" alt="image06" />
-                         <div>Name:   </br > </br >
-                       <input type="button" style="width: 100px"  value="Replace" id="replace"/>
-                        </div>
-                    </li>
-                    
+                </c:forEach>    
                 </ul>
                 
           </div>

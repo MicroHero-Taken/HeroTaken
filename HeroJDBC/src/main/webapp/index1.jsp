@@ -585,7 +585,7 @@ window.onload=function(){
 					</li>
 					<li class="s2"><a href="#"><span>會員專區</span></a>
 					<ul class="p3 a3">
-							<li><a href="#">修改英雄標籤</a></li>
+							<li><a href="<c:url value="/pages/memberHero.jsp"/>">修改英雄標籤</a></li>
 							<li><a href="#">修改資料</a></li>
 							<li><a href="#">查詢個人資料</a></li>
 						</ul>
