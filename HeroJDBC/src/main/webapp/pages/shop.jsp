@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
+
     <head>
         <title>Taken</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -18,6 +19,9 @@
 			Cufon.replace('a',{ textShadow: '1px 1px #fff', hover : true});
 		</script>
         <style type="text/css">
+        
+        h1 {position:absolute;top:5px;left:780px;}
+        
 			.description{
 				position:fixed;
 				right:10px;
@@ -43,13 +47,15 @@
 		</style>
     </head>
     <body>
+<jsp:include page="Top.jsp" flush="true" ></jsp:include>
+
 <c:if test="${not empty message1}">
 	<script type="text/javascript">alert("購 買 成 功 ! ");</script>
 </c:if>
 <c:if test="${not empty message2}">
 	<script type="text/javascript">alert("餘 額 不 足 ! ");</script>
 </c:if>
-		<center><h1>Hero <span>Shopping Mall</span></h1></center>
+		<h1>Hero <span>Shopping Mall</span></h1>
 		<!--<div class="description">Click on the thumbs or the large image</div>-->
 <div id="im_wrapper" class="im_wrapper">
 			<div style="background-position:   0px 0px;"><img src="${pageContext.request.contextPath}/HeroPhoto?heroNo=1" alt="" /></div>
