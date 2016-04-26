@@ -1,4 +1,3 @@
-<%@page import="_05mission.MissionMemDAO_JDBC"%>
 <%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -10,7 +9,7 @@
 <html>
 <head>
 
-<title>aLLiNoNE</title>
+<title>SearchMission</title>
    <link href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.2/themes/hot-sneaks/jquery-ui.css" rel="stylesheet">
   <link href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css" rel="stylesheet">
   <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.0.min.js"></script>
@@ -30,10 +29,8 @@
 				<th>內容:</th>
 				<th>發起人:</th>
 				<th>人數要求:</th>
-				<th>性別要求:</th>
 				<th>執行時間:</th>
 				<th>地點:</th>
-				<th>結束時間:</th>
 				<th>任務狀態:</th>
 			</tr>
 		</thead>
@@ -43,12 +40,10 @@
 					<td>${bean.missionTitle}</td>
 					<td>${bean.missionDesc}</td>
 					<td>${bean.given_name}</td>
-					<td>${bean.missionPeople}</td>
-					<td>${bean.missionGender}</td>
+					<td>${bean.missionPeople}</td>	
 					<td>${bean.missionExcuteTime}</td>
 					<td>${bean.missionArea}</td>
-					<td>${bean.missionEnd}</td>
-					<td>${bean.missionStatusNo}</td>
+					<td>${bean.missionStatus}</td>
 					<td><a href="">接任務</a></td>
 				</tr>
 				</c:forEach>

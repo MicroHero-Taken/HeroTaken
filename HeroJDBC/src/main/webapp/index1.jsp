@@ -365,120 +365,83 @@ form{margin:0%;paddind:0%;background:url(${pageContext.request.contextPath}/imag
 <!-- <===============================Google Map script End===============================> -->
 <!-- <==============================Google Map function Start==============================> -->
 <script type="text/javascript">
-var json = [
-            {
-                "missionTitle":"中午送便當",
-                "missionpeople":"大隻",
-                "lat": 25.033755,
-                "lng": 121.543561,
-                "missionAddress":"台北市大安區復興南路一段390號",
-                "missionStarttime":"2016-04-12",
-                "missionExcutetime":"2020-04-12",
-                "icon": "http://orig06.deviantart.net/4368/f/2012/148/a/9/jake_icon_by_finnandjake_ftw-d513xag.gif",
-                "description": "大隻肚子餓了，想找個好心人士幫忙送便當"
-            },
-            {
-            	"missionTitle":"協尋馬老",
-                "missionpeople":"大偉",
-                "lat": 25.045335,
-                "lng": 121.531452,
-                "missionAddress":"台北市中正區市民大道三段2號",
-                "missionStarttime":"2016-04-12",
-                "missionExcutetime":"2020-04-12",
-                "icon": "http://orig15.deviantart.net/11b5/f/2012/303/c/7/free_bouncy_pikachu_icon_by_kattling-d5jgq5l.gif",
-                "description": "跟蹤馬老師到三創後面就失蹤了，找人協尋"
-            },
-            {
-                "title": "Copenhagen",
-                "lat": 55.7,
-                "lng": 12.6,
-                "icon": "http://orig02.deviantart.net/8f3b/f/2013/184/9/8/imageedit_24_2364516969_by_queen_of_cute-d6bt13o.gif",
-                "description": "Copenhagen is the capital of Denmark and its most populous city, with a metropolitan population of 1,931,467 (as of 1 January 2012)."
-            }
-        ]
-//Google Map相關定義
-var initialLocation;
-var taipei = new google.maps.LatLng(25.09108, 121.5598);
-var browserSupportFlag = new Boolean();
-//var contentString = 
-
-//載入Google Map設定
-function initialize() {
-var myOptions = {
-zoom: 16,
-//minZoom: 16,
-draggable: true,
-zoomControl: false,
-mapTypeId: google.maps.MapTypeId.HYBRID
-};
-var map = new google.maps.Map(document.getElementById("map"), myOptions);
-
-//增加標記點資訊窗
-var infowindow =  new google.maps.InfoWindow({
-    content:"",
-    maxWidth: 350
-});
-
-for (var i = 0, length = json.length; i < length; i++) {
-    var data=json[i];
-    var latLng = new google.maps.LatLng(data.lat, data.lng); 
-    // Creating a marker and putting it on the map
-    var marker = new google.maps.Marker({
-        position: latLng,
-        map: map,
-        title: data.missionTitle,
-        optimized:false,
-        icon: data.icon,
-    });
-
-    bindInfoWindow(marker, map, infowindow, data.missionTitle, data.missionpeople, data.missionAddress,
-    		data.missionStarttime, data.missionExcutetime,data.description);
-} 
+//帶入後台 Database 匯出之 JSON 資料
+window.onload = function () {
+	$.ajax(
+		'${pageContext.request.contextPath}/googlemap/GoogleMapServlet',
+		{
+			async:false,
+			cache:false,
+			contentType:'application/json',
+			success:function(data){
+				LoadMap(data);
+			}
+		}
+	);
 }
+//Google Map Function    
+function LoadMap(markers) {
+    var mapOptions = {
+        zoom : 16,
+		minZoom: 16,
+		draggable : true,
+		zoomControl : false,
+		mapTypeId : google.maps.MapTypeId.HYBRID
+    };
+    var infoWindow = new google.maps.InfoWindow();
+    var latlngbounds = new google.maps.LatLngBounds();
+    var map = new google.maps.Map(document.getElementById("Map"), mapOptions);
+//迴圈帶出 Marker 進行多點標記 
+    for (var i = 0; i < markers.length; i++) {
+        var data = markers[i]
+        var myLatlng = new google.maps.LatLng(data.Latitude, data.Longitude);
+        var image = {
+        	    url: data.icon,
+        	    // This marker is 20 pixels wide by 32 pixels high.
+        	    size: new google.maps.Size(50, 50),
 
-function bindInfoWindow(marker, map, infowindow, missionTitle, missionpeople, missionAddress, 
-		missionStarttime, missionExcutetime, description) {
-marker.addListener('mouseover', function() {
-    infowindow.setContent('<div id="iw-container">'+
-            '<div class="iw-title">'+missionTitle+'</div>'+
-            '<div class="iw-content">'+
-              '<div class="iw-subTitle">任務說明</div>'+
-              '<img src="http://maps.marnoto.com/en/5wayscustomizeinfowindow/images/vistalegre.jpg" alt="Porcelain Factory of Vista Alegre" height="115" width="83">'+
-              '<p>'+description+'</p>'+
-              '<div class="iw-subTitle">任務資訊</div>'+
-              '<p>'+'任務發起人: '+missionpeople+'<br>'+
-              '任務地址: '+missionAddress+'<br>'+
-              '開始時間: '+missionStarttime+'<br>'+
-              '結束時間: '+missionExcutetime+'</p>'+
-              '</div>'+'<div class="iw-bottom-gradient"></div>'+'</div>');
-    infowindow.open(map, this);
-});
+        	  };
 
-//呼叫 W3C 地理資訊 嘗試取得使用者位置
-if(navigator.geolocation) {
-browserSupportFlag = true;
-navigator.geolocation.getCurrentPosition(function(position) {
-initialLocation = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
-map.setCenter(initialLocation);
-}, function() {
-handleNoGeolocation(browserSupportFlag);
-});
-}
-else {
-browserSupportFlag = false;
-handleNoGeolocation(browserSupportFlag);
-}
-function handleNoGeolocation(errorFlag) {
-if (errorFlag == true) {
-alert("地圖定位失敗");
-} else {
-alert("您的瀏覽器不支援定位服務");
-}
-initialLocation = taipei;
-map.setCenter(initialLocation); 
-}
-//多點地圖標記JSON檔
-//map.data.loadGeoJson('https://storage.googleapis.com/maps-devrel/google.json');
+        var marker = new google.maps.Marker({
+            position: myLatlng,
+            map: map,
+            title: data.MissionTitle,
+            icon: image,
+        });
+        (function (marker, data) {
+            google.maps.event.addListener(marker, "mouseover", function (e) {
+                infoWindow.setContent("<div style = 'width:200px;min-height:40px'>" + '任務名稱:'  + data.MissionTitle  + '<br>' + '發起人: ' + data.MemberName + '<br>' + '需求人數: ' + data.MissionPeople + '<br>' + '需求性別: ' + data.MissionGender + '<br>' + '開始時間: ' + data.MissionStrt + '<br>' + '結束時間: ' + data.MissionEnd + '<br>' + '任務說明: ' + data.MissionDesc + '<br>' + "</div>");
+                infoWindow.open(map, marker);
+            });
+        })(marker, data);
+        latlngbounds.extend(marker.position);
+    }
+    var bounds = new google.maps.LatLngBounds();
+    map.setCenter(latlngbounds.getCenter());
+    map.fitBounds(latlngbounds);  
+  //呼叫 W3C 地理資訊 嘗試取得使用者位置
+	if (navigator.geolocation) {
+		browserSupportFlag = true;
+		navigator.geolocation.getCurrentPosition(function(position) {
+			initialLocation = new google.maps.LatLng(
+					position.coords.latitude, position.coords.longitude);
+			map.setCenter(initialLocation);
+		}, function() {
+			handleNoGeolocation(browserSupportFlag);
+		});
+	} else {
+		browserSupportFlag = false;
+		handleNoGeolocation(browserSupportFlag);
+	}
+	function handleNoGeolocation(errorFlag) {
+		if (errorFlag == true) {
+			alert("地圖定位失敗");
+		} else {
+			alert("您的瀏覽器不支援定位服務");
+		}
+		initialLocation = taipei;
+		map.setCenter(initialLocation);
+	}
 }
 </script>
 <!--<===============================Google Map function End===============================>-->
@@ -575,26 +538,26 @@ window.onload=function(){
 		<ul class="p1">
 			<li class="s1"><a href="#url">Menu</a>
 				<ul class="p2" style="line-height:20px;">
-					<li class="s2"><a href="webapp/index1.jsp"><span>Home</span></a>
+					<li class="s2"><a href="<c:url value="/index1.jsp" />"><span>Home</span></a>
 					<ul class="p3 a2">
 							<li><a style="line-height:20px;" href="#">Name: ${Login.memberName}</a></li><!--名字 -->
 							<li><a href="#">$: ${Login.coin}</a></li>
 							<li><a href="#">Rating: ${Login.rating}</a></li>
-							<li><a href="#">AboutUs</a></li>
-							<li><a href="secure/logOut.jsp">LogOut</a></li>
+							<li><a href="<c:url value="AboutUs/starwars.jsp" />">AboutUs</a></li>
+							<li><a href="<c:url value="secure/logOut.jsp" />">LogOut</a></li>
 						</ul>
 					</li>
 					<li class="s2"><a href="#"><span>Members Only</span></a>
 					<ul class="p3 a3">
-							<li><a style="line-height:20px;" href="#">Modify<br>Skin</a></li>
-							<li><a style="line-height:20px;" href="#">Modify<br>Data</a></li>
+							<li><a style="line-height:20px;" href="<c:url value="pages/memberHero.jsp" />">Modify<br>Skin</a></li>
+							<li><a style="line-height:20px;" href="<c:url value="secure/memberchange.jsp" />">Modify<br>Data</a></li>
 							<li><a href="#" style="line-height:20px;">Access to<br>personal<br>data</a></li>
 						</ul>
 					</li>
 					<li class="s2"><a href="#"><span>Mission Area</span></a>
 					<ul class="p3 a4">
 							<li><a id="m" href="#" onclick="window.open('http://localhost:8080/HeroJDBC/pages/mission.jsp', 'Mission', config='height=825,width=430',flowover=hidden);" style="line-height:25px;">Publish Mission</a></li>
-							<li><a href="#" style="line-height:25px;">Accept Mission</a></li>
+							<li><a href="<c:url value="/missionMem.do?" />" style="line-height:25px;">Accept Mission</a></li>
 							<li><a href="../pages/search.jsp" style="line-height:25px;">Inquire Mission</a></li>
 						</ul>
 					</li>
