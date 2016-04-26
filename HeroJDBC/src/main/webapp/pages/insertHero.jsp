@@ -6,11 +6,25 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <!-- -------------------------------------------jQuery---------------------------------------------- -->
-<script type="text/javascript" src="/HeroJDBC/js/jquery-2.2.1.min.js"></script>
-<script src="/HeroJDBC/js/jquery.js"></script>
+<script type="text/javascript" src="../js/jquery-2.2.1.min.js"></script>
+<script src="../js/jquery.js"></script>
 <!-- ------------------------------------------------------------------------------------------------ -->
 
-<title>編輯Hero</title>
+
+<title>Edit Hero</title>
+<style type="text/css">
+body {background:url(../Img/insertHeroBG.jpg)no-repeat;}
+#heroNo {background-color:rgba(0,0,0,0.7);color:#26FFD9;Font-family:Meiryo; font-size:20px;font-weight:bold;position:absolute; top:890px;left:795px;}
+#heroName {background-color:rgba(0,0,0,0.8);color:#80FF80;Font-family:Meiryo; font-size:20px;font-weight:bold;position:absolute; top:890px;left:795px;}
+#heroPrice {background-color:rgba(0,0,0,0.7);color:#D9FF26;Font-family:Meiryo; font-size:20px;font-weight:bold;position:absolute; top:890px;left:795px;}
+#skin1 {color:#FF2E1A;font-size:1.5em;position:absolute;font-weight:bold;float:right; top:-100px;right:249px;} 
+#skin2 {color:#FF2640;font-size:1.5em;position:absolute;font-weight:bold;float:right; top:-100px;right:74px;} 
+#skin3 {color:#FF1F66;font-size:1.5em;position:absolute;font-weight:bold;float:right; top:-100px;right:34px;} 
+#skin4 {color:#FF178C;font-size:1.5em;position:absolute;font-weight:bold;float:right; top:-100px;right:76px;} 
+#skin5 {color:#FF0FB2;font-size:1.5em;position:absolute;font-weight:bold;float:right; top:-100px;right:200px;} 
+#button {width:380px;height:40px;bottom:1.875em;left:49em;position:absolute;}
+#title {color:#fef400;font-family:fantasy,cursive;font-size:5em;top:92px;left:850px;position:absolute;}
+</style>
 <script type="text/javascript">
 // 顯示上傳圖
 	$(function()

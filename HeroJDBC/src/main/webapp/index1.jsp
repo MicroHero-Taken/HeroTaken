@@ -6,6 +6,7 @@
 <html>
 <head>
 <%-- <jsp:include page="Top.jsp" flush="true" ></jsp:include> <!--選單 --> --%>
+>>>>>>> branch 'master' of https://github.com/MicroHero-Taken/HeroTaken.git
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>aLLiNoNE</title>
 <script src="js/mission.js"></script> <!--發布任務 -->
@@ -23,7 +24,7 @@ body {background:url(${pageContext.servletContext.contextPath}/Img/marvelQ1.jpg)
 transform-origin:0 0;
 }
 .menuHolder ul.p1 li {position:absolute; left:0; top:0;}
-.menuHolder ul.p2 {z-index:-1;}
+.menuHolder ul.p2 {z-index:-1;line-height:20px;}
 .menuHolder ul.p3 {z-index:-1;}
 .menuHolder li.s1 > a {position:absolute; display:block; width:100px; height:100px; background:url(${pageContext.servletContext.contextPath}/Img/shield/Shield6.png); border-radius:0 0 100px 0;}
 .menuHolder li.s2 > a {position:absolute; display:block; width:100px; padding-left:100px; height:200px; background:#444444;/*灰*/ border-radius:0 0 200px 0;}
@@ -177,7 +178,7 @@ transform:rotate(0deg);
 -o-transform:rotate(0deg);
 transform:rotate(0deg);
 }
-.menuHolder ul li:hover > a {background:${pageContext.servletContext.contextPath}#FFD700; color:#fff;} /*鼠標碰到後的顏色*/
+.menuHolder ul li:hover > a {color:#fff;${pageContext.servletContext.contextPath};} /*鼠標碰到後的顏色*/
 .menuHolder li.s2:hover > a {background:#FF0000; color:#fff;}/*背景紅色 字體白色*/
 .menuHolder .a6 li:hover > a {background:#FFD700; color:#fff;}/**/
 .menuHolder .a5 li:hover > a {background:#FFD700; color:#fff;}
@@ -207,6 +208,8 @@ transform:rotate(5deg);
 }
 .menuHolder ~ img.close {width:0; height:0; position:fixed; z-index:-1; left:0; top:0;}
 .menuHolder:hover ~ img.close {width:100%; height:50%;}
+
+a {line-height:20px;}
 /* ====================================================================================================================================== */
 #big_door_left     /*左大半*/
 {
@@ -215,7 +218,7 @@ transform:rotate(5deg);
    	left:-49.9%;
  	width:50%; 
  	height:1600px; /*佔滿瀏覽器高度*/
-	position:absolute;/*固定定位*/
+	position:fixed;/*固定定位*/
 	z-index:2; 
 	background:orange;
 }
@@ -238,7 +241,6 @@ transform:rotate(5deg);
 	width:100%;
 	height:1600px;
 	z-index:5;
-	position:absolute;
 	
 }
 
@@ -338,7 +340,7 @@ a.now-tab, a.now-tab:hover{ background:url(images/tabBG_now.png); text-indent:1.
 width:70%;
 height:900px;
 border:5px solid black ;
-position:absolute;
+position:fixed;
 top:20px;
 left:15%;
 z-index:1;
@@ -572,39 +574,39 @@ window.onload=function(){
 <div class="menuHolder" >
 	<div class="menuWindow">
 		<ul class="p1">
-			<li class="s1"><a href="#url">選  單</a>
-				<ul class="p2">
-					<li class="s2"><a href="#"><span>首頁</span></a>
+			<li class="s1"><a href="#url">Menu</a>
+				<ul class="p2" style="line-height:20px;">
+					<li class="s2"><a href="webapp/index1.jsp"><span>Home</span></a>
 					<ul class="p3 a2">
 							<li><a href="#">Name: ${Login.memberName}</a></li><!--名字 -->
 							<li><a href="#">$: ${Login.coin}</a></li>
 							<li><a href="#">Rating: ${Login.rating}</a></li>
-							<li><a href="#">關於我們</a></li>
-							<li><a href="secure/logOut.jsp">登出</a></li>
+							<li><a href="#">AboutUs</a></li>
+							<li><a href="secure/logOut.jsp">LogOut</a></li>
 						</ul>
 					</li>
-					<li class="s2"><a href="#"><span>會員專區</span></a>
+					<li class="s2"><a href="#"><span>Members Only</span></a>
 					<ul class="p3 a3">
-							<li><a href="<c:url value="/pages/memberHero.jsp"/>">修改英雄標籤</a></li>
-							<li><a href="#">修改資料</a></li>
-							<li><a href="#">查詢個人資料</a></li>
+							<li><a style="line-height:20px;" href="#">Modify<br>Skin</a></li>
+							<li><a style="line-height:20px;" href="#">Modify<br>Data</a></li>
+							<li><a href="#" style="line-height:20px;">Access to<br>personal<br>data</a></li>
 						</ul>
 					</li>
-					<li class="s2"><a href="#"><span>任務專區</span></a>
+					<li class="s2"><a href="#"><span>Mission Area</span></a>
 					<ul class="p3 a4">
-							<li><a id="m" href="#" onclick="window.open('http://localhost:8080/HeroJDBC/pages/mission.jsp', 'Mission', config='height=825,width=430',flowover=hidden);")>發布任務</a></li>
-							<li><a href="#">接收任務</a></li>
-							<li><a href="#">查詢任務</a></li>
+							<li><a id="m" href="#" onclick="window.open('http://localhost:8080/HeroJDBC/pages/mission.jsp', 'Mission', config='height=825,width=430',flowover=hidden);" style="line-height:25px;">Publish Mission</a></li>
+							<li><a href="#" style="line-height:25px;">Accept Mission</a></li>
+							<li><a href="../pages/search.jsp" style="line-height:25px;">Inquire Mission</a></li>
 						</ul>
 					</li>
-					<li class="s2"><a href="#"><span>英雄商城</span></a>
+					<li class="s2"><a href="#"><span>Hero Market</span></a>
 					<ul class="p3 a5">
-							<li><a href="pages/shop.jsp">購買英雄</a></li>
+							<li><a href="pages/shop.jsp">Buy Hero</a></li>
 						</ul>
 					</li>
-					<li class="s2"><a href="#url"><span>懸賞任務</span></a>
+					<li class="s2"><a href="#url" style="line-height:20px;"><span>Reward Mission</span></a>
 					<ul class="p3 a6">
-							<li><a href="#">懸賞任務清單</a></li>
+							<li><a href="#" onclick="window.open('http://localhost:8080/HeroJDBC/chatRoom/chat.jsp', 'chatroom', config='height=380,width=340',flowover=hidden);" style="line-height:25px;">Reward<br>Mission</br> List</a></li>
 						</ul>
 					</li>
 				</ul>

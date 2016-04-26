@@ -47,7 +47,7 @@
 		</style>
     </head>
     <body>
-<jsp:include page="Top.jsp" flush="true" ></jsp:include>
+<jsp:include page="Top.jsp" flush="true" ></jsp:include><!--選單-->
 
 <c:if test="${not empty message1}">
 	<script type="text/javascript">alert("購 買 成 功 ! ");</script>
