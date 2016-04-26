@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>TOP</title>
 </head>
 
 <style>
@@ -220,7 +220,7 @@ transform:rotate(5deg);
 					<li class="s2"><a href="webapp/index1.jsp"><span>Home</span></a>
 					<ul class="p3 a2">
 							<li><a href="#">Name: ${Login.memberName}</a></li><!--名字 -->
-							<li><a href="#">$: ${Login.coin}</a></li>
+							<li><a href="#">$: ${money}</a></li>
 							<li><a href="#">Rating: ${Login.rating}</a></li>
 							<li><a href="#">AboutUs</a></li>
 							<li><a href="secure/logOut.jsp">LogOut</a></li>
