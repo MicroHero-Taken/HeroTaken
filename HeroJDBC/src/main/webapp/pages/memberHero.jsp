@@ -39,13 +39,14 @@
                 <ul> <!-- slides -->
                 <c:forEach var="memberHero" items="${memberHero}">
                 	<li><img src="${pageContext.request.contextPath}/Garage?heroNo=${memberHero.heroNo}"  />
-                        <div>Name: ${memberHero.heroName} <br><br>
-                        <input type="button" style="width: 100px"  value="Replace" id="replace"/>
+                        <form action="<c:url value="/ChangeHeroSkin"/>">
+                        	<div>Name: <input type="hidden" name="heroName" value="${memberHero.heroName}">${memberHero.heroName} <br><br>
+                        	<input type="submit" style="width: 100px"  value="Replace" id="replace"/>
+                        </form>
                         </div>
                     </li>
                 </c:forEach>    
                 </ul>
-                
           </div>
         </div>
     </body>

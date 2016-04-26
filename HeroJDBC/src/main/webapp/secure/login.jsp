@@ -54,7 +54,7 @@ $(function(){
 window.onload="up()"
 $(function up(){
 var x=window.location.toString(); 
-if(x=="http://localhost:8080/HeroJDBC/register/Register.do"){  
+if(x=="http://localhost:8080/HeroJDBC/register/Register.do"){ 
 	document.getElementById("signup").style.zIndex="8";}     
 	});
 </script>
@@ -62,8 +62,8 @@ if(x=="http://localhost:8080/HeroJDBC/register/Register.do"){
 <div id="login">                                         
    <center>                                     
 		<br><a href="https://accounts.google.com/o/oauth2/auth?response_type=code&client_id=226465592315-jnveboc4pda9qkp3kms665bu2n3rebp7.apps.googleusercontent.com&redirect_uri=http://127.0.0.1:8080/HeroJDBC/Oauth2callback&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email"><img width="90%" height="10%" src="${pageContext.servletContext.contextPath}/Img/sign-in-with-google.jpg"></a>
-<div style="font-size:25px">-----------or-----------</div>
-	   Use your email address
+<div style="font-size:25px">─────or─────</div>
+	   	Use your email address
 	    <form action="<c:url value="/LoginServlet"/>" method="get" ><br>
 			<input type="text"   name="email" value="${param.email}" placeholder="Email Address"><br>
 			<font  color='red'    size='-1'>${error.email}</font><br>
