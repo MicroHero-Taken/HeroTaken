@@ -6,13 +6,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <!-- -------------------------------------------jQuery---------------------------------------------- -->
-<script type="text/javascript" src="js/jquery-2.2.1.min.js"></script>
-<script src="js/jquery.js"></script>
+<script type="text/javascript" src="../js/jquery-2.2.1.min.js"></script>
+<script src="../js/jquery.js"></script>
 <!-- ------------------------------------------------------------------------------------------------ -->
 
 <title>Edit Hero</title>
 <style type="text/css">
-body {background:url(Img/insertHeroB.jpg)no-repeat;}
+body {background:url(../Img/insertHeroBG.jpg)no-repeat;}
 #heroNo {background-color:rgba(0,0,0,0.7);color:#26FFD9;Font-family:Meiryo; font-size:20px;font-weight:bold;position:absolute; top:890px;left:795px;}
 #heroName {background-color:rgba(0,0,0,0.8);color:#80FF80;Font-family:Meiryo; font-size:20px;font-weight:bold;position:absolute; top:890px;left:795px;}
 #heroPrice {background-color:rgba(0,0,0,0.7);color:#D9FF26;Font-family:Meiryo; font-size:20px;font-weight:bold;position:absolute; top:890px;left:795px;}

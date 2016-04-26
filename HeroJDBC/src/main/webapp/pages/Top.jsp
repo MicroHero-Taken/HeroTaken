@@ -8,7 +8,7 @@
 </head>
 
 <style>
-*{-webkit-print-color-adjust:exact;position:fiexd;}
+*{-webkit-print-color-adjust:exact;position:fiexd;font-align:left;line-height:20px;}
 .menuHolder {width:100px; height:100px; margin:0px 0 250px 0px; position:fiexd;z-index:4;}/*選單為網頁最上層*/
 .menuHolder ul {padding:0; margin:0; list-style:none; position:absolute; left:0; top:0; width:0; height:0;}
 .menuHolder ul li {border-radius:0 0 300px 0; width:0; height:0;}
@@ -20,7 +20,7 @@
 transform-origin:0 0;
 }
 .menuHolder ul.p1 li {position:absolute; left:0; top:0;}
-.menuHolder ul.p2 {z-index:-1;}
+.menuHolder ul.p2 {z-index:-1;line-height:20px;}
 .menuHolder ul.p3 {z-index:-1;}
 .menuHolder li.s1 > a {position:absolute; display:block; width:100px; height:100px; background:url(${pageContext.servletContext.contextPath}/Img/shield/Shield6.png); border-radius:0 0 100px 0;}
 .menuHolder li.s2 > a {position:absolute; display:block; width:100px; padding-left:100px; height:200px; background:#444444;/*灰*/ border-radius:0 0 200px 0;}
@@ -174,7 +174,7 @@ transform:rotate(0deg);
 -o-transform:rotate(0deg);
 transform:rotate(0deg);
 }
-.menuHolder ul li:hover > a {background:${pageContext.servletContext.contextPath}#FFD700; color:#fff;} /*鼠標碰到後的顏色*/
+.menuHolder ul li:hover > a {color:#fff;${pageContext.servletContext.contextPath};} /*鼠標碰到後的顏色*/
 .menuHolder li.s2:hover > a {background:#FF0000; color:#fff;}/*背景紅色 字體白色*/
 .menuHolder .a6 li:hover > a {background:#FFD700; color:#fff;}/**/
 .menuHolder .a5 li:hover > a {background:#FFD700; color:#fff;}
@@ -204,6 +204,8 @@ transform:rotate(5deg);
 }
 .menuHolder ~ img.close {width:0; height:0; position:fixed; z-index:-1; left:0; top:0;}
 .menuHolder:hover ~ img.close {width:100%; height:50%;}
+
+a {line-height:20px;}
 </style>
 
 <script type="text/javascript">
@@ -215,29 +217,29 @@ transform:rotate(5deg);
 <div class="menuHolder" >
 	<div class="menuWindow">
 		<ul class="p1">
-			<li class="s1"><a href="#url">Menu</a>
-				<ul class="p2">
-					<li class="s2"><a href="webapp/index1.jsp"><span>Home</span></a>
+			<li class="s1"><a href="#">Menu</a>
+				<ul class="p2" style="line-height:20px;">
+					<li class="s2"><a href="../index1.jsp"><span>Home</span></a>
 					<ul class="p3 a2">
 							<li><a href="#">Name: ${Login.memberName}</a></li><!--名字 -->
 							<li><a href="#">$: ${Login.coin}</a></li>
 							<li><a href="#">Rating: ${Login.rating}</a></li>
-							<li><a href="#">AboutUs</a></li>
+							<li><a href="../AboutUs/starwars.jsp">AboutUs</a></li>
 							<li><a href="secure/logOut.jsp">LogOut</a></li>
 						</ul>
 					</li>
 					<li class="s2"><a href="#"><span>Members Only</span></a>
 					<ul class="p3 a3">
-							<li><a href="#">Modify Skin</a></li>
-							<li><a href="#">Modify Data</a></li>
-							<li><a href="#">Access to personal data</a></li>
+							<li><a href="#">Modify<br>Skin</a></li>   <!--修改造型-->
+							<li><a href="#">Modify<br>Data</a></li>
+							<li><a href="#" style="line-height:25px;">Access to<br>personal<br>data</a></li>
 						</ul>
 					</li>
 					<li class="s2"><a href="#"><span>Mission Area</span></a>
 					<ul class="p3 a4">
-							<li><a id="m" href="#" onclick="window.open('http://localhost:8080/HeroJDBC/pages/mission.jsp', 'Mission', config='height=825,width=430',flowover=hidden);")>發布任務</a></li>
-							<li><a href="#">Accept Mission</a></li>
-							<li><a href="#">Inquire Mission</a></li>
+							<li><a id="m" href="#" onclick="window.open('http://localhost:8080/HeroJDBC/pages/mission.jsp', 'Mission', config='height=825,width=430',flowover=hidden);" style="line-height:25px;")>Publish Mission</a></li>
+							<li><a href="pages/search.jsp" style="line-height:25px;">Accept Mission</a></li>
+							<li><a href="../pages/search.jsp" style="line-height:25px;">Inquire Mission</a></li>
 						</ul>
 					</li>
 					<li class="s2"><a href="#"><span>Hero Market</span></a>
@@ -247,7 +249,7 @@ transform:rotate(5deg);
 					</li>
 					<li class="s2"><a href="#url"><span>Reward Mission</span></a>
 					<ul class="p3 a6">
-							<li><a href="#">Reward Mission</br> List</a></li>
+							<li><a href="#" style="line-height:25px;">Reward<br>Mission</br> List</a></li>
 						</ul>
 					</li>
 				</ul>
