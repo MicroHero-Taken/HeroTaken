@@ -111,8 +111,9 @@ StarWars = (function() {
       </p>
       </div>
   </section>
+  <center>
   <img id="TOKEN" src="../AboutUs/taken.png">
- 
+ </center>
   </div>
 </article>
 </body>

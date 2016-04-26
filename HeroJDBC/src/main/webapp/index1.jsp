@@ -577,7 +577,7 @@ window.onload=function(){
 				<ul class="p2" style="line-height:20px;">
 					<li class="s2"><a href="webapp/index1.jsp"><span>Home</span></a>
 					<ul class="p3 a2">
-							<li><a href="#">Name: ${Login.memberName}</a></li><!--名字 -->
+							<li><a style="line-height:20px;" href="#">Name: ${Login.memberName}</a></li><!--名字 -->
 							<li><a href="#">$: ${Login.coin}</a></li>
 							<li><a href="#">Rating: ${Login.rating}</a></li>
 							<li><a href="#">AboutUs</a></li>
