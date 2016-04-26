@@ -21,6 +21,7 @@ private String address;
 private java.sql.Timestamp missionStrt;
 private java.sql.Timestamp missionEnd;
 private Integer missionStatusNo;
+private String missionStatus;
 	
 public MissionMemBean(Integer memberNo, String missionTitle, String given_name,
 		String missionDesc, Integer missionPeople, 
@@ -164,6 +165,14 @@ public Integer getMissionStatusNo() {
 
 public void setMissionStatusNo(Integer missionStatusNo) {
 	this.missionStatusNo = missionStatusNo;
+}
+
+public String getMissionStatus() {
+	return missionStatus;
+}
+
+public void setMissionStatus(String missionStatus) {
+	this.missionStatus = missionStatus;
 }
 
 //public Integer getMissionNo() {
