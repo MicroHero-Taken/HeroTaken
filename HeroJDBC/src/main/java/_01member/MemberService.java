@@ -51,4 +51,8 @@ public class MemberService {
 	public boolean updateCoin(int memberNo, int coin){
 		return dao.updateCoin(coin, memberNo);
 	}
+//	--------------------------------------------------------------
+	public boolean updateHeroStatus(int memberNo , int memberHeroStatus){
+		return dao.updateHeroStatus(memberHeroStatus, memberNo);
+	}
 }

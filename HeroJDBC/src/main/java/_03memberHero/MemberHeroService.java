@@ -13,6 +13,14 @@ public class MemberHeroService {
 		
 	}
 //	============================================================================================================
+	public int selectCount(int memberNo){
+		int i = 0;
+		if(memberNo != 0){
+			i =  memberHeroDAO.selectCount(memberNo);
+		}
+		return i;
+	}
+//	============================================================================================================
 	public List<MemberHeroBean> select(int memberNo){
 		List<MemberHeroBean> result = null;
 		List<MemberHeroBean> temp = memberHeroDAO.selectByMemberNo(memberNo);

@@ -88,6 +88,7 @@ header .stuts span {
 .sel_page_19:checked ~ .pss_contr.c20 ,.sel_page_20:checked ~ .pss_contr.c21,
 .sel_page_21:checked ~ .pss_contr.c22 ,.sel_page_22:checked ~ .pss_contr.c23,
 .sel_page_23:checked ~ .pss_contr.c24 ,.sel_page_24:checked ~ .pss_contr.c25
+
 {
     background-image:url(../images/down.png);
     display:block;
@@ -114,7 +115,7 @@ header .stuts span {
     position:relative;
 }
 .pss_background {
-    background:url(../images/bg.png) no-repeat scroll 0 0;
+    background:url(../images/bg.png) repeat-y scroll 0 0;
     height:100%;
     left:0;
     overflow:hidden;
@@ -131,11 +132,11 @@ header .stuts span {
 }
 .pss_main input:checked ~ .pss_slides {
     /* css3 transition */
-    -webkit-transition:all linear 1.0s;
-    -moz-transition:all linear 1.0s;
-    -o-transition:all linear 1.0s;
-    -ms-transition:all linear 1.0s;
-    transition:all linear 1.0s;
+    -webkit-transition:all linear 1s;
+    -moz-transition:all linear 1s;
+    -o-transition:all linear 1s;
+    -ms-transition:all linear 1s;
+    transition:all linear 1s;
 }
 .sel_page_1:checked ~ .pss_slides {
     background-color:#000000;
@@ -233,6 +234,9 @@ header .stuts span {
 .sel_page_5:checked ~ .pss_slides .pss_background {
     background-position:0 -1600px;
 }
+.sel_page_5:checked ~ .pss_slides .pss_background {
+    background-position:0 -1600px;
+}
 .sel_page_6:checked ~ .pss_slides .pss_background {
     background-position:0 -2000px;
 }
@@ -298,11 +302,11 @@ header .stuts span {
     top:0;
 
     /* css3 transition */
-    -webkit-transition:top ease-in 1.0s;
-    -moz-transition:top ease-in 1.0s;
-    -o-transition:top ease-in 1.0s;
-    -ms-transition:top ease-in 1.0s;
-    transition:top ease-in 1.0s; 
+    -webkit-transition:top ease-in 1s;
+    -moz-transition:top ease-in 1s;
+    -o-transition:top ease-in 1s;
+    -ms-transition:top ease-in 1s;
+    transition:top ease-in 1s; 
 }
 .pss_slides ul  li {
     height:100%;
@@ -311,11 +315,11 @@ header .stuts span {
     text-align:center;
 
     /* css3 transition */
-    -webkit-transition:opacity ease-in 1.0s;
-    -moz-transition:opacity ease-in 1.0s;
-    -o-transition:opacity ease-in 1.0s;
-    -ms-transition:opacity ease-in 1.0s;
-    transition:opacity ease-in 1.0s; 
+    -webkit-transition:opacity ease-in 1s;
+    -moz-transition:opacity ease-in 1s;
+    -o-transition:opacity ease-in 1s;
+    -ms-transition:opacity ease-in 1s;
+    transition:opacity ease-in 1s; 
 }
 .sel_page_1:checked ~ .pss_slides ul li:first-child,
 .sel_page_2:checked ~ .pss_slides ul li:nth-child(2),
@@ -354,7 +358,7 @@ header .stuts span {
     box-shadow:0 0 5px #FFFFFF inset;
     color:#FFFFFF;
     font-size:26px;
-    left:-20%;
+    left:10%;
     margin:0 auto;
     padding:20px;
     position:absolute;
@@ -364,15 +368,15 @@ header .stuts span {
 	
     
     /* css3 transition */
-    -webkit-transition:left ease-in 1.0s;
-    -moz-transition:left ease-in 1.0s;
-    -o-transition:left ease-in 1.0s;
-    -ms-transition:left ease-in 1.0s;
-    transition:left ease-in 1.0s; 
+    -webkit-transition:left ease-in 1s;
+    -moz-transition:left ease-in 1s;
+    -o-transition:left ease-in 1s;
+    -ms-transition:left ease-in 1s;
+    transition:left ease-in 1s; 
 }
 
 	#replace{
- border-top: 1px solid #000000;
+   border-top: 1px solid #000000;
    background: #002b40;
    background: -webkit-gradient(linear, left top, left bottom, from(#005ca8), to(#002b40));
    background: -webkit-linear-gradient(top, #005ca8, #002b40);
@@ -499,5 +503,6 @@ header .stuts span {
 .sel_page_23:checked ~ .pss_slides ul li:nth-child(23) div
 .sel_page_24:checked ~ .pss_slides ul li:nth-child(24) div
 {
+
     left:10%;
 }
