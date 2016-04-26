@@ -1,4 +1,4 @@
-package _05mission;
+package _08MissionMem;
 
 import java.io.IOException;
 import java.util.List;
@@ -11,8 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import _05mission.MissionMemBean;
-import _05mission.MissionMemService;
+
 @WebServlet("/missionMem.do")
 public class MissionMemServlet extends HttpServlet{
 	private static final long serialVersionUID = 1L;
