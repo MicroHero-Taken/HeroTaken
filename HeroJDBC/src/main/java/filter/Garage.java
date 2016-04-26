@@ -45,6 +45,9 @@ public class Garage implements Filter {
 			System.out.println("Garage-heroNo= "+mhb.getHeroNo());
 		}
 		
+		int i = memberHeroService.selectCount(memberNo);
+		request.setAttribute("count", i);
+		
 		chain.doFilter(request, response);
 	}
 

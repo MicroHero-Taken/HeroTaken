@@ -33,12 +33,12 @@ public class MemberHeroDAO_JDBC implements MemberHeroDAO {
 //	=========================================MAIN===============================================================
 	public static void main(String[] args){
 		MemberHeroDAO dao = new MemberHeroDAO_JDBC();
-		System.out.println(dao.selectCount(2));
+		System.out.println(dao.selectCount(1));
 		
 		
 	}
 //	============================================================================================================
-	private static final String SELECT_COUNT_BY_MEMBERNO = "SELECT COUNT(heroNo) as count FROM  memberHero WHERE memberNo = ?";
+	private static final String SELECT_COUNT_BY_MEMBERNO = "SELECT * FROM memberHero WHERE memberNo =  ?";
 	@Override
 	public int selectCount(int memberNo){
 		int a = 0;
@@ -49,7 +49,9 @@ public class MemberHeroDAO_JDBC implements MemberHeroDAO {
 				){
 			pstmt.setInt(1, memberNo);
 			rset = pstmt.executeQuery();
-			a = rset.getInt("count");
+			while(rset.next()){
+				a++;
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}finally{
