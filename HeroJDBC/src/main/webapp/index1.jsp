@@ -6,7 +6,6 @@
 <html>
 <head>
 <%-- <jsp:include page="Top.jsp" flush="true" ></jsp:include> <!--選單 --> --%>
->>>>>>> branch 'master' of https://github.com/MicroHero-Taken/HeroTaken.git
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>aLLiNoNE</title>
 <script src="js/mission.js"></script> <!--發布任務 -->
