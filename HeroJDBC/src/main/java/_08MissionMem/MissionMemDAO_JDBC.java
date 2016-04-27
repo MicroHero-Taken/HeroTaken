@@ -1,4 +1,4 @@
-package _05mission;
+package _08MissionMem;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -36,15 +36,11 @@ public class MissionMemDAO_JDBC implements MissionMemDAO{
 
 	// private static final String SELECT_ALL =
 	// "select mm.missionNo, m.memberNo, m.nickName, m.gender, m.experience from MissionMem mm  FULL OUTER JOIN Member m ON mm.memberNo = m.memberNo";
-	private static final String SELECT_ALL = "SELECT Mission.missionTitle,"
-											  + "Mission.missionDesc,"
-											  + "Mission.missionPeople,"
-											  + "Mission.missionGender,"
-											  + "Mission.missionExcuteTime,"
-											  + "Mission.missionArea, Mission.address,"
-											  + "Mission.missionStrt,"
-											  + "Mission.missionEnd,"
-											  + "Mission.missionStatusNo, Member.given_name FROM Member INNER JOIN Mission ON Member.memberNo = Mission.memberNo";
+	private static final String SELECT_ALL = "SELECT MissionStatus.missionStatus, Mission.*, Member.given_name"
+											+" FROM Member INNER JOIN"
+											+" Mission ON Member.memberNo = Mission.memberNo INNER JOIN"
+											+" MissionStatus ON Mission.missionStatusNo = MissionStatus.missionStatusNo"
+											+" WHERE MissionStatus.missionStatusNo != 3";
 
 	public List<MissionMemBean> select() {
 		List<MissionMemBean> result = null;
@@ -70,6 +66,7 @@ public class MissionMemDAO_JDBC implements MissionMemDAO{
 				bean.setMissionStrt(rs.getTimestamp("missionStrt"));
 				bean.setMissionEnd(rs.getTimestamp("missionEnd"));
 				bean.setMissionStatusNo(rs.getInt("missionStatusNo"));
+				bean.setMissionStatus(rs.getString("missionStatus"));
 				result.add(bean);
 //				 System.out.println(bean);
 			}

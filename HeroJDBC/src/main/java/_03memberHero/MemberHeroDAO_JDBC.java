@@ -13,8 +13,6 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
-import _05mission.MissionDAO;
-import _05mission.MissionDAO_JDBC;
 
 public class MemberHeroDAO_JDBC implements MemberHeroDAO {
 //	private static final String URL = "jdbc:sqlserver://localhost:1433;database=Hero";
