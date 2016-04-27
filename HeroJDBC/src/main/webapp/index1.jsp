@@ -11,7 +11,7 @@
 <script src="js/mission.js"></script> <!--發布任務 -->
 <style type="text/css">
 *{-webkit-print-color-adjust:exact;}
-body {background:url(${pageContext.servletContext.contextPath}/Img/marvelQ1.jpg);margin:0px;padding:0px;font-align:center;overflow:hidden;}
+body {background:url(${pageContext.servletContext.contextPath}/Img/marvelQ1.jpg) ;margin:0px;padding:0px;font-align:center;overflow:hidden;}
 .menuHolder {width:100px; height:100px; margin:0px 0 250px 0px; position:fiexd;z-index:4;}/*選單為網頁最上層*/
 .menuHolder ul {padding:0; margin:0; list-style:none; position:absolute; left:0; top:0; width:0; height:0;}
 .menuHolder ul li {border-radius:0 0 300px 0; width:0; height:0;}
@@ -231,12 +231,11 @@ a {line-height:20px;}
  	height:1600px; /*佔滿瀏覽器高度*/
 	position:fixed;/*固定定位*/
 	z-index:2;
-	border 2px solid red;
 	background:yellow;
 }
 
 #hiden_door_left {     /*隱藏部分(左)*/
-	background:url(${pageContext.servletContext.contextPath}/Img/CaptainAmericaCivilWar03.jpg) no-repeat;
+	background:url(${pageContext.servletContext.contextPath}/Img/CaptainAmericaCivilWar03.jpg) no-repeat ;
 	width:100%;
 	height:1600px;
 	z-index:5;
@@ -271,69 +270,6 @@ a {line-height:20px;}
 	padding-top:470px;	
 	z-index:3;
 }
-/* ====================================================================================================================================== */
-#ad {/*外*/
-    position:absolute;
-    top:-100%;
-    buttom:100px;
-    left:0%;
-    right:0px;
-    width:100%;
-    height:100%;
-	z-index:6;
-/* 	background:orange; */
-/* 	opacity:0.5; */
-}
-#bk {/*裡*/
-    position:fixed;
-    top:-100%;
-    left:0px;
-    right:0px;
-    width:100%;
-    height:100%;
-	background:black;
-    opacity:0.7;
-}
-#X {
-    position:fixed;
-    top:-100%;
-    width:100%;
-    height:50px;
-    left:0%;
-    background:white;
-    font-size:20px;
-    font:center;
-    z-index:7;
-   }
-/* ====================================================================================================================================== */
-#abgneBlock {
-	width:60%;
-	height:88%;
-	top:80px;
-	left:200px;
-	position:absolute;
-	border: 1px solid black;
-}
-
-.hdr{ background:gray; width:461px; height:94px; margin:10px auto; text-indent:-9999px;}
-a{ text-decoration:none;}
-a:hover{ text-decoration:underline;}
-.listReset{ padding:0; margin:0; list-style:none;}
-
-.tabPanel{ width:768px;height:1024px;position:absolute;top:75px;left:25%;}
-.tab-content{ width:450px; height:200px; position:; top:0; left:0;}
-.detail{ position:absolute; left:20px; top:0; width:150px; height:190px; background:url(images/detailBG.png); padding:5px;}
-.detail h1 a{ color:#FF0; font-size:.5em;}
-.detail p{ color:#FFF; font-size:.8em; line-height:1.5;}
-.detail ul{ color:#F90; list-style-type:square; padding-left:20px; margin:10px 0 0;}
-.detail ul a{ color:#FC0;  font-size:.8em; line-height:1.5;}
-
-.switch{ width:150px; position:absolute; top:0; right:0px;}
-.switch a{ display:block; line-height:40px; background:url(images/tabBG.jpg); text-indent:1em; color:#666; text-decoration:none; *height:40px;}
-.switch a:hover{ background:#F0F; color:#000; background:url(images/tabBG_over.jpg);}
-
-a.now-tab, a.now-tab:hover{ background:url(images/tabBG_now.png); text-indent:1.5em; color:#FFF; font-weight:bold; margin-left:-20px; border:0;}
-
 /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  Google Map  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 #map {
 width:70%;
@@ -450,82 +386,26 @@ function LoadMap(markers) {
 	$("#left_door").hover(function(){ //滑鼠滑入(左)時
 			$("#big_door_left").animate({ left:'0px'}, 800 ,'swing');
 			$("#big_door_right").animate({ right:'0px'}, 800 ,'swing');
-			
-//      		$("#ad").css('z-index','6');
-     		
-     		$("#ad").animate({top:'60px'},2000,'swing');
-     		$("#X").animate({top:'0px'},2000,'swing');
-     		$("#bk").animate({top:'0px'},2000,'swing');
- 			
-			//把左邊的px變成'0px'，就可以把它推出來
 	 }); 
 	});
-                                 /* ↑left, ↓right */
 $(function(){
 	$("#right_door").hover(function(){ //滑鼠滑入(右)時
 		    $("#big_door_left").animate({ left:'0px'}, 800 ,'swing');
 			$("#big_door_right").animate({ right:'0px'}, 800 ,'swing');
-			
-			
-// 			$("#ad").css('z-index','6');
-			
-			$("#ad").animate({top:'60px'},2000,'swing');
-			$("#X").animate({top:'0px'},2000,'swing');
-			$("#bk").animate({top:'0px'},2000,'swing');
-			//把"那片"的width調成  負的原先值
 	 });
-});
-                                 
+});                             
 $(function(){
-	$("#X").click(function(){   //滑入上方白條後=收
-// 		$("#ad").css('z-index','-2');
+	$(".menuHolder").click(function(){   //滑入上方白條後=收
 	
 		$("#big_door_right").animate({ right:'-49.9%' }, 10 ,'swing');
-		$("#big_door_left").animate({left:'-49.9%' }, 10 ,'swing');
-		
-		$("#ad").animate({top:'-100%'},10,'swing');
-		$("#X").animate({top:'-100%'},10,'swing');
-		$("#bk").animate({top:'-100%'},10,'swing');
    });
 });
-/**//**//**//**//**//**//**//**//**//**//**//*以下為輪播廣告*//**//**//**//**//**//**//**//**//**//**/
-window.onload=function(){
+$(function(){
+$(".menuHolder").click(function(){   //滑入上方白條後=收
 	
-	var num=1;
-	var tNum=5;
-	var duration=2000;
-	
-	run();
-	document.getElementById("box").onmouseover=stopRun;
-	document.getElementById("box").onmouseout=run;
-	
-	for(var i=1; i<=tNum; i++){
-		document.getElementById("tab"+i).onclick=show;
-		document.getElementById("con"+i).style.display="none";
-	}
-	document.getElementById("con1").style.display="block";
-	document.getElementById("tab1").className="now-tab";
-//===============================================
-//===============================================
-	function autoShow(){
-		for(var i=1; i<=tNum; i++){
-			document.getElementById("con"+i).style.display="none";
-			document.getElementById("tab"+i).className="";
-		}
-		if(num<tNum){ num++;}else{ num=1;}
-		document.getElementById("con"+num).style.display="block";
-		document.getElementById("tab"+num).className="now-tab";
-	}
-	
-	function show(){
-		num=this.id.substr(3)-1;
-		autoShow();
-	}
-	
-	function stopRun(){ clearInterval(myInterval);}
-	
-	function run(){ myInterval= setInterval( autoShow, duration);}
-};
+	$("#big_door_left").animate({left:'-49.9%' }, 10 ,'swing');
+});
+});
 //************************************************************************************************************************************
 </script>
 
@@ -544,7 +424,7 @@ window.onload=function(){
 							<li><a href="#">$: ${Login.coin}</a></li>
 							<li><a href="#">Rating: ${Login.rating}</a></li>
 							<li><a href="<c:url value="AboutUs/starwars.jsp" />">AboutUs</a></li>
-							<li><a href="<c:url value="secure/logOut.jsp" />">LogOut</a></li>
+							<li><a href="<c:url value="../secure/logOut.jsp" />">LogOut</a></li>
 						</ul>
 					</li>
 					<li class="s2"><a href="#"><span>Members Only</span></a>
@@ -556,7 +436,7 @@ window.onload=function(){
 					</li>
 					<li class="s2"><a href="#"><span>Mission Area</span></a>
 					<ul class="p3 a4">
-							<li><a id="m" href="#" onclick="window.open('http://localhost:8080/HeroJDBC/pages/mission.jsp', 'Mission', config='height=825,width=430',flowover=hidden);" style="line-height:25px;">Publish Mission</a></li>
+							<li><a id="m" href="#" onclick="window.open('pages/mission.jsp', 'Mission', config='height=825,width=430',flowover=hidden);" style="line-height:25px;">Publish Mission</a></li>
 							<li><a href="<c:url value="/missionMem.do?" />" style="line-height:25px;">Accept Mission</a></li>
 							<li><a href="../pages/search.jsp" style="line-height:25px;">Inquire Mission</a></li>
 						</ul>
@@ -593,36 +473,6 @@ window.onload=function(){
 <div id="hiden_door_right">
 	                      <!--隱藏門(右)-->
 </div>
-</div>
- <!-- ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓輪播廣告 用↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ -->
-
-<div id="ad" >
-<div id="bk">123456789</div>
-<div class="tabPanel" id="box">
-  <div class="tab-content" id="con1">
-    <img src="${pageContext.servletContext.contextPath}/Img/Ad/1.jpg" width="1024" height="768" alt="Marvel">
-  </div>
-  <div class="tab-content" id="con2">
-    <img src="${pageContext.servletContext.contextPath}/Img/Ad/5.jpg" width="1024" height="768" alt="SuperWomen">
-  </div>
-  <div class="tab-content" id="con3">
-    <img src="${pageContext.servletContext.contextPath}/Img/Ad/3.jpg" width="1024" height="768" alt="AntMan">
-  </div>
-  <div class="tab-content" id="con4">
-    <img src="${pageContext.servletContext.contextPath}/Img/Ad/4.jpg" width="1024" height="768" alt="SpiderMan">
-  </div>
-  <div class="tab-content" id="con5">
-    <img src="${pageContext.servletContext.contextPath}/Img/Ad/2.jpg" width="1024" height="768" alt="Hulk">
-  </div>
-  <ul class="listReset switch">
-    <li><a  id="tab1"></a></li>
-    <li><a  id="tab2"></a></li>
-    <li><a  id="tab3"></a></li>
-    <li><a  id="tab4"></a></li>
-    <li><a  id="tab5"></a></li>
-  </ul>
-</div>
-<div id="X" font-size:40px;>    點    擊   這    裡   關    閉    廣    告    </div>
 </div>
 
 </body>

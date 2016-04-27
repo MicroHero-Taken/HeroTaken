@@ -7,12 +7,11 @@
     <title>Taken</title>
         <meta charset="utf-8" />
         <link href="../css/main.css" rel="stylesheet" type="text/css" />
-    </head>
+    </head>  
     <body>
-        <header tabindex="0">
-            <h2>Garage</h2>
-        </header>
+            <div id="Garage">Garage</div>        
         
+                
         <div class="pss_main"> <!-- main parallax scrolling slider object -->
             <input id="r_1" type="radio" name="p" class="sel_page_1" style="display: none" checked="checked" /> <!-- hidden radios -->
             <input id="r_2" type="radio" name="p" class="sel_page_2" style="display: none" />

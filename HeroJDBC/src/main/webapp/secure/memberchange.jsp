@@ -11,9 +11,9 @@
 <title>Taken</title>
 </head>
 <body>
-
+<jsp:include page="../Top.jsp" flush="true" ></jsp:include><!--選單-->
 	<h3>編輯會員資料</h3>
-
+<div>
 	<form action="<c:url value="/register/Register.do" />" method="post">
 		<table>
 		
@@ -61,6 +61,6 @@
 			</tr>
 		</table>
 	</form>
-
+</div>
 </body>
 </html>
