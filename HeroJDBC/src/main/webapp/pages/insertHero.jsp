@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -6,13 +6,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <!-- -------------------------------------------jQuery---------------------------------------------- -->
-<script type="text/javascript" src="../js/jquery-2.2.1.min.js"></script>
-<script src="../js/jquery.js"></script>
+<script type="text/javascript" src="/HeroJDBC/js/jquery-2.2.1.min.js"></script>
+<script src="/HeroJDBC/js/jquery.js"></script>
 <!-- ------------------------------------------------------------------------------------------------ -->
 
 <title>Edit Hero</title>
 <style type="text/css">
-body {background:url(../Img/insertHeroBG.jpg)no-repeat;}
+body {background:url(/HeroJDBC/Img/insertHeroBG.jpg)no-repeat;}
 #heroNo {background-color:rgba(0,0,0,0.7);color:#26FFD9;Font-family:Meiryo; font-size:20px;font-weight:bold;position:absolute; top:890px;left:795px;}
 #heroName {background-color:rgba(0,0,0,0.8);color:#80FF80;Font-family:Meiryo; font-size:20px;font-weight:bold;position:absolute; top:890px;left:795px;}
 #heroPrice {background-color:rgba(0,0,0,0.7);color:#D9FF26;Font-family:Meiryo; font-size:20px;font-weight:bold;position:absolute; top:890px;left:795px;}
@@ -233,8 +233,8 @@ body {background:url(../Img/insertHeroBG.jpg)no-repeat;}
   
 </head>
 <body>
-	
-		<h1>${ErrMsg.action}</h1>
+
+		<h1 style="color:white">${ErrMsg.action}</h1>
 		<form action="<c:url value="/InsertHero"/>" method="post" enctype="multipart/form-data">
 
 			<div id="heroNo">● 英雄編號:<input type="text"  name="heroNo"  size=18px style="font-family:Microsoft JhengHei; value="${param.heroNo}"  />
@@ -267,9 +267,9 @@ body {background:url(../Img/insertHeroBG.jpg)no-repeat;}
 			<br>
 			
 				<div id="button"><center>
-				<input type="button" value="Insert" style="width:120px;height:40px;border:3px #D9408C double;font-size:16px;font-weight:bold;color:#0085CC;background-color:#FFFF4D;">
-				<input type="button" value="Update" style="width:120px;height:40px;border:3px #D9408C double;font-size:16px;font-weight:bold;color:#00B280;background-color:#FFFF4D;">
-				<input type="button" value="Delete" style="width:120px;height:40px;border:3px #D9408C double;font-size:16px;font-weight:bold;color:#00E033;background-color:#FFFF4D;">
+				<input type="submit" name="hero" value="Insert" style="width:120px;height:40px;border:3px #D9408C double;font-size:16px;font-weight:bold;color:#0085CC;background-color:#FFFF4D;">
+				<input type="submit" name="hero" value="Update" style="width:120px;height:40px;border:3px #D9408C double;font-size:16px;font-weight:bold;color:#00B280;background-color:#FFFF4D;">
+				<input type="submit" name="hero" value="Delete"" style="width:120px;height:40px;border:3px #D9408C double;font-size:16px;font-weight:bold;color:#00E033;background-color:#FFFF4D;">
 				</center></div>
 			</form>
 			<font id="title">Edit Hero</font>

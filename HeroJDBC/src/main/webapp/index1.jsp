@@ -271,7 +271,7 @@ a {line-height:20px;}
 	z-index:3;
 }
 /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  Google Map  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
-#map {
+#Map {
 width:70%;
 height:900px;
 border:5px solid black ;
@@ -297,88 +297,125 @@ form{margin:0%;paddind:0%;background:url(${pageContext.request.contextPath}/imag
 <script type='text/javascript' src='http://code.jquery.com/jquery-1.9.1.min.js'></script>
 <!-- <==============================Google Map script Start==============================> -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=&signed_in=true&callback=initMap"></script>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 <!-- <===============================Google Map script End===============================> -->
-<!-- <==============================Google Map function Start==============================> -->
 <script type="text/javascript">
+//==============================Google Map function Start==============================
 //帶入後台 Database 匯出之 JSON 資料
-window.onload = function () {
-	$.ajax(
-		'${pageContext.request.contextPath}/googlemap/GoogleMapServlet',
-		{
-			async:false,
-			cache:false,
-			contentType:'application/json',
-			success:function(data){
-				LoadMap(data);
-			}
-		}
-	);
-}
-//Google Map Function    
-function LoadMap(markers) {
-    var mapOptions = {
-        zoom : 16,
-		minZoom: 16,
-		draggable : true,
-		zoomControl : false,
-		mapTypeId : google.maps.MapTypeId.HYBRID
-    };
-    var infoWindow = new google.maps.InfoWindow();
-    var latlngbounds = new google.maps.LatLngBounds();
-    var map = new google.maps.Map(document.getElementById("Map"), mapOptions);
-//迴圈帶出 Marker 進行多點標記 
-    for (var i = 0; i < markers.length; i++) {
-        var data = markers[i]
-        var myLatlng = new google.maps.LatLng(data.Latitude, data.Longitude);
-        var image = {
-        	    url: data.icon,
-        	    // This marker is 20 pixels wide by 32 pixels high.
-        	    size: new google.maps.Size(50, 50),
-
-        	  };
-
-        var marker = new google.maps.Marker({
-            position: myLatlng,
-            map: map,
-            title: data.MissionTitle,
-            icon: image,
-        });
-        (function (marker, data) {
-            google.maps.event.addListener(marker, "mouseover", function (e) {
-                infoWindow.setContent("<div style = 'width:200px;min-height:40px'>" + '任務名稱:'  + data.MissionTitle  + '<br>' + '發起人: ' + data.MemberName + '<br>' + '需求人數: ' + data.MissionPeople + '<br>' + '需求性別: ' + data.MissionGender + '<br>' + '開始時間: ' + data.MissionStrt + '<br>' + '結束時間: ' + data.MissionEnd + '<br>' + '任務說明: ' + data.MissionDesc + '<br>' + "</div>");
-                infoWindow.open(map, marker);
-            });
-        })(marker, data);
-        latlngbounds.extend(marker.position);
+ window.onload = function () {
+    	$.ajax(
+    		'${pageContext.request.contextPath}/googlemap/GoogleMapServlet',
+    		{
+    			async:false,
+    			cache:false,
+    			contentType:'application/json',
+    			success:function(data){
+    				LoadMap(data);
+    			}
+    		}
+    	);
     }
-    var bounds = new google.maps.LatLngBounds();
-    map.setCenter(latlngbounds.getCenter());
-    map.fitBounds(latlngbounds);  
-  //呼叫 W3C 地理資訊 嘗試取得使用者位置
-	if (navigator.geolocation) {
-		browserSupportFlag = true;
-		navigator.geolocation.getCurrentPosition(function(position) {
-			initialLocation = new google.maps.LatLng(
-					position.coords.latitude, position.coords.longitude);
-			map.setCenter(initialLocation);
-		}, function() {
-			handleNoGeolocation(browserSupportFlag);
-		});
-	} else {
-		browserSupportFlag = false;
-		handleNoGeolocation(browserSupportFlag);
-	}
-	function handleNoGeolocation(errorFlag) {
-		if (errorFlag == true) {
-			alert("地圖定位失敗");
+//Google Map Function    
+    function LoadMap(markers) {
+        var mapOptions = {
+            zoom : 16,
+			minZoom: 16,
+			draggable : true,
+			zoomControl : false,
+			mapTypeId : google.maps.MapTypeId.ROADMAP
+        };
+        var infoWindow = new google.maps.InfoWindow();
+        var latlngbounds = new google.maps.LatLngBounds();
+        var map = new google.maps.Map(document.getElementById("Map"), mapOptions);
+//迴圈帶出 Marker 進行多點標記 
+        for (var i = 0; i < markers.length; i++) {
+            var data = markers[i]
+            var myLatlng = new google.maps.LatLng(data.Latitude, data.Longitude);
+            var image = {
+            	    url: data.icon,
+            	    // This marker is 20 pixels wide by 32 pixels high.
+            	    //size: new google.maps.Size(50, 50),
+
+            	  };
+
+            var marker = new google.maps.Marker({
+                position: myLatlng,
+                map: map,
+                title: data.MissionTitle,
+                optimized:false,
+                icon: image,
+            });
+            (function (marker, data) {
+                google.maps.event.addListener(marker, "mouseover", function (e) {
+                    infoWindow.setContent("<div style = 'width:200px;min-height:40px'>" + '任務名稱:'  + data.MissionTitle  + '<br>' + '發起人: ' + data.MemberName + '<br>' + '需求人數: ' + data.MissionPeople + '<br>' + '需求性別: ' + data.MissionGender + '<br>' + '開始時間: ' + data.MissionStrt + '<br>' + '結束時間: ' + data.MissionEnd + '<br>' + '任務說明: ' + data.MissionDesc + '<br>' + "</div>");
+                    infoWindow.open(map, marker);
+                });
+            })(marker, data);
+            latlngbounds.extend(marker.position);
+        }
+        var bounds = new google.maps.LatLngBounds();
+        map.setCenter(latlngbounds.getCenter());
+        map.fitBounds(latlngbounds);  
+      //呼叫 W3C 地理資訊 嘗試取得使用者位置
+		if (navigator.geolocation) {
+			browserSupportFlag = true;
+			navigator.geolocation.getCurrentPosition(function(position) {
+				initialLocation = new google.maps.LatLng(
+						position.coords.latitude, position.coords.longitude);
+				map.setCenter(initialLocation);
+			}, function() {
+				handleNoGeolocation(browserSupportFlag);
+			});
 		} else {
-			alert("您的瀏覽器不支援定位服務");
+			browserSupportFlag = false;
+			handleNoGeolocation(browserSupportFlag);
 		}
-		initialLocation = taipei;
-		map.setCenter(initialLocation);
-	}
-}
+		function handleNoGeolocation(errorFlag) {
+			if (errorFlag == true) {
+				alert("地圖定位失敗");
+			} else {
+				alert("您的瀏覽器不支援定位服務");
+			}
+			initialLocation = taipei;
+			map.setCenter(initialLocation);
+		}
+//===============================Google Map script End===============================
+/**//**//**//**//**//**//**//**//**//**//**//*以下為輪播廣告*//**//**//**//**//**//**//**//**//**//**/
+		var num=1;
+		var tNum=5;
+		var duration=2000;
+		
+		run();
+		document.getElementById("box").onmouseover=stopRun;
+		document.getElementById("box").onmouseout=run;
+		
+		for(var i=1; i<=tNum; i++){
+			document.getElementById("tab"+i).onclick=show;
+			document.getElementById("con"+i).style.display="none";
+		}
+		document.getElementById("con1").style.display="block";
+		document.getElementById("tab1").className="now-tab";
+	//===============================================
+	//===============================================
+		function autoShow(){
+			for(var i=1; i<=tNum; i++){
+				document.getElementById("con"+i).style.display="none";
+				document.getElementById("tab"+i).className="";
+			}
+			if(num<tNum){ num++;}else{ num=1;}
+			document.getElementById("con"+num).style.display="block";
+			document.getElementById("tab"+num).className="now-tab";
+		}
+		
+		function show(){
+			num=this.id.substr(3)-1;
+			autoShow();
+		}
+		
+		function stopRun(){ clearInterval(myInterval);}
+		
+		function run(){ myInterval= setInterval( autoShow, duration);}
+    }
 </script>
 <!--<===============================Google Map function End===============================>-->
 <script type="text/javascript">
@@ -410,9 +447,9 @@ $(".menuHolder").click(function(){   //滑入上方白條後=收
 </script>
 
 </head>
-<body onload="initialize()">
+<body>
+<div id="Map"></div>
 
-<div id="map" ></div>
 <div class="menuHolder" >
 	<div class="menuWindow">
 		<ul class="p1">

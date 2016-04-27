@@ -8,11 +8,11 @@
 </head>
 
 <style>
-*{-webkit-print-color-adjust:exact;position:fiexd;font-align:left;line-height:20px;}
+*{-webkit-print-color-adjust:exact;position:fiexd;font-align:left;line-height:20px;overflow:hidden;}
 .menuHolder {width:100px; height:100px; margin:0px 0 250px 0px; position:fiexd;z-index:4;}/*選單為網頁最上層*/
 .menuHolder ul {padding:0; margin:0; list-style:none; position:absolute; left:0; top:0; width:0; height:0;}
 .menuHolder ul li {border-radius:0 0 300px 0; width:0; height:0;}
-.menuHolder ul li a {color:#000; text-decoration:none; font:bold 15px/55px malgun gothic, sans-serif; text-align:center; box-shadow:-5px 5px 5px rgba(0,0,0,0.4);
+.menuHolder ul li a {color:white; text-decoration:none; font:bold 15px/55px malgun gothic, sans-serif; text-align:center; box-shadow:-5px 5px 5px rgba(0,0,0,0.4);
 -webkit-transform-origin:0 0;
 -moz-transform-origin:0 0;
 -ms-transform-origin:0 0;
@@ -225,7 +225,7 @@ a {line-height:20px;}
 							<li><a href="#">$: ${Login.coin}</a></li>
 							<li><a href="#">Rating: ${Login.rating}</a></li>
 							<li><a href="../AboutUs/starwars.jsp">AboutUs</a></li>
-							<li><a href="secure/logOut.jsp">LogOut</a></li>
+							<li><a href="../secure/logOut.jsp">LogOut</a></li>
 						</ul>
 					</li>
 					<li class="s2"><a href="#"><span>Members Only</span></a>
