@@ -196,15 +196,15 @@ public class missionServlet extends HttpServlet {
 				
 				
 				
-				//HttpSession session1 = request.getSession();
-				request.setAttribute("mission",missionBean);
-				//HttpSession session2 = request.getSession();
-				request.setAttribute("missionReward",missionRewardBean);
-				//HttpSession session3 = request.getSession();
-				request.setAttribute("missionNo", noBean);
+				HttpSession session1 = request.getSession();
+				session1.setAttribute("mission",missionBean);
+				HttpSession session2 = request.getSession();
+				session2.setAttribute("missionReward",missionRewardBean);
+				HttpSession session3 = request.getSession();
+				session3.setAttribute("missionNo", noBean);
 				
 				String contextPath = request.getContextPath();
-				response.sendRedirect(contextPath + "/temporary.jsp");
+				response.sendRedirect(contextPath + "/pages/missionDisplay.jsp");
 				return;
 			}
 			
