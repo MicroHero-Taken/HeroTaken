@@ -251,9 +251,9 @@ a {line-height:20px;}
 				<ul class="p2" style="line-height:20px;">
 					<li class="s2"><a href="<c:url value="/index1.jsp" />"><span>Home</span></a>
 					<ul class="p3 a2">
-							<li><a style="line-height:20px;" href="#">Name: ${Login.memberName}</a></li><!--名字 -->
-							<li><a href="#">$: ${Login.coin}</a></li>
-							<li><a href="#">Rating: ${Login.rating}</a></li>
+							<li><a style="line-height:20px;" href="#">Name: ${memberInfo.memberName}</a></li><!--名字 -->
+							<li><a href="#">$: ${memberInfo.coin}</a></li>
+							<li><a href="#">Rating: ${memberInfo.rating}</a></li>
 							<li><a href="<c:url value="AboutUs/starwars.jsp" />">AboutUs</a></li>
 							<li><a href="<c:url value="../secure/logOut.jsp" />">LogOut</a></li>
 						</ul>

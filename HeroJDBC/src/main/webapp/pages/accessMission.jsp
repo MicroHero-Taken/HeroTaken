@@ -9,7 +9,7 @@
 <html>
 <head>
 
-<title>SearchMission</title>
+<title>AccessMission</title>
    <link href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.2/themes/hot-sneaks/jquery-ui.css" rel="stylesheet">
   <link href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css" rel="stylesheet">
   <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.0.min.js"></script>
@@ -47,7 +47,6 @@
 					<td><a href="">接任務</a></td>
 				</tr>
 				</c:forEach>
-				<td><input type="submit" value="submit"></td>
 		</tbody>
 	</table>
 	</form>
