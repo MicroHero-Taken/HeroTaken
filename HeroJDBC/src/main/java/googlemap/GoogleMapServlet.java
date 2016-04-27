@@ -39,7 +39,7 @@ public class GoogleMapServlet extends HttpServlet {
 			obj.put("Latitude",list.get(i).getLatitude());
 			obj.put("Longitude",list.get(i).getLongitude());
 			obj.put("MissionStatusNo",list.get(i).getMissionStatusNo());
-			obj.put("icon",contextPath+"/HeroPhoto?heroNo="+list.get(i).getMemberHeroStatus());
+			obj.put("icon",contextPath+"/HeroPhotoSkin3?heroNo="+list.get(i).getMemberHeroStatus());
 			array.put(obj);	
 		}
 		out.println(array.toString());

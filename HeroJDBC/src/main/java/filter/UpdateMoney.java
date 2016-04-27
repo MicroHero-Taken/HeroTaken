@@ -19,8 +19,7 @@ import _01member.MemberService;
 @WebFilter(
 		urlPatterns = { "/pages/Top.jsp" }, 
 		initParams = { 
-				@WebInitParam(name = "url_1", value = "/pages/Top.jsp"),
-				@WebInitParam(name = "url_2", value = "/pages/shop.jsp")
+				@WebInitParam(name = "url_1", value = "/pages/Top.jsp")
 		})
 public class UpdateMoney implements Filter {
 
@@ -36,6 +35,7 @@ public class UpdateMoney implements Filter {
 		MemberService memberService =new MemberService();
 		MemberBean memberBean = memberService.selectById(memberNo);
 		int coin = memberBean.getCoin();
+		System.out.println("Filter-coin: " +coin);
 		request.setAttribute("money", coin);
 		
 		chain.doFilter(request, response);

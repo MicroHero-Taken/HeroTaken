@@ -272,67 +272,67 @@ a {line-height:20px;}
 	z-index:3;
 }
 /* ====================================================================================================================================== */
-/* #ad {/*外*/ */
-/*     position:absolute; */
-/*     top:-100%; */
-/*     buttom:100px; */
-/*     left:0%; */
-/*     right:0px; */
-/*     width:100%; */
-/*     height:100%; */
-/* 	z-index:6; */
+#ad {/*外*/
+    position:absolute;
+    top:-100%;
+    buttom:100px;
+    left:0%;
+    right:0px;
+    width:100%;
+    height:100%;
+	z-index:6;
 /* 	background:orange; */
 /* 	opacity:0.5; */
 }
-/* #bk {/*裡*/ */
-/*     position:fixed; */
-/*     top:-100%; */
-/*     left:0px; */
-/*     right:0px; */
-/*     width:100%; */
-/*     height:100%; */
-/* 	background:black; */
-/*     opacity:0.7; */
-/* } */
-/* #X { */
-/*     position:fixed; */
-/*     top:-100%; */
-/*     width:100%; */
-/*     height:50px; */
-/*     left:0%; */
-/*     background:white; */
-/*     font-size:20px; */
-/*     font:center; */
-/*     z-index:7; */
-/*    } */
+#bk {/*裡*/
+    position:fixed;
+    top:-100%;
+    left:0px;
+    right:0px;
+    width:100%;
+    height:100%;
+	background:black;
+    opacity:0.7;
+}
+#X {
+    position:fixed;
+    top:-100%;
+    width:100%;
+    height:50px;
+    left:0%;
+    background:white;
+    font-size:20px;
+    font:center;
+    z-index:7;
+   }
 /* ====================================================================================================================================== */
-/* #abgneBlock { */
-/* 	width:60%; */
-/* 	height:88%; */
-/* 	top:80px; */
-/* 	left:200px; */
-/* 	position:absolute; */
-/* 	border: 1px solid black; */
-/* } */
+#abgneBlock {
+	width:60%;
+	height:88%;
+	top:80px;
+	left:200px;
+	position:absolute;
+	border: 1px solid black;
+}
 
-/* .hdr{ background:gray; width:461px; height:94px; margin:10px auto; text-indent:-9999px;} */
-/* a{ text-decoration:none;} */
-/* a:hover{ text-decoration:underline;} */
-/* .listReset{ padding:0; margin:0; list-style:none;} */
+.hdr{ background:gray; width:461px; height:94px; margin:10px auto; text-indent:-9999px;}
+a{ text-decoration:none;}
+a:hover{ text-decoration:underline;}
+.listReset{ padding:0; margin:0; list-style:none;}
 
-/* .tabPanel{ width:768px;height:1024px;position:absolute;top:75px;left:25%;} */
-/* .tab-content{ width:450px; height:200px; position:; top:0; left:0;} */
-/* .detail{ position:absolute; left:20px; top:0; width:150px; height:190px; background:url(images/detailBG.png); padding:5px;} */
-/* .detail h1 a{ color:#FF0; font-size:.5em;} */
-/* .detail p{ color:#FFF; font-size:.8em; line-height:1.5;} */
-/* .detail ul{ color:#F90; list-style-type:square; padding-left:20px; margin:10px 0 0;} */
-/* .detail ul a{ color:#FC0;  font-size:.8em; line-height:1.5;} */
+.tabPanel{ width:768px;height:1024px;position:absolute;top:75px;left:25%;}
+.tab-content{ width:450px; height:200px; position:; top:0; left:0;}
+.detail{ position:absolute; left:20px; top:0; width:150px; height:190px; background:url(images/detailBG.png); padding:5px;}
+.detail h1 a{ color:#FF0; font-size:.5em;}
+.detail p{ color:#FFF; font-size:.8em; line-height:1.5;}
+.detail ul{ color:#F90; list-style-type:square; padding-left:20px; margin:10px 0 0;}
+.detail ul a{ color:#FC0;  font-size:.8em; line-height:1.5;}
 
-/* .switch{ width:150px; position:absolute; top:0; right:0px;} */
-/* .switch a{ display:block; line-height:40px; background:url(images/tabBG.jpg); text-indent:1em; color:#666; text-decoration:none; *height:40px;} */
-/* .switch a:hover{ background:#F0F; color:#000; background:url(images/tabBG_over.jpg);} */
+.switch{ width:150px; position:absolute; top:0; right:0px;}
+.switch a{ display:block; line-height:40px; background:url(images/tabBG.jpg); text-indent:1em; color:#666; text-decoration:none; *height:40px;}
+.switch a:hover{ background:#F0F; color:#000; background:url(images/tabBG_over.jpg);}
 
-/* a.now-tab, a.now-tab:hover{ background:url(images/tabBG_now.png); text-indent:1.5em; color:#FFF; font-weight:bold; margin-left:-20px; border:0;} */
+a.now-tab, a.now-tab:hover{ background:url(images/tabBG_now.png); text-indent:1.5em; color:#FFF; font-weight:bold; margin-left:-20px; border:0;}
 
 /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  Google Map  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 #Map {
@@ -383,10 +383,10 @@ form{margin:0%;paddind:0%;background:url(${pageContext.request.contextPath}/imag
     function LoadMap(markers) {
         var mapOptions = {
             zoom : 16,
-			//minZoom: 16,
+			minZoom: 16,
 			draggable : true,
 			zoomControl : false,
-			mapTypeId : google.maps.MapTypeId.HYBRID
+			mapTypeId : google.maps.MapTypeId.ROADMAP
         };
         var infoWindow = new google.maps.InfoWindow();
         var latlngbounds = new google.maps.LatLngBounds();
@@ -398,7 +398,7 @@ form{margin:0%;paddind:0%;background:url(${pageContext.request.contextPath}/imag
             var image = {
             	    url: data.icon,
             	    // This marker is 20 pixels wide by 32 pixels high.
-            	    size: new google.maps.Size(50, 50),
+            	   // size: new google.maps.Size(50, 50),
 
             	  };
 
@@ -406,11 +406,12 @@ form{margin:0%;paddind:0%;background:url(${pageContext.request.contextPath}/imag
                 position: myLatlng,
                 map: map,
                 title: data.MissionTitle,
+                optimized: false,
                 icon: image,
             });
             (function (marker, data) {
                 google.maps.event.addListener(marker, "mouseover", function (e) {
-                    infoWindow.setContent("<div style = 'width:200px;min-height:40px'>" + '任務名稱:'  + data.MissionTitle  + '<br>' + '發起人: ' + data.MemberName + '<br>' + '需求人數: ' + data.MissionPeople + '<br>' + '需求性別: ' + data.MissionGender + '<br>' + '開始時間: ' + data.MissionStrt + '<br>' + '結束時間: ' + data.MissionEnd + '<br>' + '任務說明: ' + data.MissionDesc + '<br>' + "</div>");
+                    infoWindow.setContent("<div style = 'width:200px;min-height:40px'>" + '任務名稱:'  + data.MissionTitle  + '<br>' + '發起人: ' + data.MemberName + '<br>' + '需求人數: ' + data.MissionPeople + '<br>' + '需求性別: ' + data.MissionGender + '<br>' + '開始時間: ' + data.MissionStrt + '<br>' + '任務說明: ' + data.MissionDesc + '<br>' + "</div>");
                     infoWindow.open(map, marker);
                 });
             })(marker, data);
@@ -444,41 +445,41 @@ form{margin:0%;paddind:0%;background:url(${pageContext.request.contextPath}/imag
 		}
 //===============================Google Map script End===============================
 /**//**//**//**//**//**//**//**//**//**//**//*以下為輪播廣告*//**//**//**//**//**//**//**//**//**//**/
-// 		var num=1;
-// 		var tNum=5;
-// 		var duration=2000;
+		var num=1;
+		var tNum=5;
+		var duration=2000;
 		
-// 		run();
-// 		document.getElementById("box").onmouseover=stopRun;
-// 		document.getElementById("box").onmouseout=run;
+		run();
+		document.getElementById("box").onmouseover=stopRun;
+		document.getElementById("box").onmouseout=run;
 		
-// 		for(var i=1; i<=tNum; i++){
-// 			document.getElementById("tab"+i).onclick=show;
-// 			document.getElementById("con"+i).style.display="none";
-// 		}
-// 		document.getElementById("con1").style.display="block";
-// 		document.getElementById("tab1").className="now-tab";
-// 	//===============================================
-// 	//===============================================
-// 		function autoShow(){
-// 			for(var i=1; i<=tNum; i++){
-// 				document.getElementById("con"+i).style.display="none";
-// 				document.getElementById("tab"+i).className="";
-// 			}
-// 			if(num<tNum){ num++;}else{ num=1;}
-// 			document.getElementById("con"+num).style.display="block";
-// 			document.getElementById("tab"+num).className="now-tab";
-// 		}
+		for(var i=1; i<=tNum; i++){
+			document.getElementById("tab"+i).onclick=show;
+			document.getElementById("con"+i).style.display="none";
+		}
+		document.getElementById("con1").style.display="block";
+		document.getElementById("tab1").className="now-tab";
+	//===============================================
+	//===============================================
+		function autoShow(){
+			for(var i=1; i<=tNum; i++){
+				document.getElementById("con"+i).style.display="none";
+				document.getElementById("tab"+i).className="";
+			}
+			if(num<tNum){ num++;}else{ num=1;}
+			document.getElementById("con"+num).style.display="block";
+			document.getElementById("tab"+num).className="now-tab";
+		}
 		
-// 		function show(){
-// 			num=this.id.substr(3)-1;
-// 			autoShow();
-// 		}
+		function show(){
+			num=this.id.substr(3)-1;
+			autoShow();
+		}
 		
-// 		function stopRun(){ clearInterval(myInterval);}
+		function stopRun(){ clearInterval(myInterval);}
 		
-// 		function run(){ myInterval= setInterval( autoShow, duration);}
-//     }
+		function run(){ myInterval= setInterval( autoShow, duration);}
+    }
 </script>
 <!--<===============================Google Map function End===============================>-->
 <script type="text/javascript">
@@ -595,29 +596,29 @@ $(function(){
 
 <div id="ad" >
 <div id="bk">123456789</div>
-<!-- <div class="tabPanel" id="box"> -->
-<!--   <div class="tab-content" id="con1"> -->
-<%--     <img src="${pageContext.servletContext.contextPath}/Img/Ad/1.jpg" width="1024" height="768" alt="Marvel"> --%>
-<!--   </div> -->
-<!--   <div class="tab-content" id="con2"> -->
-<%--     <img src="${pageContext.servletContext.contextPath}/Img/Ad/5.jpg" width="1024" height="768" alt="SuperWomen"> --%>
-<!--   </div> -->
-<!--   <div class="tab-content" id="con3"> -->
-<%--     <img src="${pageContext.servletContext.contextPath}/Img/Ad/3.jpg" width="1024" height="768" alt="AntMan"> --%>
-<!--   </div> -->
-<!--   <div class="tab-content" id="con4"> -->
-<%--     <img src="${pageContext.servletContext.contextPath}/Img/Ad/4.jpg" width="1024" height="768" alt="SpiderMan"> --%>
-<!--   </div> -->
-<!--   <div class="tab-content" id="con5"> -->
-<%--     <img src="${pageContext.servletContext.contextPath}/Img/Ad/2.jpg" width="1024" height="768" alt="Hulk"> --%>
-<!--   </div> -->
-<!--   <ul class="listReset switch"> -->
-<!--     <li><a  id="tab1"></a></li> -->
-<!--     <li><a  id="tab2"></a></li> -->
-<!--     <li><a  id="tab3"></a></li> -->
-<!--     <li><a  id="tab4"></a></li> -->
-<!--     <li><a  id="tab5"></a></li> -->
-<!--   </ul> -->
+<div class="tabPanel" id="box">
+  <div class="tab-content" id="con1">
+    <img src="${pageContext.servletContext.contextPath}/Img/Ad/1.jpg" width="1024" height="768" alt="Marvel">
+  </div>
+  <div class="tab-content" id="con2">
+    <img src="${pageContext.servletContext.contextPath}/Img/Ad/5.jpg" width="1024" height="768" alt="SuperWomen">
+  </div>
+  <div class="tab-content" id="con3">
+    <img src="${pageContext.servletContext.contextPath}/Img/Ad/3.jpg" width="1024" height="768" alt="AntMan">
+  </div>
+  <div class="tab-content" id="con4">
+    <img src="${pageContext.servletContext.contextPath}/Img/Ad/4.jpg" width="1024" height="768" alt="SpiderMan">
+  </div>
+  <div class="tab-content" id="con5">
+    <img src="${pageContext.servletContext.contextPath}/Img/Ad/2.jpg" width="1024" height="768" alt="Hulk">
+  </div>
+  <ul class="listReset switch">
+    <li><a  id="tab1"></a></li>
+    <li><a  id="tab2"></a></li>
+    <li><a  id="tab3"></a></li>
+    <li><a  id="tab4"></a></li>
+    <li><a  id="tab5"></a></li>
+  </ul>
 </div>
 <div id="X" font-size:40px;>    點    擊   這    裡   關    閉    廣    告    </div>
 </div>

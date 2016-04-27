@@ -68,7 +68,7 @@ public class HeroPhotoSkin3 extends HttpServlet {
 				}else{
 					is = new FileInputStream(defaultPhoto);
 				}
-				response.setContentType("image/png");
+				response.setContentType("image/gif");
 				OutputStream os = response.getOutputStream();
 				byte[] b = new byte[4*1024];
 				int len = is.read(b);
