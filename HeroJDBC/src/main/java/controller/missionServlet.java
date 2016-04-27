@@ -204,7 +204,7 @@ public class missionServlet extends HttpServlet {
 				request.setAttribute("missionNo", noBean);
 				
 				String contextPath = request.getContextPath();
-				response.sendRedirect(contextPath + "/pages/missionDisplay.jsp");
+				response.sendRedirect(contextPath + "/temporary.jsp");
 				return;
 			}
 			
