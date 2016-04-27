@@ -398,7 +398,7 @@ form{margin:0%;paddind:0%;background:url(${pageContext.request.contextPath}/imag
             var image = {
             	    url: data.icon,
             	    // This marker is 20 pixels wide by 32 pixels high.
-            	   // size: new google.maps.Size(50, 50),
+            	    //size: new google.maps.Size(50, 50),
 
             	  };
 
@@ -406,12 +406,12 @@ form{margin:0%;paddind:0%;background:url(${pageContext.request.contextPath}/imag
                 position: myLatlng,
                 map: map,
                 title: data.MissionTitle,
-                optimized: false,
+                optimized:false,
                 icon: image,
             });
             (function (marker, data) {
                 google.maps.event.addListener(marker, "mouseover", function (e) {
-                    infoWindow.setContent("<div style = 'width:200px;min-height:40px'>" + '任務名稱:'  + data.MissionTitle  + '<br>' + '發起人: ' + data.MemberName + '<br>' + '需求人數: ' + data.MissionPeople + '<br>' + '需求性別: ' + data.MissionGender + '<br>' + '開始時間: ' + data.MissionStrt + '<br>' + '任務說明: ' + data.MissionDesc + '<br>' + "</div>");
+                    infoWindow.setContent("<div style = 'width:200px;min-height:40px'>" + '任務名稱:'  + data.MissionTitle  + '<br>' + '發起人: ' + data.MemberName + '<br>' + '需求人數: ' + data.MissionPeople + '<br>' + '需求性別: ' + data.MissionGender + '<br>' + '開始時間: ' + data.MissionStrt + '<br>' + '結束時間: ' + data.MissionEnd + '<br>' + '任務說明: ' + data.MissionDesc + '<br>' + "</div>");
                     infoWindow.open(map, marker);
                 });
             })(marker, data);
