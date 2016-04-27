@@ -6,10 +6,25 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Mission Display</title>
+<style type="text/css">
+
+	div{
+        font-weight:bold;
+		background:url(${pageContext.request.contextPath}/images/PNG6.png) ; 
+        background-repeat:no-repeat;
+        background-size:100% 150%;
+        background-position:50% 50%;
+    }
+
+    body{
+    background:url(${pageContext.request.contextPath}/images/back.jpg) center repeat;
+    }
+</style>
 
 </head>
 <body >
-<table   width="680" border="2" align="center" cellpadding="2" cellspacing="2" bordercolorlight="#FFFFFF" bordercolordark="#330033">
+<div>
+<table   width="400"   height="800" border="2" align="center" cellpadding="2" cellspacing="2" bordercolorlight="#FFFFFF" bordercolordark="#330033">
 	<tr height='36'>
        <td width="120" align="right" >任務標題:</td>
        <td colspan="3" align="center">${mission.missionTitle}</td>
@@ -34,7 +49,7 @@
        <td width="120" align="right" >任務執行時間:</td>
        <td colspan="3" align="center">${mission.missionExcuteTime}</td>
     </tr>
-    <tr >
+    <tr height='36'>
        <td width="120" align="right" >任務報酬:</td>
        <th align="center">Coin: ${missionReward.rewardCoin} $</th>
        <th><img width="100px"
@@ -42,5 +57,6 @@
        </th>    
     </tr>
 </table>
+</div>
 </body>
 </html>
