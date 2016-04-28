@@ -80,15 +80,6 @@ public class MemberServlet extends HttpServlet {
 		        if(temp2 ==null || temp2.trim().length()==0) {
 		        	errorMsg.put("birthday", "不可空白");		        
 		        } 
-		    // int phone = 0;
-			//if(phone1!=null && phone1.trim().length()!=0) {
-			//try {
-			//phone = Integer.parseInt(phone1.trim());
-			//} catch (NumberFormatException e) {
-			//e.printStackTrace();
-		    //errorMsg.put("phone", "電話號碼必須是整數");
-		    //}
-			//}
 		      
 				java.sql.Timestamp birthday  = null;
 					if(temp2!=null && temp2.trim().length()!=0) {
@@ -138,7 +129,7 @@ public class MemberServlet extends HttpServlet {
 						HttpSession session2 = request.getSession();
 						session2.setAttribute("user", bean);
 						String path = request.getContextPath();
-						response.sendRedirect(path+"/index1.jsp");
+						response.sendRedirect(path+"/secure/index.jsp");
 					}
 					
 				} catch (SQLException e) {

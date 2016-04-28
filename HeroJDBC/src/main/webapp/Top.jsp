@@ -223,7 +223,7 @@ transform:rotate(5deg);
 							<li><a href="#">$: ${money}</a></li>
 							<li><a href="#">Rating: ${Login.rating}</a></li>
 							<li><a href="#">AboutUs</a></li>
-							<li><a href="<c:url value="/logOut.jsp" />">LogOut</a></li>
+							<li><a href="<c:url value="../secure/logOut.jsp" />">LogOut</a></li>
 						</ul>
 					</li>
 					<li class="s2"><a href="#"><span>Members Only</span></a>
