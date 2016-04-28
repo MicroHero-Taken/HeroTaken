@@ -79,7 +79,14 @@ transform:rotate(18deg);
 /*-----------------------------------------------------------------------------*/
 
 .menuHolder .a6 li:nth-of-type(2) > a {background:#0000AA; /*懸賞任務*/
--webkit-transform:rotate(90deg);                 /*藍色02*/
+-webkit-transform:rotate(45deg);                 /*藍色02*/
+-moz-transform:rotateZ(45deg);
+-ms-transform:rotate(45deg);
+-o-transform:rotate(45deg);
+transform:rotate(45deg);
+}
+.menuHolder .a6 li:nth-of-type(3) > a 
+-webkit-transform:rotate(90deg);
 -moz-transform:rotateZ(90deg);
 -ms-transform:rotate(90deg);
 -o-transform:rotate(90deg);
@@ -248,6 +255,7 @@ transform:rotate(5deg);
 					<li class="s2"><a href="#url"><span>Reward Mission</span></a>
 					<ul class="p3 a6">
 							<li><a href="#">Reward Mission</br> List</a></li>
+							<li><a href='pages/report.jsp'>Report</a></li>
 						</ul>
 					</li>
 				</ul>
