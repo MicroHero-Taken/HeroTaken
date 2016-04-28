@@ -54,7 +54,7 @@ public class MissionMemDAO_JDBC implements MissionMemDAO{
 			result = new ArrayList<MissionMemBean>();
 			while (rs.next()) {
 				MissionMemBean bean = new MissionMemBean();
-//				bean.setMemberNo(rs.getInt("memberNo"));
+				bean.setMissionNo(rs.getInt("missionNo"));
 				bean.setMissionTitle(rs.getString("missionTitle"));
 				bean.setMissionDesc(rs.getString("missionDesc"));
 				bean.setGiven_name(rs.getString("given_name"));
