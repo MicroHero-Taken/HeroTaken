@@ -20,7 +20,17 @@
     background:url(${pageContext.request.contextPath}/images/back.jpg) center repeat;
     }
 </style>
-
+<script type="text/javascript">
+	var websocket = new WebSocket("ws://localhost:8080/HeroJDBC/chatroomServerEndpoint");
+		websocket.onmessage = function processMessage(message){
+			var jsonData = JSON.parse(message.data);
+			if(jsonData.message != null)messageTextArea.value += jsonData.message + "\n" ;
+		}
+		function sendMessage(){
+			websocket.send(messageText.value);
+			messageText.value = "" ;
+		}
+</script>
 </head>
 <body >
 <div>
@@ -51,12 +61,18 @@
     </tr>
     <tr height='36'>
        <td width="120" align="right" >任務報酬:</td>
-       <th align="center">Coin: ${missionReward.rewardCoin} $</th>
+       <th align="center">Coin: ${missionReward.rewardCoin}${mission.rewardCoin} $</th>
        <th><img width="100px"
 				src="${pageContext.request.contextPath}/photo.view?missionNo=${missionNo.missionNo}">
        </th>    
     </tr>
 </table>
+</div>
+<div>
+	<mark>UserName: ${username } </mark><br>
+	<textarea id="messageTextArea" readonly="readonly" rows="12" cols="26"></textarea><br>
+	<input 	type="text" id="messageText" size="19"   onkeydown = "if (event.keyCode == 13) document.getElementById('btn').click()"  />
+	<input	type="button" id="btn" value="Send" onclick="sendMessage()"  />
 </div>
 </body>
 </html>

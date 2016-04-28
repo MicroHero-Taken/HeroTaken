@@ -20,24 +20,33 @@ public class MissionService {
 		System.out.println("beans= " + beans);
 	}
 //	============================================================================================================
-	public List<MissionBean> select(MissionBean bean){
-		List<MissionBean> result = null;
-		if(bean != null && bean.getMemberName() != null){
-			List<MissionBean> temp =  missionDAO.selectName(bean.getMemberName());
-			if(temp != null){
-				result = new ArrayList<MissionBean>();
-				result.addAll(temp);
-			}	
-		}else if(bean != null && bean.getMissionArea() != null){
-			List<MissionBean> temp1 =  missionDAO.selectArea(bean.getMissionArea());
-			if(temp1 != null){
-				result = new ArrayList<MissionBean>();
-				result.addAll(temp1);
-			}
-		}else{
-			result = missionDAO.select();
+	public MissionBean selectByNo(int missionNo){
+		MissionBean result = null;
+		if(missionNo != 0){
+			result = new MissionBean();
+			result = missionDAO.selectNo(missionNo);
 		}
 		return result;
+	}
+//	============================================================================================================
+	public List<MissionBean> select(MissionBean bean){
+			List<MissionBean> result = null;
+			if(bean != null && bean.getMemberName() != null){
+				List<MissionBean> temp =  missionDAO.selectName(bean.getMemberName());
+				if(temp != null){
+					result = new ArrayList<MissionBean>();
+					result.addAll(temp);
+				}	
+			}else if(bean != null && bean.getMissionArea() != null){
+				List<MissionBean> temp1 =  missionDAO.selectArea(bean.getMissionArea());
+				if(temp1 != null){
+					result = new ArrayList<MissionBean>();
+					result.addAll(temp1);
+				}
+			}else{
+				result = missionDAO.select();
+			}
+			return result;
 	}
 //	----------------------------------------------------------------------------------------------------------
 	public MissionBean selectMissionNo(String missionDesc){

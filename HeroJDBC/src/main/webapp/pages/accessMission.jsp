@@ -42,7 +42,7 @@ body {
 			<span>任務清單</span>
 		</h1>
 	</div>
-	<form action="<c:url value="/missionMem.do"/>" method="get">
+	<form action="<c:url value="/AccessMission"/>" method="get">
 		<table id="testtt">
 		<thead>
 			<tr>
@@ -59,9 +59,8 @@ body {
 		</thead>
 		<tbody>
 				<c:forEach var="bean" items="${beans}" begin="1" end="20" step="1">
-				<form action="<c:url value="/AccessMission" />" method="get">
 				<tr>
-					<td><input type="hidden" name="no" value="${bean.missionNo}">${bean.missionNo}</td>
+					<td>${bean.missionNo}</td>
 					<td>${bean.missionTitle}</td>
 					<td>${bean.missionDesc}</td>
 					<td>${bean.given_name}</td>
@@ -69,9 +68,8 @@ body {
 					<td>${bean.missionExcuteTime}</td>
 					<td>${bean.missionArea}</td>
 					<td>${bean.missionStatus}</td>
-					<td><input type="submit" value="Access"></td>
+					<td><input type="submit" value="Access" onclick="onnn()"></td>
 				</tr>
-				</form>
 				</c:forEach>
 		</tbody>
 	</table>
@@ -80,6 +78,9 @@ body {
     $(document).ready(function(){ 
       $("#table1").dataTable();
       });
+    function onnn(){
+    	alert($("#hi").val());
+    }
   </script>
 </body>
 </html>
