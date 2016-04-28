@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>ChatRoom</title>
 <script type="text/javascript">
-	var websocket = new WebSocket("ws://localhost:8080/HeroJDBC/chatroomServerEndpoint");
+var websocket = new WebSocket("ws://localhost:8080/HeroJDBC/chatroomServerEndpoint");
 	websocket.onmessage = function processMessage(message){
 		var jsonData = JSON.parse(message.data);
 		if(jsonData.message != null)messageTextArea.value += jsonData.message + "\\n" ;
@@ -18,9 +18,12 @@
 </script>
 </head>
 <body>
+	<div>
 	<mark>UserName: ${username } </mark><br>
-	<textarea id="messageTextArea" readonly="readonly" rows="20" cols="40"></textarea><br>
-	<input 	type="text" id="messageText" size="32"   onkeydown = "if (event.keyCode == 13) document.getElementById('btn').click()"  />
+	<textarea id="messageTextArea" readonly="readonly" rows="12" cols="26"></textarea>
+	<input 	type="text" id="messageText" size="19"   onkeydown = "if (event.keyCode == 13) document.getElementById('btn').click()"  />
 	<input	type="button" id="btn" value="Send" onclick="sendMessage()"  />
+	</div>
+	
 </body>
 </html>

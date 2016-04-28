@@ -25,6 +25,7 @@
 	<table>
 		<thead>
 			<tr>
+				<th>任務No:</th>
 				<th>任務:</th>
 				<th>內容:</th>
 				<th>發起人:</th>
@@ -37,6 +38,7 @@
 		<tbody>
 				<c:forEach var="bean" items="${beans}">
 				<tr>
+					<td>${bean.missionNo}</td>
 					<td>${bean.missionTitle}</td>
 					<td>${bean.missionDesc}</td>
 					<td>${bean.given_name}</td>

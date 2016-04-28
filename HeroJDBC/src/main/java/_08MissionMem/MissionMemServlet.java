@@ -32,7 +32,7 @@ public class MissionMemServlet extends HttpServlet{
 			HttpSession session = request.getSession();
 			session.setAttribute("beans", result);
 			request.getRequestDispatcher(
-					"/pages/search.jsp").forward(request, response);
+					"/pages/accessMission.jsp").forward(request, response);
 		}
 	}
 	

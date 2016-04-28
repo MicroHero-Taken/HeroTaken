@@ -41,7 +41,7 @@ public class missionServlet extends HttpServlet {
 		
 		try {
 			String memberNoStr;
-			int memberNo = 0;
+			int memberNo = 0; 
 			String missionTitle = "";
 			String missionDesc = "";
 			String missionPeopleStr = "";

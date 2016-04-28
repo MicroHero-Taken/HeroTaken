@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class MissionMemBean implements Serializable{
 	private static final long serialVersionUID = 1L;
-//private Integer missionNo;
+private Integer missionNo;
 //private Integer memberNo;
 //private String nickName;
 //private String gender;
@@ -173,6 +173,14 @@ public String getMissionStatus() {
 
 public void setMissionStatus(String missionStatus) {
 	this.missionStatus = missionStatus;
+}
+
+public Integer getMissionNo() {
+	return missionNo;
+}
+
+public void setMissionNo(Integer missionNo) {
+	this.missionNo = missionNo;
 }
 
 //public Integer getMissionNo() {

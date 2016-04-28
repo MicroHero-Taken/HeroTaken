@@ -474,7 +474,7 @@ $(".menuHolder").click(function(){   //滑入上方白條後=收
 					<li class="s2"><a href="#"><span>Mission Area</span></a>
 					<ul class="p3 a4">
 							<li><a id="m" href="#" onclick="window.open('pages/mission.jsp', 'Mission', config='height=825,width=430',flowover=hidden);" style="line-height:25px;">Publish Mission</a></li>
-							<li><a href="<c:url value="/pages/accessMission.jsp" />" style="line-height:25px;">Accept Mission</a></li>
+							<li><a href="<c:url value="/missionMem.do?" />" style="line-height:25px;">Accept Mission</a></li>
 							<li><a href="#" style="line-height:25px;">Inquire Mission</a></li>
 						</ul>
 					</li>
