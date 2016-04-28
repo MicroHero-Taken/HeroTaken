@@ -62,10 +62,7 @@ public class LoginServlet extends HttpServlet {
 					String path = request.getContextPath();
 					response.sendRedirect(path + "/index1.jsp");
 				}
-			
 		
-		
-		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	

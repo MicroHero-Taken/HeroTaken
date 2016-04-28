@@ -95,7 +95,7 @@ if(x=="http://localhost:8080/HeroJDBC/register/Register.do"){
 <center>
 		<div>
 		       <h1>Sign Up</h1>
-			   <td>帳號 :<br><input type="text" name="memberAccount" value="${param.email}"></td><br>
+			   <td>帳號 :<br><input type="text" name="email" value="${param.email}"></td><br>
 			   <td><font color='red'>${error.email}</font></td><br>
 			   <td>密碼 :<br><input type="text" name="password" value="${param.password}"></td><br>
 				<td><font color='red'>${error.password}</font></td><br>
