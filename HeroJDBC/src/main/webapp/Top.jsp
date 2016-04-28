@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>TOP</title>
 </head>
 
 <style>
@@ -217,18 +217,18 @@ transform:rotate(5deg);
 		<ul class="p1">
 			<li class="s1"><a href="#url">Menu</a>
 				<ul class="p2">
-					<li class="s2"><a href="webapp/index1.jsp"><span>Home</span></a>
+					<li class="s2"><a href="/HeroJDBC/index1.jsp"><span>Home</span></a>
 					<ul class="p3 a2">
 							<li><a href="#">Name: ${Login.memberName}</a></li><!--名字 -->
-							<li><a href="#">$: ${Login.coin}</a></li>
+							<li><a href="#">$: ${money}</a></li>
 							<li><a href="#">Rating: ${Login.rating}</a></li>
 							<li><a href="#">AboutUs</a></li>
-							<li><a href="secure/logOut.jsp">LogOut</a></li>
+							<li><a href="<c:url value="/logOut.jsp" />">LogOut</a></li>
 						</ul>
 					</li>
 					<li class="s2"><a href="#"><span>Members Only</span></a>
 					<ul class="p3 a3">
-							<li><a href="#">Modify Skin</a></li>
+							<li><a href="/HeroJDBC/pages/memberHero.jsp">Modify Skin</a></li>
 							<li><a href="#">Modify Data</a></li>
 							<li><a href="#">Access to personal data</a></li>
 						</ul>

@@ -11,6 +11,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>aLLiNoNE</title>
+<link
+	href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.2/themes/hot-sneaks/jquery-ui.css"
+	rel="stylesheet">
+<link rel="stylesheet" type="text/css"
+	href="http://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css" />
+
+
 <style type="text/css">
 * {
 	-webkit-print-color-adjust: exact;
@@ -516,10 +523,11 @@ a.now-tab, a.now-tab:hover {
 }
 </style>
 
+
 <!-- <=======================================================================================================================================================> -->
 
 </head>
-<body onload="initialize()">
+<body>
 
 	<!-- width="70%" height="95%"  style="border:5px solid black ;position:fixed;top:20px;left:15%;" z-index="1" -->
 	<!-- css參考用 -->
@@ -560,7 +568,7 @@ a.now-tab, a.now-tab:hover {
 		</div>
 	</div>
 	<form action="<c:url value="/missionMem.do"/>" method="get">
-	<table>
+	<table id="testtt" style="height:900px">
 		<thead>
 			<tr>
 				<th>任務:</th>
@@ -572,10 +580,12 @@ a.now-tab, a.now-tab:hover {
 				<th>地點:</th>
 				<th>結束時間:</th>
 				<th>任務狀態:</th>
+				<th></th>
+
 			</tr>
 		</thead>
 		<tbody>
-				<c:forEach var="bean" items="${beans}">
+				<c:forEach var="bean" items="${beans}" begin="1" end="20" step="1">
 				<tr>
 					<td>${bean.missionTitle}</td>
 					<td>${bean.missionDesc}</td>
@@ -592,5 +602,18 @@ a.now-tab, a.now-tab:hover {
 		</tbody>
 	</table>
 	</form>
+	
+<script type="text/javascript"
+	src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.0.min.js"></script>
+<script type="text/javascript"
+	src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$("#testtt").DataTable({
+			"pageLenght":5,
+			"lengthMenu":[10 , 20, 25, 30 ]
+		});
+	});
+</script>
 </body>
 </html>

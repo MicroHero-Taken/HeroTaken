@@ -138,7 +138,7 @@ public class MemberServlet extends HttpServlet {
 						HttpSession session2 = request.getSession();
 						session2.setAttribute("user", bean);
 						String path = request.getContextPath();
-						response.sendRedirect(path+"/secure/index.jsp");
+						response.sendRedirect(path+"/index1.jsp");
 					}
 					
 				} catch (SQLException e) {

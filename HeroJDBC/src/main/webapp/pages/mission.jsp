@@ -567,9 +567,9 @@ function codeAddress(){
 				<tr><td id="title">● 禮物說明:</td></tr>
 				<tr><td><textarea rows="3" cols="52" name="describe"></textarea></td></tr>
 				<tr><th>
-					<input type="button" value="預覽" style="width:60px;height:22px">
+					
 					<input type="submit" value="發佈" style="width:60px;height:22px">
-					<input type="button" value="取消" style="width:60px;height:22px">
+
 				</th></tr>
 				
 			</tbody>

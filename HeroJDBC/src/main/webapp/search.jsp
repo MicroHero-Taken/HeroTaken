@@ -57,6 +57,7 @@ body {
 		<table id="testtt">
 			<thead>
 				<tr>
+					<th>任務No:</th>
 					<th>任務:</th>
 					<th>內容:</th>
 					<th>發起人:</th>
@@ -68,6 +69,7 @@ body {
 			<tbody>
 				<c:forEach var="bean" items="${beans}" begin="1" end="20" step="1">
 					<tr>
+						<td>${bean.missionNo}</td>
 						<td>${bean.missionTitle}</td>
 						<td>${bean.missionDesc}</td>
 						<td>${bean.given_name}</td>

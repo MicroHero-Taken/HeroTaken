@@ -19,9 +19,8 @@
 </head>
 <body>
 	<mark>UserName: ${username } </mark><br>
-	<textarea id="messageTextArea" readonly="readonly" rows="30" cols="55"></textarea>
-	<textarea id="usernameTextArea" readonly="readonly" rows="30" cols="25"></textarea><br>
-	<input 	type="text" id="messageText" size="75"   onkeydown = "if (event.keyCode == 13) document.getElementById('btn').click()"  />
+	<textarea id="messageTextArea" readonly="readonly" rows="20" cols="40"></textarea><br>
+	<input 	type="text" id="messageText" size="32"   onkeydown = "if (event.keyCode == 13) document.getElementById('btn').click()"  />
 	<input	type="button" id="btn" value="Send" onclick="sendMessage()"  />
 </body>
 </html>

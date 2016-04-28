@@ -138,7 +138,25 @@ public class MemberDAOjdbc implements MemberDAO  {
 		}
 		return false;
 	}
-	
+//	============================================================================================================	
+	private static final String UPDATE_HEROSTATUS = "UPDATE Member SET memberHeroStatus = ? WHERE memberNo = ? ";
+	@Override
+	public boolean updateHeroStatus(int memberHeroStatus , int memberNo){
+		try (	//Connection conn = DriverManager.getConnection(URL,USERNAME,PASSWORD);
+				Connection conn = ds.getConnection();
+				PreparedStatement pstmt = conn.prepareStatement(UPDATE_HEROSTATUS);
+				){
+			pstmt.setInt(1, memberHeroStatus);
+			pstmt.setInt(2, memberNo);
+			int i = pstmt.executeUpdate();
+			if(i==1){
+				return true;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
 	
 	
 //	--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
