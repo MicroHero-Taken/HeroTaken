@@ -347,7 +347,7 @@ form{margin:0%;paddind:0%;background:url(${pageContext.request.contextPath}/imag
             });
             (function (marker, data) {
                 google.maps.event.addListener(marker, "mouseover", function (e) {
-                    infoWindow.setContent("<div style = 'width:200px;min-height:40px'>" + '任務名稱:'  + data.MissionTitle  + '<br>' + '發起人: ' + data.MemberName + '<br>' + '需求人數: ' + data.MissionPeople + '<br>' + '需求性別: ' + data.MissionGender + '<br>' + '開始時間: ' + data.MissionStrt + '<br>' + '結束時間: ' + data.MissionEnd + '<br>' + '任務說明: ' + data.MissionDesc + '<br>' + "</div>");
+                    infoWindow.setContent("<div style = 'width:200px;min-height:40px'>" + '任務名稱:'  + data.MissionTitle  + '<br>' + '發起人: ' + data.MemberName + '<br>' + '需求人數: ' + data.MissionPeople + '<br>' + '需求性別: ' + data.MissionGender + '<br>' + '開始時間: ' + data.MissionStrt + '<br>' +  '任務說明: ' + data.MissionDesc + '<br>' + "</div>");
                     infoWindow.open(map, marker);
                 });
             })(marker, data);
@@ -457,9 +457,9 @@ $(".menuHolder").click(function(){   //滑入上方白條後=收
 				<ul class="p2" style="line-height:20px;">
 					<li class="s2"><a href="<c:url value="/index1.jsp" />"><span>Home</span></a>
 					<ul class="p3 a2">
-							<li><a style="line-height:20px;" href="#">Name: ${Login.memberName}</a></li><!--名字 -->
-							<li><a href="#">$: ${Login.coin}</a></li>
-							<li><a href="#">Rating: ${Login.rating}</a></li>
+							<li><a style="line-height:20px;" href="#">Name: ${memberInfo.memberName}</a></li><!--名字 -->
+							<li><a href="#">$: ${memberInfo.coin}</a></li>
+							<li><a href="#">Rating: ${memberInfo.rating}</a></li>
 							<li><a href="<c:url value="AboutUs/starwars.jsp" />">AboutUs</a></li>
 							<li><a href="<c:url value="../secure/logOut.jsp" />">LogOut</a></li>
 						</ul>
@@ -474,8 +474,8 @@ $(".menuHolder").click(function(){   //滑入上方白條後=收
 					<li class="s2"><a href="#"><span>Mission Area</span></a>
 					<ul class="p3 a4">
 							<li><a id="m" href="#" onclick="window.open('pages/mission.jsp', 'Mission', config='height=825,width=430',flowover=hidden);" style="line-height:25px;">Publish Mission</a></li>
-							<li><a href="<c:url value="/missionMem.do?" />" style="line-height:25px;">Accept Mission</a></li>
-							<li><a href="../pages/search.jsp" style="line-height:25px;">Inquire Mission</a></li>
+							<li><a href="<c:url value="/pages/accessMission.jsp" />" style="line-height:25px;">Accept Mission</a></li>
+							<li><a href="#" style="line-height:25px;">Inquire Mission</a></li>
 						</ul>
 					</li>
 					<li class="s2"><a href="#"><span>Hero Market</span></a>

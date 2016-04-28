@@ -17,11 +17,12 @@ import _01member.MemberBean;
 import _01member.MemberService;
 
 @WebFilter(
-		urlPatterns = { "/pages/Top.jsp" }, 
+		urlPatterns = { "/index1.jsp","/pages/shop.jsp" }, 
 		initParams = { 
-				@WebInitParam(name = "url_1", value = "/pages/Top.jsp")
+				@WebInitParam(name = "url_1", value = "/index1.jsp"),
+				@WebInitParam(name = "url_2", value = "/pages/shop.jsp")
 		})
-public class UpdateMoney implements Filter {
+public class UpdateMemberInfo implements Filter {
 
 	public void destroy() {
 		
@@ -30,13 +31,13 @@ public class UpdateMoney implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		HttpSession session = ((HttpServletRequest) request).getSession();
 		MemberBean bean = (MemberBean)session.getAttribute("Login");
+		System.out.println(bean);
 		int memberNo = bean.getMemberNo();
-		
+		System.out.println(memberNo);
 		MemberService memberService =new MemberService();
 		MemberBean memberBean = memberService.selectById(memberNo);
-		int coin = memberBean.getCoin();
-		System.out.println("Filter-coin: " +coin);
-		request.setAttribute("money", coin);
+		System.out.println("Filter-memberBean: " +memberBean);
+		request.setAttribute("memberInfo", memberBean);
 		
 		chain.doFilter(request, response);
 	}
