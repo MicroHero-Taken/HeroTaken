@@ -110,6 +110,23 @@ public static void main(String[] args){
 		return result;
 	}
 //	----------------------------------------------------------------------------------------------------------
+	private static final String SELECT_BY_NO = "SELECT Mission.* FROM Mission WHERE missionNo = ?";
+	public MissionBean selectNo(int missionNo){
+		MissionBean result = null;
+		ResultSet rset = null;
+		try (	//Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+				Connection conn = dataSource.getConnection();
+				PreparedStatement pstmt = conn.prepareStatement(SELECT_BY_NO);
+				){
+			pstmt.setInt(1, missionNo);
+			rset = pstmt.executeQuery();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+//	----------------------------------------------------------------------------------------------------------
 	private static final String SELECT_BY_NAME = "SELECT Mission.*, MissionStatus.missionStatus, MissionReward.fileName, MissionReward.gift, MissionReward.describe,  MissionReward.rewardCoin, Member.memberNo AS Expr1, Member.memberName"
 			+" FROM Member INNER JOIN"
 			+" Mission ON Member.memberNo = Mission.memberNo INNER JOIN"

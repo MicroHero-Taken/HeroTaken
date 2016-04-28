@@ -37,8 +37,9 @@
 		</thead>
 		<tbody>
 				<c:forEach var="bean" items="${beans}">
+				<form action="<c:url value="/AccessMission" />" method="get">
 				<tr>
-					<td>${bean.missionNo}</td>
+					<td><input type="hidden" name="no" value="${bean.missionNo}">${bean.missionNo}</td>
 					<td>${bean.missionTitle}</td>
 					<td>${bean.missionDesc}</td>
 					<td>${bean.given_name}</td>
@@ -46,8 +47,9 @@
 					<td>${bean.missionExcuteTime}</td>
 					<td>${bean.missionArea}</td>
 					<td>${bean.missionStatus}</td>
-					<td><a href="">接任務</a></td>
+					<td><input type="submit" value="Access"></td>
 				</tr>
+				</form>
 				</c:forEach>
 		</tbody>
 	</table>
