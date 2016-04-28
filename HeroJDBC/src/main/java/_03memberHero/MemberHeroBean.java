@@ -5,6 +5,7 @@ public class MemberHeroBean {
 	private String given_name;
 	private Integer HeroNo;
 	private String heroName;
+	private Integer count;
 	public MemberHeroBean() {
 
 	}
@@ -47,4 +48,12 @@ public class MemberHeroBean {
 		this.heroName = heroName;
 	}
 
+	public Integer getCount() {
+		return count;
+	}
+
+	public void setCount(Integer count) {
+		this.count = count;
+	}
+	
 }

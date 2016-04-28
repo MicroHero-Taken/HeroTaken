@@ -1,6 +1,7 @@
 package _03memberHero;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -11,6 +12,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
+
 
 public class MemberHeroDAO_JDBC implements MemberHeroDAO {
 //	private static final String URL = "jdbc:sqlserver://localhost:1433;database=Hero";
@@ -28,11 +30,40 @@ public class MemberHeroDAO_JDBC implements MemberHeroDAO {
 	}
 //	=========================================MAIN===============================================================
 	public static void main(String[] args){
-		
+		MemberHeroDAO dao = new MemberHeroDAO_JDBC();
+		System.out.println(dao.selectCount(1));
 		
 		
 	}
 //	============================================================================================================
+	private static final String SELECT_COUNT_BY_MEMBERNO = "SELECT * FROM memberHero WHERE memberNo =  ?";
+	@Override
+	public int selectCount(int memberNo){
+		int a = 0;
+		ResultSet rset = null;
+		try (	//Connection conn = DriverManager.getConnection(URL,USERNAME,PASSWORD);
+				Connection conn = dataSource.getConnection();
+				PreparedStatement pstmt = conn.prepareStatement(SELECT_COUNT_BY_MEMBERNO);
+				){
+			pstmt.setInt(1, memberNo);
+			rset = pstmt.executeQuery();
+			while(rset.next()){
+				a++;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally{
+			if(rset != null){
+				try {
+					rset.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return a;
+	}
+	//	============================================================================================================
 	private static final String SELECT_BY_MemberNo ="SELECT MemberHero.memberNo, Member.given_name, MemberHero.HeroNo, Shop.heroName"
 			+" FROM    Member INNER JOIN"
 			+" MemberHero ON Member.memberNo = MemberHero.memberNo INNER JOIN"

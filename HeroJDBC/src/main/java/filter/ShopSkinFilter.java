@@ -35,7 +35,7 @@ public class ShopSkinFilter implements Filter {
 //		--------------------------------------------        取造型         --------------------------------------------------------------
 		ShopService service = new ShopService();
 		List<ShopBean> heroImg = service.select();
-		request.setAttribute("heroSkin1", heroImg);	
+		request.setAttribute("heroSkin1", heroImg);	  //此叁行好像沒用到
 		
 		ShopBean heroInfo1 = service.selectByNo(1);		ShopBean heroInfo13 = service.selectByNo(13);
 		ShopBean heroInfo2 = service.selectByNo(2);      ShopBean heroInfo14 = service.selectByNo(14);

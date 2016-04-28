@@ -8,9 +8,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<c:forEach var="skin1" items="${heroSkin1}">
-		<img src="${pageContext.request.contextPath}/HeroPhoto?heroNo=${skin1.heroNo}">
-	</c:forEach>
+
+
 	
 	
 	
