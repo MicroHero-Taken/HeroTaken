@@ -43,7 +43,7 @@ public class LoginServlet extends HttpServlet {
 				}
 				
 		//呼叫Model
-				MemberBean bean = service.login( email, password);
+				MemberBean bean = service.login(email, password);
 				MemberBean LoginBean = service.selectByEmail(email);
 		//根據Model執行結果顯示View
 				if(bean==null) {
