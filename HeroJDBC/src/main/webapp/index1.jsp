@@ -319,7 +319,7 @@ form{margin:0%;paddind:0%;background:url(${pageContext.request.contextPath}/imag
     function LoadMap(markers) {
         var mapOptions = {
             zoom : 16,
-			//minZoom: 16,
+			minZoom: 16,
 			draggable : true,
 			zoomControl : false,
 			mapTypeId : google.maps.MapTypeId.ROADMAP
