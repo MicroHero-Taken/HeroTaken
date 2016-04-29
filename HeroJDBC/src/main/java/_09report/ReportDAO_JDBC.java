@@ -32,8 +32,14 @@ public class ReportDAO_JDBC implements ReportDAO {
 	}
 	public static void main(String[] args){
 		ReportDAO dao = new ReportDAO_JDBC();
-		List<ReportBean> beans = dao.select();
-		System.out.println(beans);
+//		List<ReportBean> beans = dao.select();
+//		System.out.println(beans);
+		ReportBean reportBean = new ReportBean();
+		reportBean.setMemberNo(2);
+		reportBean.setEmail("b@yahoo.com.tw");
+		reportBean.setDetail("abc");
+		ReportBean bean = dao.insert(reportBean);
+		System.out.println(bean);
 	}
 	
 	private static final String SELECT_ALL = "SELECT * FROM Report"; 
@@ -67,7 +73,7 @@ public class ReportDAO_JDBC implements ReportDAO {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		try {
-			//Connection conn = DriverManager.getConnection(URL,USERNAME,PASSWORD);
+//			Connection conn1 = DriverManager.getConnection(URL,USERNAME,PASSWORD);
 			conn = dataSource.getConnection();
 			pstmt =conn.prepareStatement(INSERT);
 			

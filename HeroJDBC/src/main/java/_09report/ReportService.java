@@ -8,10 +8,15 @@ public class ReportService {
 
 	public static void main(String[] args) {
 		ReportService service = new ReportService();
-		ReportBean bean = new ReportBean();
 
-		List<ReportBean> beans = service.select(bean);
-		System.out.println("beans= " + beans);
+//		ReportBean reportBean = new ReportBean();
+//		reportBean.setMemberNo(3);
+//		reportBean.setEmail("b@yahoo.com.tw");
+//		reportBean.setDetail("abc");
+//		ReportBean bean = service.insert(reportBean);
+//		System.out.println(bean);
+//		List<ReportBean> beans = service.select(bean);
+//		System.out.println("beans= " + beans);
 	}
 
 	public List<ReportBean> select(ReportBean bean){

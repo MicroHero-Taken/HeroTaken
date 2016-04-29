@@ -1,10 +1,5 @@
-<%-- <%@page import="_08report.ReportDAO_JDBC"%> --%>
-<%@page import="java.util.Date"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page import="_09report.*"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%-- <%@ page import="_08report.*"%> --%>
-<%@ page import="java.util.*"%>
 <!doctype html>
 <html lang="zh">
 <head>
@@ -13,8 +8,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Taken</title>
 <link rel="stylesheet" type="text/css" media="screen"
-	href="css/reset.css">
-<link rel="stylesheet" type="text/css" href="../css/default.css">
+	href="../css/reset.css">
+<link rel="stylesheet" type="text/css" href="../css/contact.css">
 <script src="http://libs.useso.com/js/jquery/1.11.0/jquery.min.js"></script>
 <script type="text/javascript" src="../js/turnBox.js"></script>
 <style>
@@ -215,11 +210,11 @@ p {
 
 </head>
 <body>
-	<form action="<c:url value='/Report.do' />" method="post">
+	<form action="<c:url value="/Report.do"/>" method="get">
 		<div class="htmleaf-container">
 			<header class="htmleaf-header">
 				<h1>
-					CONTACT FORM<span></span>
+					Report<span></span>
 				</h1>
 				<div class="htmleaf-links"></div>
 				<div class="htmleaf-demo center"></div>
@@ -229,33 +224,32 @@ p {
 					<div>
 						<p class="turnBoxButton" style="font-size: 22.5px">CONTACT</p>
 					</div>
-					<div>
-						<ul class="user-information">
-							<li><span>No.</span></li>
-							<li><span>MAIL</span></li>
-						</ul>
-						<textarea></textarea>
-						<span class="check">
-							<div>
-								<p class="confirm-button turnBoxButton">CONFIRM</p>
-							</div>
-							<div>
-								<p class="cancel turnBoxButton turnBoxButtonPrev">CANCEL</p>
-								<p class="send turnBoxButton">
-									<input type="submit" value="">SEND
-								</p>
-							</div>
-						</span>
-					</div>
-					<div>
-						<p class="turnBoxButton turnBoxButtonPrev"
-							style="font-size: 22.5px">THANKS</p>
-					</div>
+<%-- 					<c:forEach var="bean" items="${report}"> --%>
+						<div>
+							<ul class="user-information">
+								<li><span>No.</span><input type="text" name="memberNo" value="${bean.no}"> <font>${error.no}</font></li>
+								<li><span>Email</span><input type="text" name="email" value="${bean.email}"> <font>${error.email}</font></li>
+							</ul>
+							<textarea></textarea>
+							<span class="check">
+								<div>
+									<p class="confirm-button turnBoxButton">CONFIRM</p>
+								</div>
+								<div>
+									<p class="cancel turnBoxButton turnBoxButtonPrev">CANCEL</p>
+									<p class="send turnBoxButton">SEND</p>
+								</div>
+							</span>
+						</div>
+						<div>
+							<p class="turnBoxButton turnBoxButtonPrev"
+								style="font-size: 22.5px">THANKS</p>
+						</div>
+<%-- 					</c:forEach> --%>
 				</div>
 			</div>
 		</div>
 	</form>
-
 	<script type="text/javascript">
 		var width = 340;
 		var duration = 450;

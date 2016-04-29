@@ -112,7 +112,6 @@ public class MemberServlet extends HttpServlet {
 		        	bean.setGender(gender);
 		        	bean.setId(id);
 		        	bean.setPhone(phone);
-		        	bean.setRating(1);
 		        	bean.setExperience(0);
 		        	bean.setCoin(0);
 		        	bean.setBirthday(birthday);
