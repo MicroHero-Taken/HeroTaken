@@ -14,9 +14,9 @@
 <title>Taken</title>
 <link rel="stylesheet" type="text/css" media="screen"
 	href="css/reset.css">
-<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="../css/default.css">
 <script src="http://libs.useso.com/js/jquery/1.11.0/jquery.min.js"></script>
-<script type="text/javascript" src="js/turnBox.js"></script>
+<script type="text/javascript" src="../js/turnBox.js"></script>
 <style>
 body {
 	background-color: #000000;

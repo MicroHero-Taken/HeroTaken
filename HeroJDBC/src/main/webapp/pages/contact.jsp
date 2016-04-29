@@ -5,10 +5,10 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Taken</title>
-	<link rel="stylesheet" type="text/css" media="screen" href="css/reset.css">
-	<link rel="stylesheet" type="text/css" href="css/contact.css">
+	<link rel="stylesheet" type="text/css" media="screen" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/contact.css">
   	<script src="http://libs.useso.com/js/jquery/1.11.0/jquery.min.js"></script>
-  	<script type="text/javascript" src="js/turnBox.js"></script>
+  	<script type="text/javascript" src="../js/turnBox.js"></script>
   	<style>
 
     body {
@@ -210,7 +210,7 @@
 <body>
 	<div class="htmleaf-container">
 		<header class="htmleaf-header">
-			<h1>CONTACT FORM<span></span></h1>
+			<h1>Report<span></span></h1>
 			<div class="htmleaf-links">
 
 			</div>
@@ -228,10 +228,12 @@
 			    <div>
 			      <ul class="user-information">
 			        <li>
-			          <span>NAME</span><input type="text">
+			          <span>No.</span><input type="text" name="no" value="${param.no}">
+			          <font>${error.no}</font>
 			        </li>
 			        <li>
-			          <span>MAIL</span><input type="text">
+			          <span>Email</span><input type="text" name="email" value="${param.email}">
+			          <font>${error.email}</font>
 			        </li>
 			      </ul>
 			      <textarea></textarea>

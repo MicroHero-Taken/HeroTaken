@@ -16,8 +16,9 @@ public class ReportBean implements Serializable{
 	
 	}
 	
-	public ReportBean(String email, String detail) {
+	public ReportBean(Integer memberNo, String email, String detail) {
 		super();
+		this.memberNo = memberNo;
 		this.email = email;
 		this.detail = detail;
 	}

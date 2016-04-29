@@ -30,6 +30,7 @@ public class ReportServlet extends HttpServlet {
 		        request.setAttribute("error", error); 
 		        
 		        try {
+		        	Integer memberNo = 0;
 					String email = "";
 					String detail = "";
 					
@@ -58,11 +59,11 @@ public class ReportServlet extends HttpServlet {
 							rd.forward(request, response);
 							return;
 						}else{
-						ReportBean reportBean = new ReportBean(email,detail);
+						ReportBean reportBean = new ReportBean(memberNo,email,detail);
 						ReportService reportService = new ReportService();
 						ReportBean rbean = reportService.insert(reportBean);
 						
-						
+						reportBean.setMemberNo(memberNo);
 						reportBean.setEmail(email);
 						reportBean.setDetail(detail);
       

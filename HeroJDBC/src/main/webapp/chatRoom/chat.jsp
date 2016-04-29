@@ -9,7 +9,7 @@
 	var websocket = new WebSocket("ws://localhost:8080/HeroJDBC/chatroomServerEndpoint");
 	websocket.onmessage = function processMessage(message){
 		var jsonData = JSON.parse(message.data);
-		if(jsonData.message != null)messageTextArea.value += jsonData.message + "\\n" ;
+		if(jsonData.message != null)messageTextArea.value += jsonData.message + "\n" ;
 	}
 	function sendMessage(){
 		websocket.send(messageText.value);
