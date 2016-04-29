@@ -18,6 +18,11 @@ public class AccessMission extends HttpServlet {
        
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
+		doPost(request, response);
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
 		String noStr = request.getParameter("no");
 		int no = 0;
 		if(noStr != null && noStr.trim().length() != 0){
@@ -33,12 +38,6 @@ public class AccessMission extends HttpServlet {
 		
 		String contextPath = request.getContextPath();
 		response.sendRedirect(contextPath + "/temporary.jsp");
-
-	}
-
-	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
-		doGet(request, response);
 	}
 
 }

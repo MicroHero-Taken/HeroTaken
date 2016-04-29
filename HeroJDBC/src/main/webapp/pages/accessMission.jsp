@@ -42,7 +42,6 @@ body {
 			<span>任務清單</span>
 		</h1>
 	</div>
-	<form action="<c:url value="/AccessMission"/>" method="get">
 		<table id="testtt">
 		<thead>
 			<tr>
@@ -73,14 +72,18 @@ body {
 				</c:forEach>
 		</tbody>
 	</table>
-	</form>
 	<script language="JavaScript">
     $(document).ready(function(){ 
       $("#table1").dataTable();
       });
-    function onnn(){
-    	alert($("#hi").val());
-    }
+	
+    $(document).ready(function(){
+        $("#testtt > tbody > tr > td:nth-child(1)").children().each(function(){
+        	
+        });
+    });
+
+    
   </script>
 </body>
 </html>
