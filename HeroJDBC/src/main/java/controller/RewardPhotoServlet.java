@@ -27,7 +27,7 @@ import javax.sql.DataSource;
 @WebServlet(
 		urlPatterns={"/photo.view"},
 		initParams={
-				@WebInitParam(name="defaultFile", value="/images/x.png")
+				@WebInitParam(name="defaultFile", value="/images/NG.png")
 		}
 )
 public class RewardPhotoServlet extends HttpServlet {

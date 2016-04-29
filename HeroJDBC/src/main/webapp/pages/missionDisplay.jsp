@@ -62,8 +62,8 @@
     <tr height='36'>
        <td width="120" align="right" >任務報酬:</td>
        <th align="center">Coin: ${missionReward.rewardCoin}${mission.rewardCoin} $</th>
-       <th><img width="100px"
-				src="${pageContext.request.contextPath}/photo.view?missionNo=${missionNo.missionNo}">
+       <th>
+       		<img width="100px" src="${pageContext.request.contextPath}/photo.view?missionNo=${missionNo.missionNo}${mission.missionNo}">
        </th>    
     </tr>
 </table>
