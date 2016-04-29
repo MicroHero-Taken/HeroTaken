@@ -461,7 +461,7 @@ $(".menuHolder").click(function(){   //滑入上方白條後=收
 							<li><a href="#">$: ${memberInfo.coin}</a></li>
 							<li><a href="#">Rating: ${memberInfo.rating}</a></li>
 							<li><a href="<c:url value="AboutUs/starwars.jsp" />">AboutUs</a></li>
-							<li><a href="<c:url value="../secure/logOut.jsp" />">LogOut</a></li>
+							<li><a href="<c:url value="/secure/logOut.jsp" />">LogOut</a></li>
 						</ul>
 					</li>
 					<li class="s2"><a href="#"><span>Members Only</span></a>

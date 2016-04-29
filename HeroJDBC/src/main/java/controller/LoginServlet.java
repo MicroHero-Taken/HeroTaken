@@ -47,6 +47,7 @@ public class LoginServlet extends HttpServlet {
 		//呼叫Model
 				MemberBean bean = service.login( email, password);
 				MemberBean LoginBean = service.selectByEmail(email);
+				String memberName = LoginBean.getMemberName();
 		//根據Model執行結果顯示View
 				if(bean==null) {
 					error.put("password", "登入失敗，請再次輸入ID/PWD");
@@ -58,6 +59,9 @@ public class LoginServlet extends HttpServlet {
 					
 					HttpSession sessionLogin =request.getSession();
 					sessionLogin.setAttribute("Login", LoginBean);
+					
+					HttpSession sessionChatName = request.getSession(true);
+					sessionChatName.setAttribute("username", memberName);
 					
 					String path = request.getContextPath();
 					response.sendRedirect(path + "/index1.jsp");
@@ -73,4 +77,3 @@ public class LoginServlet extends HttpServlet {
 	}
 	
 }
-

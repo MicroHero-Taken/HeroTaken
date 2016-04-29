@@ -9,7 +9,7 @@
 </head>
 <body>
 <%--  <c:if test="${not empty MemberBean}">  --%>
- <form action="<c:url value="/LoginServlet"/>" method="get">
+ <form action="<c:url value="login.jsp"/>" method="get">
 <table>
 
 	<thead>

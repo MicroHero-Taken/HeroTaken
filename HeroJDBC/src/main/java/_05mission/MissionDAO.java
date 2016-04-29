@@ -24,5 +24,7 @@ public interface MissionDAO {
 
 	public abstract MissionBean selectByMD(String missionDesc);
 
+	public abstract MissionBean selectNo(int missionNo);
+
 
 }

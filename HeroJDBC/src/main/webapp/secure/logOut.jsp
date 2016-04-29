@@ -95,20 +95,20 @@ if(x=="http://localhost:8080/HeroJDBC/register/Register.do"){
 <center>
 		<div>
 		       <h1>Sign Up</h1>
-			   <td>帳號 :<br><input type="text" name="email" value="${param.email}"></td><br>
-			   <td><font color='red'>${error.email}</font></td><br>
-			   <td>密碼 :<br><input type="text" name="password" value="${param.password}"></td><br>
+			    <td>信箱 :<br><input type="text" name="email" value="${param.email}"></td><br>
+			    <td><font color='red'>${error.email}</font></td><br>
+			    <td>密碼 :<br><input type="password" name="password" value="${param.password}"></td><br>
 				<td><font color='red'>${error.password}</font></td><br>
-				<td>姓名:<br><input type="text" name="memberName"value="${param.memberName}"></td><br>
+				<td>會員名稱:<br><input type="text" name="memberName"value="${param.memberName}"></td><br>
 				<td><font color='red'>${error.memberName}</font></td><br>
-				<td>暱稱 :<br><input type="text" name="nickName"value="${param.nickName}"></td><br>
-				<td><font color='red'>${error.nickName}</font></td><br>
+				<td>姓氏:<br><input type="text" name="family_name"value="${param.family_name}"></td><br>
+				<td><font color='red'>${error.family_name}</font></td><br>
+				<td>姓名:<br><input type="text" name="given_name"value="${param.given_name}"></td><br>
+				<td><font color='red'>${error.given_name}</font></td><br>
 				<td>性別 :<br><input type="text" name="gender" value="${param.gender}"></td><br>
 				<td><font color='red'>${error.gender}</font></td><br>
 				<td>身分證字號 :<br><input type="text" name="id" value="${param.id}"></td><br>
 				<td><font color='red'>${error.id}</font></td><br>
-				<td>信箱 :<br><input type="text" name="email" value="${param.email}"></td><br>
-				<td><font color='red'>${error.email}</font></td><br>
 				<td>電話號碼 :<br><input type="text" name="phone" value="${param.phone}"></td><br>
 				<td><font color='red'>${error.phone}</font></td><br>
 				<td>出生日 :<br><input type="text" name="birthday"value="${param.birthday}"></td><br>

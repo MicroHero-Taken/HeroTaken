@@ -284,7 +284,9 @@ public class MemberDAOjdbc implements MemberDAO  {
 		return result;
 	}
 
-	private static final String INSERT = "Insert into Member (email, password, memberName, family_name, given_name, gender, id, phone, rating, experience, coin, birthday, memberStatusNo, memberHeroStatus) values (?, ?, ?, ?,?, ?, ?,?,? ,?, ?, ?, ?,?)";
+	
+	//private static final String INSERT = "Insert into Member (email, password, memberName, family_name, given_name, gender, id, phone, rating, experience, coin, birthday, memberStatusNo, memberHeroStatus) values (?, ?, ?, ?,?, ?, ?,?,? ,?, ?, ?, ?, ?)";
+	private static final String INSERT = "Insert into Member (email, password, memberName, family_name, given_name, gender, id, phone, rating, experience, coin, birthday, memberStatusNo) values (?, ?, ?, ?,?, ?, ?,?,? ,?, ?, ?, ?)";
 	@Override
 	public MemberBean insertMember(MemberBean bean) throws SQLException {
 		MemberBean result = null;
@@ -310,7 +312,7 @@ public class MemberDAOjdbc implements MemberDAO  {
 			stmt.setInt(11, bean.getCoin());
 			stmt.setTimestamp(12, bean.getBirthday());
 			stmt.setInt(13, bean.getMemberStatusNo());
-			stmt.setInt(14, bean.getMemberHeroStatus());
+			//stmt.setInt(14, bean.getMemberHeroStatus());
 		
 			count = stmt.executeUpdate();
 			if(count==1) {
