@@ -319,7 +319,7 @@ form{margin:0%;paddind:0%;background:url(${pageContext.request.contextPath}/imag
     function LoadMap(markers) {
         var mapOptions = {
             zoom : 16,
-			minZoom: 16,
+			//minZoom: 16,
 			draggable : true,
 			zoomControl : false,
 			mapTypeId : google.maps.MapTypeId.ROADMAP
@@ -333,9 +333,6 @@ form{margin:0%;paddind:0%;background:url(${pageContext.request.contextPath}/imag
             var myLatlng = new google.maps.LatLng(data.Latitude, data.Longitude);
             var image = {
             	    url: data.icon,
-            	    // This marker is 20 pixels wide by 32 pixels high.
-            	    //size: new google.maps.Size(50, 50),
-
             	  };
 
             var marker = new google.maps.Marker({
@@ -347,7 +344,10 @@ form{margin:0%;paddind:0%;background:url(${pageContext.request.contextPath}/imag
             });
             (function (marker, data) {
                 google.maps.event.addListener(marker, "mouseover", function (e) {
-                    infoWindow.setContent("<div style = 'width:200px;min-height:40px'>" + '任務名稱:'  + data.MissionTitle  + '<br>' + '發起人: ' + data.MemberName + '<br>' + '需求人數: ' + data.MissionPeople + '<br>' + '需求性別: ' + data.MissionGender + '<br>' + '開始時間: ' + data.MissionStrt + '<br>' +  '任務說明: ' + data.MissionDesc + '<br>' + "</div>");
+                	
+                	var acmissionpage = "http://www.wibibi.com/"+data.MissionNo;
+                	
+                	infoWindow.setContent('<div style = "width:200px;min-height:40px">' + '任務名稱: '  + data.MissionTitle  + '<br>' + '發起人: ' + data.MemberName + '<br>' + '需求人數: ' + data.MissionPeople + '<br>' + '需求性別: ' + data.MissionGender + '<br>' + '開始時間: ' + data.MissionStrt + '<br>' + '任務說明: ' + data.MissionDesc + '<br>' + '<input type="button" value="接受任務" onclick="window.location.replace(\''+ acmissionpage + '\')">' + '</div>');
                     infoWindow.open(map, marker);
                 });
             })(marker, data);

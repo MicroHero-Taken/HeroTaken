@@ -20,7 +20,7 @@ public class GoogleMapServlet extends HttpServlet {
 		response.setContentType("application/json; charset=utf-8");
 	
 		//轉換為JSON格式
-		System.out.println("Servlet 啟動");		
+		System.out.println("Google Map JSON Servlet - Start");		
 		GoogleMap_DAO dao =new GoogleMap_DAO();
 		List<GoogleMapBean> list=dao.select();
 		PrintWriter out = response.getWriter();
