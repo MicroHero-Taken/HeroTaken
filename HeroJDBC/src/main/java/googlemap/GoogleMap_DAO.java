@@ -27,7 +27,7 @@ public class GoogleMap_DAO {
 
 	private static final String SELECT_ACTIVE_MISSION = "SELECT Mission.missionNo, Mission.missionTitle, Member.memberName, Mission.missionPeople, Mission.missionGender,Mission.missionStrt, Mission.missionEnd, Mission.missionDesc, Mission.latitude, Mission.longitude,Mission.missionStatusNo, Member.memberHeroStatus FROM Member INNER JOIN Mission ON Member.memberNo = Mission.memberNo WHERE Mission.missionStatusNo=1";
 	public List<GoogleMapBean> select() {
-		System.out.println("DAO select begin");
+		System.out.println("Google Map Select DAO   - Start");
 		 List<GoogleMapBean> result = null;
 		try (
 				Connection conn = ds.getConnection();

@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context>
 <!-- ================================= Azure DataBase ================================= -->
-<!--<Resource name="jdbc/xxx" auth="Container" type="javax.sql.DataSource" driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver" url="jdbc:sqlserver://bg13guc0m0.database.windows.net:1433;database=Hero" username="eeit84taken@bg13guc0m0" password="Qwerty20160504"/> -->
-<!-- ================================= Local DataBase ================================= -->
 	<Resource name="jdbc/xxx" auth="Container" type="javax.sql.DataSource"
-               maxTotal="100" maxIdle="30" maxWaitMillis="10000"
-               username="sa" password="passw0rd"
-               driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
-               url="jdbc:sqlserver://localhost:1433;database=Hero"/>
+		driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+		url="jdbc:sqlserver://bg13guc0m0.database.windows.net:1433;database=Hero"
+		username="eeit84taken@bg13guc0m0" password="Qwerty20160504" />
+	<!-- ================================= Local DataBase ================================= -->
+	<!--<Resource name="jdbc/xxx" auth="Container" type="javax.sql.DataSource"
+		maxTotal="100" maxIdle="30" maxWaitMillis="10000" username="sa"
+		password="passw0rd" driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+		url="jdbc:sqlserver://localhost:1433;database=Hero" />-->
 </Context>
-
