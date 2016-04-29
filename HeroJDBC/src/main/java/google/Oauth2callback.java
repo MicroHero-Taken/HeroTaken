@@ -114,7 +114,9 @@ public class Oauth2callback extends HttpServlet {
             MemberBean LoginBean = service.selectByEmail(email);
             HttpSession sessionLogin =request.getSession();
 			sessionLogin.setAttribute("Login", LoginBean);
-            
+			
+			HttpSession sessionChatName = request.getSession();
+			sessionChatName.setAttribute("username", memberName);
             
             String contextPath = request.getContextPath();
             response.sendRedirect(contextPath + "/index1.jsp");

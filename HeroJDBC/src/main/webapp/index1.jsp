@@ -81,14 +81,14 @@ transform:rotate(18deg);
 }
 /*-----------------------------------------------------------------------------*/
 
-.menuHolder .a6 li:nth-of-type(2) > a {background:#0000AA; /*懸賞任務*/
+.menuHolder .a6 li:nth-of-type(3) > a {background:#0000AA; /*懸賞任務*/
 -webkit-transform:rotate(90deg);                 /*藍色02*/
 -moz-transform:rotateZ(90deg);
 -ms-transform:rotate(90deg);
 -o-transform:rotate(90deg);
 transform:rotate(90deg);
 }
-.menuHolder .a6 li:nth-of-type(3) > a {background:#0000AA;
+.menuHolder .a6 li:nth-of-type(2) > a {background:#0000AA;
 -webkit-transform:rotate(45deg);
 -moz-transform:rotateZ(45deg);
 -ms-transform:rotate(45deg);
@@ -468,7 +468,7 @@ $(".menuHolder").click(function(){   //滑入上方白條後=收
 							<li><a href="#">$: ${memberInfo.coin}</a></li>
 							<li><a href="#">Rating: ${memberInfo.rating}</a></li>
 							<li><a href="<c:url value="AboutUs/starwars.jsp" />">AboutUs</a></li>
-							<li><a href="<c:url value="../secure/logOut.jsp" />">LogOut</a></li>
+							<li><a href="<c:url value="/secure/logOut.jsp" />">LogOut</a></li>
 						</ul>
 					</li>
 					<li class="s2"><a href="#"><span>Members Only</span></a>
@@ -481,7 +481,7 @@ $(".menuHolder").click(function(){   //滑入上方白條後=收
 					<li class="s2"><a href="#"><span>Mission Area</span></a>
 					<ul class="p3 a4">
 							<li><a id="m" href="#" onclick="window.open('pages/mission.jsp', 'Mission', config='height=825,width=430',flowover=hidden);" style="line-height:25px;">Publish Mission</a></li>
-							<li><a href="<c:url value="/pages/accessMission.jsp" />" style="line-height:25px;">Accept Mission</a></li>
+							<li><a href="<c:url value="/missionMem.do?" />" style="line-height:25px;">Accept Mission</a></li>
 							<li><a href="#" style="line-height:25px;">Inquire Mission</a></li>
 						</ul>
 					</li>
@@ -493,7 +493,7 @@ $(".menuHolder").click(function(){   //滑入上方白條後=收
 					<li class="s2"><a href="#url" style="line-height:20px;"><span>Reward Mission</span></a>
 					<ul class="p3 a6">
 							<li><a href="#" onclick="window.open('http://localhost:8080/HeroJDBC/chatRoom/chat.jsp', 'chatroom', config='height=380,width=340',flowover=hidden);" style="line-height:25px;">Reward<br>Mission</br> List</a></li>
-							<li><a href="/pages/report.jsp" style="line-height:25px;">Report</a></li>
+							<li><a href="pages/contact.jsp" style="line-height:25px;">Report</a></li>
 						</ul>
 					</li>
 				</ul>

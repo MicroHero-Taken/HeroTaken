@@ -110,6 +110,56 @@ public static void main(String[] args){
 		return result;
 	}
 //	----------------------------------------------------------------------------------------------------------
+	private static final String SELECT_BY_NO = "SELECT Mission.*, MissionReward.gift, MissionReward.describe, MissionReward.rewardCoin," 
+											+" MissionStatus.missionStatus"
+											+" FROM Mission INNER JOIN"
+											+" MissionReward ON Mission.missionNo = MissionReward.missionNo INNER JOIN"
+											+" MissionStatus ON Mission.missionStatusNo = MissionStatus.missionStatusNo"
+											+" WHERE Mission.missionNo = ?";
+	@Override
+	public MissionBean selectNo(int missionNo){
+		MissionBean result = null;
+		ResultSet rset = null;
+		try (	//Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+				Connection conn = dataSource.getConnection();
+				PreparedStatement pstmt = conn.prepareStatement(SELECT_BY_NO);
+				){
+			pstmt.setInt(1, missionNo);
+			rset = pstmt.executeQuery();
+			if(rset.next()){
+				result = new MissionBean();
+				result.setMissionNo(rset.getInt("missionNo"));
+				result.setMemberNo(rset.getInt("memberNo"));
+				result.setMissionTitle(rset.getString("missionTitle"));
+				result.setMissionDesc(rset.getString("missionDesc"));
+				result.setGift(rset.getBytes("gift"));
+				result.setDescribe(rset.getString("describe"));
+				result.setRewardCoin(rset.getInt("rewardCoin"));
+				result.setMissionPeople(rset.getInt("missionPeople"));
+				result.setMissionGender(rset.getString("missionGender"));
+				result.setMissionExcuteTime(rset.getString("missionExcuteTime"));
+				result.setMissionArea(rset.getString("missionArea"));
+				result.setAddress(rset.getString("address"));
+				result.setMissionStrt(rset.getDate("missionStrt"));
+				result.setMissionEnd(rset.getDate("missionEnd"));
+				result.setMissionStatus(rset.getString("missionStatus"));
+				result.setLatitude(rset.getString("latitude"));
+				result.setLongitude(rset.getString("longitude"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally{
+			if(rset!=null){
+				try {
+					rset.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return result;
+	}
+//	----------------------------------------------------------------------------------------------------------
 	private static final String SELECT_BY_NAME = "SELECT Mission.*, MissionStatus.missionStatus, MissionReward.fileName, MissionReward.gift, MissionReward.describe,  MissionReward.rewardCoin, Member.memberNo AS Expr1, Member.memberName"
 			+" FROM Member INNER JOIN"
 			+" Mission ON Member.memberNo = Mission.memberNo INNER JOIN"

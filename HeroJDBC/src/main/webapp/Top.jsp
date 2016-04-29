@@ -224,7 +224,7 @@ transform:rotate(5deg);
 							<li><a href="#">$: ${money}</a></li>
 							<li><a href="#">Rating: ${Login.rating}</a></li>
 							<li><a href="#">AboutUs</a></li>
-							<li><a href="<c:url value="/logOut.jsp" />">LogOut</a></li>
+							<li><a href="<c:url value="../secure/logOut.jsp" />">LogOut</a></li>
 						</ul>
 					</li>
 					<li class="s2"><a href="#"><span>Members Only</span></a>
@@ -237,7 +237,7 @@ transform:rotate(5deg);
 					<li class="s2"><a href="#"><span>Mission Area</span></a>
 					<ul class="p3 a4">
 							<li><a id="m" href="#" onclick="window.open('http://localhost:8080/HeroJDBC/pages/mission.jsp', 'Mission', config='height=825,width=430',flowover=hidden);")>發布任務</a></li>
-							<li><a href="#">Accept Mission</a></li>
+							<li><a href="http://localhost:8080/HeroJDBC/missionMem.do?">Accept Mission</a></li>
 							<li><a href="#">Inquire Mission</a></li>
 						</ul>
 					</li>

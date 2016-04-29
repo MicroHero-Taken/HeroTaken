@@ -30,7 +30,7 @@ public class UpdateMemberInfo implements Filter {
 
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		HttpSession session = ((HttpServletRequest) request).getSession();
-		MemberBean bean = (MemberBean)session.getAttribute("Login");
+		MemberBean bean = (MemberBean)session.getAttribute("user");
 		System.out.println(bean);
 		int memberNo = bean.getMemberNo();
 		System.out.println(memberNo);

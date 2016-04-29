@@ -1,3 +1,5 @@
+<%@ page import="_09report.*"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!doctype html>
 <html lang="zh">
 <head>
@@ -208,6 +210,7 @@
 
 </head>
 <body>
+<form action="<c:url value="/Report.do"/>" method="get">
 	<div class="htmleaf-container">
 		<header class="htmleaf-header">
 			<h1>Report<span></span></h1>
@@ -221,25 +224,26 @@
 		<div class="htmleaf-content">
 			<div class="example contact-form">
 			    <div>
-			      <p class="turnBoxButton" style="font-size:22.5px";>
+			      <p class="turnBoxButton" style="font-size:22.5px">
 			        CONTACT
 			      </p>
 			    </div>
+			    <c:forEach var="bean" items="${report}">
 			    <div>
 			      <ul class="user-information">
 			        <li>
-			          <span>No.</span><input type="text" name="no" value="${param.no}">
+			          <span>No.</span><input type="text" name="no" value="${bean.no}">
 			          <font>${error.no}</font>
 			        </li>
 			        <li>
-			          <span>Email</span><input type="text" name="email" value="${param.email}">
+			          <span>Email</span><input type="text" name="email" value="${bean.email}">
 			          <font>${error.email}</font>
 			        </li>
 			      </ul>
 			      <textarea></textarea>
 			      <span class="check">
 			        <div>
-			          <p class="confirm-button turnBoxButton" ;>
+			          <p class="confirm-button turnBoxButton">
 			            CONFIRM
 			          </p>
 			        </div>
@@ -250,12 +254,13 @@
 			      </span>
 			    </div>
 			    <div>
-			      <p class="turnBoxButton turnBoxButtonPrev" style="font-size:22.5px";>THANKS</p>
+			      <p class="turnBoxButton turnBoxButtonPrev" style="font-size:22.5px">THANKS</p>
 			    </div>
 			  </div>
 		</div>
-		
-	
+			</div>
+		</c:forEach>
+	</form>
 	<script type="text/javascript">
 
     var width = 340;

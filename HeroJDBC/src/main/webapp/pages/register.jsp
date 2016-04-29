@@ -23,7 +23,7 @@
 			</tr>
 			<tr>
 				<td>密碼 :</td>
-				<td><input type="text" name="password"
+				<td><input type="password" name="password"
 					value="${param.password}"></td>
 				<td><font color='red' size='-1'>${error.password}</font></td>
 			</tr>
@@ -40,7 +40,7 @@
 				<td><font color='red' size='-1'>${error.family_name}</font></td>
 			</tr>
 			<tr>
-				<td>名子:</td>
+				<td>姓名:</td>
 				<td><input type="text" name="given_name"
 					value="${param.given_name}"></td>
 				<td><font color='red' size='-1'>${error.given_name}</font></td>

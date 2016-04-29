@@ -15,8 +15,6 @@
 			<div class="os-phrases" id="os-phrases">
 				
 				<h2>Mission</h2>
-				
-				
 				<h2>Start</h2>
 			
 				
