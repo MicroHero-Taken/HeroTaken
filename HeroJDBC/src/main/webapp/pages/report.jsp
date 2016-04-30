@@ -1,4 +1,3 @@
-<%@ page import="_09report.*"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!doctype html>
 <html lang="zh">
@@ -6,11 +5,11 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Taken</title>
+<title>Report</title>
 <link rel="stylesheet" type="text/css" media="screen"
 	href="../css/reset.css">
 <link rel="stylesheet" type="text/css" href="../css/contact.css">
-<script src="http://libs.useso.com/js/jquery/1.11.0/jquery.min.js"></script>
+<!-- <script src="http://libs.useso.com/js/jquery/1.11.0/jquery.min.js"></script> -->
 <script type="text/javascript" src="../js/turnBox.js"></script>
 <style>
 body {
@@ -210,7 +209,7 @@ p {
 
 </head>
 <body>
-	<form action="<c:url value="/Report.do"/>" method="get">
+	<form action="<c:url value="/ReportServlet"/>" method="post">
 		<div class="htmleaf-container">
 			<header class="htmleaf-header">
 				<h1>
@@ -224,16 +223,15 @@ p {
 					<div>
 						<p class="turnBoxButton" style="font-size: 22.5px">CONTACT</p>
 					</div>
-<%-- 					<c:forEach var="bean" items="${report}"> --%>
 						<div>
 							<ul class="user-information">
-								<li><span>No.</span><input type="text" name="memberNo" value="${bean.no}"> <font>${error.no}</font></li>
-								<li><span>Email</span><input type="text" name="email" value="${bean.email}"> <font>${error.email}</font></li>
+								<li><span>No.</span><input type="text" name="memberNo" value="${user.memberNo}"  readonly="readonly"></li>
+								<li><span>Email</span><input type="text" name="email" value="${user.email}"  readonly="readonly"></li>
 							</ul>
-							<textarea></textarea>
+							<textarea name="detail"></textarea>
 							<span class="check">
 								<div>
-									<p class="confirm-button turnBoxButton">CONFIRM</p>
+									<p class="confirm-button turnBoxButton"><input type="submit" value="CONFIRM"></p>
 								</div>
 								<div>
 									<p class="cancel turnBoxButton turnBoxButtonPrev">CANCEL</p>
@@ -242,10 +240,8 @@ p {
 							</span>
 						</div>
 						<div>
-							<p class="turnBoxButton turnBoxButtonPrev"
-								style="font-size: 22.5px">THANKS</p>
+							<p class="turnBoxButton turnBoxButtonPrev" style="font-size:22.5px";>THANKS</p>
 						</div>
-<%-- 					</c:forEach> --%>
 				</div>
 			</div>
 		</div>
