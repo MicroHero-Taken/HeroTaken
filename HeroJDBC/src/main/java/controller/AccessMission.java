@@ -18,27 +18,26 @@ public class AccessMission extends HttpServlet {
        
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
-		String noStr = request.getParameter("no");
-		int no = 0;
+		doPost(request, response);
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
+		String noStr = request.getParameter("missionNo");
+		int missionNo = 0;
 		if(noStr != null && noStr.trim().length() != 0){
-			no = Integer.parseInt(noStr);
+			missionNo = Integer.parseInt(noStr);
 		}
-		System.out.println("Access-no: " +no);
+		System.out.println("Access-no: " +missionNo);
 		MissionBean missionBean = new MissionBean();
 		MissionService missionService = new MissionService();
-		missionBean = missionService.selectByNo(no);
+		missionBean = missionService.selectByNo(missionNo);
 		System.out.println("ACC-missionBean= " +missionBean);
 		HttpSession session = request.getSession();
 		session.setAttribute("mission",missionBean);
 		
 		String contextPath = request.getContextPath();
 		response.sendRedirect(contextPath + "/temporary.jsp");
-
-	}
-
-	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
-		doGet(request, response);
 	}
 
 }

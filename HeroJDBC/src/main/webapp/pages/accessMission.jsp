@@ -42,7 +42,6 @@ body {
 			<span>任務清單</span>
 		</h1>
 	</div>
-	<form action="<c:url value="/AccessMission"/>" method="get">
 		<table id="testtt">
 		<thead>
 			<tr>
@@ -53,7 +52,7 @@ body {
 				<th>人數要求:</th>
 				<th>執行時間:</th>
 				<th>地點:</th>
-				<th>任務狀態:</th>
+				<th>任務狀態:</th> 
 				<th></th>
 			</tr>
 		</thead>
@@ -68,19 +67,33 @@ body {
 					<td>${bean.missionExcuteTime}</td>
 					<td>${bean.missionArea}</td>
 					<td>${bean.missionStatus}</td>
-					<td><input type="submit" value="Access" onclick="onnn()"></td>
+					<td><input type="submit" value="Access" name="access"></td>
 				</tr>
 				</c:forEach>
 		</tbody>
 	</table>
-	</form>
+	<!--   </form> -->
+	  <form>
+	  	<input type="hidden" name="a"/>
+	  </form>
 	<script language="JavaScript">
     $(document).ready(function(){ 
       $("#table1").dataTable();
       });
-    function onnn(){
-    	alert($("#hi").val());
-    }
+
+    $(document).ready(function(){
+        $("#testtt > tbody > tr > td:nth-child(9)").children().each(function(){
+        	$(this).click(function(){
+        		var missionNo = $(this).parent().prevAll()[7].firstChild.nodeValue;
+        		console.log(missionNo);
+    			document.forms[0].action="<c:url value='/AccessMission?missionNo="+missionNo+" '/>";
+    			document.forms[0].method="POST";
+    			document.forms[0].submit();	
+        	})
+        });
+    });
+
+    
   </script>
 </body>
 </html>
