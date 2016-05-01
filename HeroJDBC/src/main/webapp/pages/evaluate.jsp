@@ -67,7 +67,7 @@ input, textarea {
 				<input
 					data-progression type="text"
 					data-helper="Tracks users progress when filling in forms"
-					name="email" value="" placeholder="">
+					name="commentary" value="" placeholder="">
 		</div>
 
 		<div id="demo5" class="demo" style="display:block; margin:10px; padding:10px; ">
