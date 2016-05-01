@@ -70,34 +70,28 @@ public class ReportDAO_JDBC implements ReportDAO {
 	@Override
 	public ReportBean insert(ReportBean bean){
 		ReportBean result = null;
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		try {
-//			Connection conn1 = DriverManager.getConnection(URL,USERNAME,PASSWORD);
-			conn = dataSource.getConnection();
-			pstmt =conn.prepareStatement(INSERT);
-			
+		try (	//Connection conn = DriverManager.getConnection(URL,USERNAME,PASSWORD);
+				Connection conn = dataSource.getConnection();
+				PreparedStatement pstmt =conn.prepareStatement(INSERT);
+				){
 			if(bean != null){
-				result =new ReportBean();
+				result = new ReportBean();
 				pstmt.setInt(1, bean.getMemberNo());
 				pstmt.setString(2, bean.getEmail());
 				pstmt.setString(3, bean.getDetail());
-				
-				
 				int i = pstmt.executeUpdate();
 				
 				result.setMemberNo(bean.getMemberNo());
-				result.setEmail( bean.getEmail());
-				result.setDetail( bean.getDetail());
+				result.setEmail(bean.getEmail());
+				result.setDetail(bean.getEmail());
 				
 				if(i == 1){
-					System.out.println(result);
 					return result;
 				}
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}		
+		}
 		return result;
 	}
 
