@@ -36,10 +36,17 @@ public class ReportServlet extends HttpServlet {
 		System.out.println("reportServletEmail: " +email);
 		System.out.println("reportServletDetail: " +detail);
 		
-		if(email != null && detail!= null){
+		if(email == null || detail== null){
+			String path = request.getContextPath();
+			response.sendRedirect(path + "/pages/report.jsp");
+			return;
+		}else{
 			ReportService reportService = new ReportService();
 			ReportBean bean = new ReportBean(memberNo,email,detail); 
 			ReportBean reportBean = reportService.insert(bean);
+			String path = request.getContextPath();
+			response.sendRedirect(path + "/pages/report.jsp");
+			return;
 		}
 
 		

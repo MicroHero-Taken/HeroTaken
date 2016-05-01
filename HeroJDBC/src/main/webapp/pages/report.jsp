@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" media="screen"
 	href="../css/reset.css">
 <link rel="stylesheet" type="text/css" href="../css/contact.css">
-<!-- <script src="http://libs.useso.com/js/jquery/1.11.0/jquery.min.js"></script> -->
+<script src="http://libs.useso.com/js/jquery/1.11.0/jquery.min.js"></script>
 <script type="text/javascript" src="../js/turnBox.js"></script>
 <style>
 body {
@@ -209,7 +209,6 @@ p {
 
 </head>
 <body>
-	<form action="<c:url value="/ReportServlet"/>" method="post">
 		<div class="htmleaf-container">
 			<header class="htmleaf-header">
 				<h1>
@@ -225,28 +224,48 @@ p {
 					</div>
 						<div>
 							<ul class="user-information">
-								<li><span>No.</span><input type="text" name="memberNo" value="${user.memberNo}"  readonly="readonly"></li>
-								<li><span>Email</span><input type="text" name="email" value="${user.email}"  readonly="readonly"></li>
+								<li><span>No.</span><input id="no" type="text" name="memberNo" value="${user.memberNo}"  readonly="readonly"></li>
+								<li><span>Email</span><input id="email" type="text" name="email" value="${user.email}"  readonly="readonly"></li>
 							</ul>
-							<textarea name="detail"></textarea>
+							<textarea id="detail" name="detail"></textarea>
 							<span class="check">
 								<div>
-									<p class="confirm-button turnBoxButton"><input type="submit" value="CONFIRM"></p>
+									<p class="confirm-button turnBoxButton">CONFIRM</p>
 								</div>
 								<div>
 									<p class="cancel turnBoxButton turnBoxButtonPrev">CANCEL</p>
-									<p class="send turnBoxButton">SEND</p>
+									<p id="button" class="send turnBoxButton">SEND</p>
 								</div>
 							</span>
 						</div>
 						<div>
-							<p class="turnBoxButton turnBoxButtonPrev" style="font-size:22.5px";>THANKS</p>
+							<p class="turnBoxButton turnBoxButtonPrev" style="font-size:22.5px">THANKS</p>
 						</div>
 				</div>
 			</div>
 		</div>
-	</form>
+<form>
+	<input type="hidden" name="a"/>
+</form>
 	<script type="text/javascript">
+	    $(document).ready(function(){
+	        
+	        	$("#button").click(function(){
+	        		var memberNo = $('input[name="memberNo"]').val();
+	        		console.log(memberNo);
+	        		var email = $('input[name="email"]').val();
+	        		console.log(email);
+	        		var detail = $("#detail").val();
+	        		console.log(detail);
+	    			document.forms[0].action="<c:url value='/ReportServlet?memberNo="+memberNo+"&email="+email+"&detail="+detail+" '/>";
+	    			document.forms[0].method="POST";
+	    			document.forms[0].submit();	
+	        	})
+	        
+	    });
+	
+	
+	
 		var width = 340;
 		var duration = 450;
 		var general_box = $(".example");
