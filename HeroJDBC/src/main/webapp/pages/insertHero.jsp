@@ -222,7 +222,7 @@ transform:rotate(5deg);
 a {line-height:20px;}
 </style>
 <script type="text/javascript">
-// 顯示上傳圖
+                                                         // 顯示上傳圖
 	$(function()
 	{
 		$("#imgInp1").change(function(){
@@ -446,19 +446,19 @@ a {line-height:20px;}
 	                    
 	                    
 			<div id="skin1">● 英雄SKIN1:
-			<input type="file" name="myfile1" id="imgInp1" size="30" style="width: 200px;"/><img id="blah1" src="#"  width="80"/></div>
+			<input type="file" name="myfile1" id="imgInp1" size="30" style="width: 200px;"/><img id="blah1" src="#"  width="50" height="50"/></div>
 	                    
 			<div id="skin2">● 英雄SKIN2:
-			<input type="file" name="myfile2" id="imgInp2" size="30" style="width: 200px;"/><img id="blah2" src="#"  width="80"/></div>
+			<input type="file" name="myfile2" id="imgInp2" size="30" style="width: 200px;"/><img id="blah2" src="#"  width="50" height="50"/></div>
 						
 			<div id="skin3">● 英雄SKIN3:
-			<input type="file" name="myfile3" id="imgInp3" size="30" style="width: 200px;"/><img id="blah3" src="#"  width="80"/></div>
+			<input type="file" name="myfile3" id="imgInp3" size="30" style="width: 200px;"/><img id="blah3" src="#"  width="50" height="50"/></div>
 						
 			<div id="skin4">● 英雄SKIN4:
-			<input type="file" name="myfile4" id="imgInp4" size="30" style="width: 200px;"/><img id="blah4" src="#"  width="80"/></div>
+			<input type="file" name="myfile4" id="imgInp4" size="30" style="width: 200px;"/><img id="blah4" src="#"  width="50" height="50"/></div>
 						
 			<div id="skin5">● 英雄SKIN5:
-			<input type="file" name="myfile5" id="imgInp5" size="30" style="width: 200px;"/><img id="blah5" src="#"  width="80"/></div>
+			<input type="file" name="myfile5" id="imgInp5" size="30" style="width: 200px;"/><img id="blah5" src="#"  width="50" height="50"/></div>
 		    
 			
 			<br>
