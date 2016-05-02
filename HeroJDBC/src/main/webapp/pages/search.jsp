@@ -131,7 +131,8 @@ input, textarea {
 	$("#rate").click(function(){
 		var rate = $("#rate").attr('data-rate');
 		console.log(rate);
-	})
+	});
 	</script>
+	<a href='<c:url value="/index1.jsp" />'>回首頁</a>
 </body>
 </html>

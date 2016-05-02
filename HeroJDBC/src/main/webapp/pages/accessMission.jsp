@@ -239,7 +239,7 @@ transform:rotate(5deg);
 		<ul class="p1">
 			<li class="s1"><a href="#url">Menu</a>
 				<ul class="p2" style="line-height:20px;">
-					<li class="s2"><a href='<c:url value="/index1.jsp" />'>Home</span></a>
+					<li class="s2"><a href='<c:url value="/index1.jsp" />'>Home</a>
 					<ul class="p3 a2">
 							<li><a style="line-height:20px;" href="#">Name: ${Login.memberName}</a></li><!--名字 -->
 							<li><a href="#">$: ${Login.coin}</a></li>
@@ -257,7 +257,7 @@ transform:rotate(5deg);
 					<li class="s2"><a href="#"><span>Missions</span></a>
 					<ul class="p3 a4">
 							<li><a id="m" href="#" onclick="window.open('/HeroJDBC/pages/mission.jsp', 'Mission', config='height=825,width=430',flowover=hidden);" style="line-height:25px;">Release Mission</a></li>
-							<li><a style="line-height:25px;" href="/HeroJDBC/missionMem.do">Accept Mission</a></li>
+							<li><a style="line-height:25px;" href="#">Accept Mission</a></li>
 							<li><a href="../pages/search.jsp" style="line-height:25px;">Search For Mission</a></li>
 						</ul>
 					</li>
