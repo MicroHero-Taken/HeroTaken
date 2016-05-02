@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/missionMem.do")
 public class MissionMemServlet extends HttpServlet{
 	private static final long serialVersionUID = 1L;
-	private MissionMemService missionMemService =new MissionMemService();;
+	private MissionMemService missionMemService =new MissionMemService();
 	public MissionMemServlet(){
 		
 		
@@ -28,7 +28,7 @@ public class MissionMemServlet extends HttpServlet{
 		MissionMemBean bean = new MissionMemBean();
 		List<MissionMemBean> result = missionMemService.select();
 
-		if(result!=null) {
+		if(result!=null && equals("true")) {
 			HttpSession session = request.getSession();
 			session.setAttribute("beans", result);
 			request.getRequestDispatcher(

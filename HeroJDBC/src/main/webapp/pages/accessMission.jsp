@@ -59,11 +59,13 @@ body {
 		<tbody>
 				<c:forEach var="bean" items="${beans}" begin="1" end="20" step="1">
 				<tr>
+				
 					<td>${bean.missionNo}</td>
 					<td>${bean.missionTitle}</td>
 					<td>${bean.missionDesc}</td>
 					<td>${bean.given_name}</td>
 					<td>${bean.missionPeople}</td>	
+<%-- 					<td><c:out value="${bean.missionExcuteTime}" default="未執行"></c:out></td> --%>
 					<td>${bean.missionExcuteTime}</td>
 					<td>${bean.missionArea}</td>
 					<td>${bean.missionStatus}</td>

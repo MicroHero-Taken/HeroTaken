@@ -119,8 +119,47 @@ public class MemberDAOjdbc implements MemberDAO  {
 		}
 		return result;
 	}
+//	============================================================================================================	
+	private static final String UPDATE_COIN = "update member set coin=? where memberNo=?";
+	@Override
+	public boolean updateCoin(int coin, int memberNo){
+		try (	//Connection conn = DriverManager.getConnection(URL,USERNAME,PASSWORD);
+				Connection conn = ds.getConnection();
+				PreparedStatement pstmt = conn.prepareStatement(UPDATE_COIN);
+				){
+			pstmt.setInt(1, coin);
+			pstmt.setInt(2, memberNo);
+			int i = pstmt.executeUpdate();
+			if(i==1){
+				return true;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+//	============================================================================================================	
+	private static final String UPDATE_HEROSTATUS = "UPDATE Member SET memberHeroStatus = ? WHERE memberNo = ? ";
+	@Override
+	public boolean updateHeroStatus(int memberHeroStatus , int memberNo){
+		try (	//Connection conn = DriverManager.getConnection(URL,USERNAME,PASSWORD);
+				Connection conn = ds.getConnection();
+				PreparedStatement pstmt = conn.prepareStatement(UPDATE_HEROSTATUS);
+				){
+			pstmt.setInt(1, memberHeroStatus);
+			pstmt.setInt(2, memberNo);
+			int i = pstmt.executeUpdate();
+			if(i==1){
+				return true;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
 	
 	
+//	--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	private static final String SELECT_BY_ID = "Select memberNo ,email, password, memberName, family_name, given_name, gender, id,  phone, rating, experience, coin, birthday, memberStatusNo, memberHeroStatus from Member where memberNo = ?";
 	@Override
 	public MemberBean select(int id) {
@@ -184,7 +223,6 @@ public class MemberDAOjdbc implements MemberDAO  {
 		return select();
 	}
 	private static final String SELECT_ALL = "Select email, password, memberName, family_name, given_name, gender, id, phone, rating, experience, coin, birthday, memberStatus, memberHeroStatusNo from Member";
-
 	@Override
 	public List<MemberBean> select() {
 		result = null;
@@ -246,12 +284,9 @@ public class MemberDAOjdbc implements MemberDAO  {
 		return result;
 	}
 
-	private static final String INSERT = "Insert into Member (email, password, memberName, family_name, given_name, gender, id, phone, rating, experience, coin, birthday, memberStatusNo, memberHeroStatus) values (?, ?, ?, ?,?, ?, ?,?,? ,?, ?, ?, ?,?)";
-
 	
-	/* (non-Javadoc)
-	 * @see register.model.MemberDAO#insertMember(register.model.MemberBean)
-	 */
+	//private static final String INSERT = "Insert into Member (email, password, memberName, family_name, given_name, gender, id, phone, rating, experience, coin, birthday, memberStatusNo, memberHeroStatus) values (?, ?, ?, ?,?, ?, ?,?,? ,?, ?, ?, ?, ?)";
+	private static final String INSERT = "Insert into Member (email, password, memberName, family_name, given_name, gender, id, phone, rating, experience, coin, birthday, memberStatusNo) values (?, ?, ?, ?,?, ?, ?,?,? ,?, ?, ?, ?)";
 	@Override
 	public MemberBean insertMember(MemberBean bean) throws SQLException {
 		MemberBean result = null;
@@ -277,7 +312,7 @@ public class MemberDAOjdbc implements MemberDAO  {
 			stmt.setInt(11, bean.getCoin());
 			stmt.setTimestamp(12, bean.getBirthday());
 			stmt.setInt(13, bean.getMemberStatusNo());
-			stmt.setInt(14, bean.getMemberHeroStatus());
+			//stmt.setInt(14, bean.getMemberHeroStatus());
 		
 			count = stmt.executeUpdate();
 			if(count==1) {
@@ -304,10 +339,7 @@ public class MemberDAOjdbc implements MemberDAO  {
 		return result;
 	}
 	private static final String UPDATE = "update member set email=?, password=?, memberName=?, family_name=?, given_name=? gender=?, id=?, phone=?, rating=?, experience=?, coin=?, birthday=?, memberStatusNo=?, memberHeroStatus=? where memberNo=?";
-	
-	/* (non-Javadoc)
-	 * @see register.model.MemberDAO#update(int, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, int, int, int, java.sql.Timestamp, int, int)
-	 */
+
 	@Override
 	public MemberBean update(int memberNo, String email, String password ,String memberName, String family_name, String given_name, String gender, String id, String phone, int rating, int experience, int coin,java.sql.Timestamp birthday, int memberStatusNo, int memberHeroStatus) 
 	{
@@ -379,8 +411,8 @@ public class MemberDAOjdbc implements MemberDAO  {
 		}
 		return result;
 	}
-	private static final String SELECT_BY_EMAIL = "Select memberNo ,email, password, memberName, family_name, given_name, gender, id, phone, rating, experience, coin, birthday, memberStatusNo, memberHeroStatus from Member where email = ?";
-
+	private static final String SELECT_BY_EMAIL = "SELECT * FROM Member WHERE email = ? ";
+								
 	@Override
 	public MemberBean select(String email) {
 		MemberBean result = null;
@@ -388,9 +420,9 @@ public class MemberDAOjdbc implements MemberDAO  {
 		PreparedStatement stmt = null;
 		ResultSet rset = null;
 		try {
-			conn = ds.getConnection();
-			stmt = conn.prepareStatement(SELECT_BY_EMAIL1);
-			stmt.setString(1,  email);
+			conn = ds.getConnection();   
+			stmt = conn.prepareStatement(SELECT_BY_EMAIL);
+			stmt.setString(1,email);
 			rset = stmt.executeQuery();
 			if (rset.next()) {
 				result = new MemberBean();
@@ -437,5 +469,4 @@ public class MemberDAOjdbc implements MemberDAO  {
 		}
 		return result;
 	}
-
 }

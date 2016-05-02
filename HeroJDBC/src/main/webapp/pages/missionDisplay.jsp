@@ -69,7 +69,7 @@
 </table>
 </div>
 <div>
-	<mark>UserName: ${username } </mark><br>
+	<mark>UserName: ${username} </mark><br>
 	<textarea id="messageTextArea" readonly="readonly" rows="12" cols="26"></textarea><br>
 	<input 	type="text" id="messageText" size="19"   onkeydown = "if (event.keyCode == 13) document.getElementById('btn').click()"  />
 	<input	type="button" id="btn" value="Send" onclick="sendMessage()"  />

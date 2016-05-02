@@ -31,10 +31,10 @@ public class LoginServlet extends HttpServlet {
 				Map<String, String> error = new HashMap<String, String>();
 				request.setAttribute("error", error);
 
-				if( email==null ||  email.length()==0) {
+				if( email==null ||  email.trim().length()==0) {
 					error.put("email", "未輸入Email");
 				}
-				if(password==null || password.length()==0) {
+				if(password==null || password.trim().length()==0) {
 					error.put("password", "未輸入Password");
 				}
 				

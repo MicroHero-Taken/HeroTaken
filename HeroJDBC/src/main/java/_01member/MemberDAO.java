@@ -25,4 +25,8 @@ public interface MemberDAO {
 
 	MemberBean insertGoogle(MemberBean bean);
 
+	boolean updateCoin(int coin, int memberNo);
+
+	boolean updateHeroStatus(int memberHeroStatus, int memberNo);
+
 }
