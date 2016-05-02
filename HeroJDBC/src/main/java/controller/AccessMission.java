@@ -46,6 +46,10 @@ public class AccessMission extends HttpServlet {
 		MissionMem02Service missionMem02Service = new MissionMem02Service();
 		MissionMemBean02 missionMemBean02 = new MissionMemBean02(missionNo,memberNo);
 		missionMem02Service.insert(missionMemBean02);
+		//更改任務狀態為"執行中"
+		MissionBean missionBean2 = new MissionBean(missionNo,2);
+		missionService.updateStatus(missionBean2);
+		
 		
 		HttpSession session = request.getSession();
 		session.setAttribute("mission",missionBean);

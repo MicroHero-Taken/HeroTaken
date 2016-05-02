@@ -20,6 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
+import _01member.MemberBean;
 import _05mission.MissionBean;
 import _05mission.MissionService;
 import _07missionReward.MissionRewardBean;
@@ -30,7 +31,7 @@ import _init.GlobalService;
 @WebServlet("/search.do")
 public class SearchServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private MissionService missionService =new MissionService();
+	private MissionMemService missionMemService = new MissionMemService();
     public SearchServlet() {
 
     }
@@ -40,17 +41,18 @@ public class SearchServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
-		Map<String , String> errorMsgs = new HashMap<>();
-		request.setAttribute("ErrMsg", errorMsgs);
+		//當前會員
+		HttpSession httpSession = request.getSession();
+		MemberBean bean = (MemberBean)httpSession.getAttribute("Login");
+		int memberNo = bean.getMemberNo();
 		
-		MissionBean bean = new MissionBean();
-		MissionService missionService = new MissionService();
-		List<MissionBean> result = missionService.selectByName(bean);
-				
-		HttpSession session = request.getSession();
-		session.setAttribute("search",bean);
+		List<MissionMemBean> beans1 = missionMemService.slectNO_3(memberNo);
+		List<MissionMemBean> beans2 = missionMemService.slectNO_2(memberNo);
+		request.setAttribute("mission3", beans1);
+		request.setAttribute("mission2", beans2);
+
+		
 		String contextPath = request.getContextPath();
-		response.sendRedirect(contextPath + "/search.jsp");
-		return;
-			}
+		response.sendRedirect(contextPath + "/pages/search.jsp");
+	}
 }

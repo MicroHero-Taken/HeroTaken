@@ -45,6 +45,13 @@ public class MissionBean implements Serializable{
 	public MissionBean(){
 		
 	}
+	
+	public MissionBean(Integer missionNo, Integer missionStatusNo) {
+	super();
+	this.missionNo = missionNo;
+	this.missionStatusNo = missionStatusNo;
+}
+
 	public MissionBean(Integer memberNo, String missionTitle,
 			String missionDesc, Integer missionPeople, 
 			String missionArea, String address, String missionExcuteTime,String latitude,String longitude) {

@@ -64,7 +64,6 @@ body {
 					<td>${bean.missionDesc}</td>
 					<td>${bean.given_name}</td>
 					<td>${bean.missionPeople}</td>	
-<%-- 					<td><c:out value="${bean.missionExcuteTime}" default="未執行"></c:out></td> --%>
 					<td>${bean.missionExcuteTime}</td>
 					<td>${bean.missionArea}</td>
 					<td>${bean.missionStatus}</td>
