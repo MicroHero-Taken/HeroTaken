@@ -12,7 +12,7 @@
 
 <title>Edit Hero</title>
 <style type="text/css">
-body {background:url(../Img/InsertHero.jpg)no-repeat;}
+body {background:url(${pageContext.request.contextPath}/Img/InsertHero.jpg)no-repeat;}
 #heroNo {background-color:rgba(0,0,0,0.7);color:#26FFD9;Font-family:Meiryo; font-size:20px;font-weight:bold;position:absolute; top:890px;left:795px;}
 #heroName {background-color:rgba(0,0,0,0.8);color:#80FF80;Font-family:Meiryo; font-size:20px;font-weight:bold;position:absolute; top:890px;left:795px;}
 #heroPrice {background-color:rgba(0,0,0,0.7);color:#D9FF26;Font-family:Meiryo; font-size:20px;font-weight:bold;position:absolute; top:890px;left:795px;}
@@ -93,11 +93,18 @@ transform:rotate(18deg);
 /*-----------------------------------------------------------------------------*/
 
 .menuHolder .a6 li:nth-of-type(2) > a {background:#0000AA; /*懸賞任務*/
--webkit-transform:rotate(90deg);                 /*藍色02*/
--moz-transform:rotateZ(90deg);
--ms-transform:rotate(90deg);
--o-transform:rotate(90deg);
-transform:rotate(90deg);
+-webkit-transform:rotate(0deg);                 /*藍色02*/
+-moz-transform:rotateZ(0deg);
+-ms-transform:rotate(0deg);
+-o-transform:rotate(0deg);
+transform:rotate(0deg);
+}
+.menuHolder .a6 li:nth-of-type(2) > a {background:#0000AA; /*懸賞任務*/
+-webkit-transform:rotate(45deg);                 /*藍色02*/
+-moz-transform:rotateZ(45deg);
+-ms-transform:rotate(45deg);
+-o-transform:rotate(45deg);
+transform:rotate(45deg);
 }
 /*------------------------------------------------------------------------------*/
 .menuHolder .a5 li:nth-of-type(2) > a {background:#0000AA; /*商城*/
@@ -160,18 +167,11 @@ transform:rotate(72deg);
 transform:rotate(0deg);
 }
 .menuHolder .a3 li:nth-of-type(2) > a {background:#0000AA;/*r3*//*會員*/
--webkit-transform:rotate(30deg);
--moz-transform:rotateZ(30deg);
--ms-transform:rotate(30deg);
--o-transform:rotate(30deg);
-transform:rotate(30deg);
-}
-.menuHolder .a3 li:nth-of-type(3) > a {background:#0000CC;/*r2*/
--webkit-transform:rotate(60deg);
--moz-transform:rotateZ(60deg);
--ms-transform:rotate(60deg);
--o-transform:rotate(60deg);
-transform:rotate(60deg);
+-webkit-transform:rotate(45deg);
+-moz-transform:rotateZ(45deg);
+-ms-transform:rotate(45deg);
+-o-transform:rotate(45deg);
+transform:rotate(45deg);
 }
 /*-------------------------------------------------------------------------*/
 .menuHolder li.s1:hover ul.p2 {
@@ -222,7 +222,7 @@ transform:rotate(5deg);
 a {line-height:20px;}
 </style>
 <script type="text/javascript">
-// 顯示上傳圖
+                                                         // 顯示上傳圖
 	$(function()
 	{
 		$("#imgInp1").change(function(){
@@ -446,19 +446,19 @@ a {line-height:20px;}
 	                    
 	                    
 			<div id="skin1">● 英雄SKIN1:
-			<input type="file" name="myfile1" id="imgInp1" size="30" style="width: 200px;"/><img id="blah1" src="#"  width="80"/></div>
+			<input type="file" name="myfile1" id="imgInp1" size="30" style="width: 200px;"/><img id="blah1" src="#"  width="50" height="50"/></div>
 	                    
 			<div id="skin2">● 英雄SKIN2:
-			<input type="file" name="myfile2" id="imgInp2" size="30" style="width: 200px;"/><img id="blah2" src="#"  width="80"/></div>
+			<input type="file" name="myfile2" id="imgInp2" size="30" style="width: 200px;"/><img id="blah2" src="#"  width="50" height="50"/></div>
 						
 			<div id="skin3">● 英雄SKIN3:
-			<input type="file" name="myfile3" id="imgInp3" size="30" style="width: 200px;"/><img id="blah3" src="#"  width="80"/></div>
+			<input type="file" name="myfile3" id="imgInp3" size="30" style="width: 200px;"/><img id="blah3" src="#"  width="50" height="50"/></div>
 						
 			<div id="skin4">● 英雄SKIN4:
-			<input type="file" name="myfile4" id="imgInp4" size="30" style="width: 200px;"/><img id="blah4" src="#"  width="80"/></div>
+			<input type="file" name="myfile4" id="imgInp4" size="30" style="width: 200px;"/><img id="blah4" src="#"  width="50" height="50"/></div>
 						
 			<div id="skin5">● 英雄SKIN5:
-			<input type="file" name="myfile5" id="imgInp5" size="30" style="width: 200px;"/><img id="blah5" src="#"  width="80"/></div>
+			<input type="file" name="myfile5" id="imgInp5" size="30" style="width: 200px;"/><img id="blah5" src="#"  width="50" height="50"/></div>
 		    
 			
 			<br>
@@ -475,43 +475,44 @@ a {line-height:20px;}
 		<ul class="p1">
 			<li class="s1"><a href="#url">Menu</a>
 				<ul class="p2" style="line-height:20px;">
-					<li class="s2"><a href="<c:url value="/index1.jsp" />"><span>Home</span></a>
+					<li class="s2"><a href='<c:url value="/index1.jsp" />'>Home</span></a>
 					<ul class="p3 a2">
 							<li><a style="line-height:20px;" href="#">Name: ${Login.memberName}</a></li><!--名字 -->
 							<li><a href="#">$: ${Login.coin}</a></li>
 							<li><a href="#">Rating: ${Login.rating}</a></li>
-							<li><a href="<c:url value="AboutUs/starwars.jsp" />">AboutUs</a></li>
-							<li><a href="<c:url value="../secure/logOut.jsp" />">LogOut</a></li>
+							<li><a href="/HeroJDBC/AboutUs/CAST.jsp">AboutUs</a></li>
+							<li><a href="/HeroJDBC/secure/logOut.jsp">LogOut</a></li>
 						</ul>
 					</li>
-					<li class="s2"><a href="#"><span>Members Only</span></a>
+					<li class="s2"><a href="#"><span>Members</span></a>
 					<ul class="p3 a3">
-							<li><a style="line-height:20px;" href="<c:url value="pages/memberHero.jsp" />">Modify<br>Skin</a></li>
-							<li><a style="line-height:20px;" href="<c:url value="secure/memberchange.jsp" />">Modify<br>Data</a></li>
-							<li><a href="#" style="line-height:20px;">Access to<br>personal<br>data</a></li>
+							<li><a style="line-height:20px;" href="/HeroJDBC/pages/memberHero.jsp">Uniforms</a></li>
+							<li><a style="line-height:20px;" href="/HeroJDBC/secure/memberchange.jsp">Edit<br>Profile</a></li>
 						</ul>
 					</li>
-					<li class="s2"><a href="#"><span>Mission Area</span></a>
+					<li class="s2"><a href="#"><span>Missions</span></a>
 					<ul class="p3 a4">
-							<li><a id="m" href="#" onclick="window.open('pages/mission.jsp', 'Mission', config='height=825,width=430',flowover=hidden);" style="line-height:25px;">Publish Mission</a></li>
-							<li><a href="<c:url value="/missionMem.do?" />" style="line-height:25px;">Accept Mission</a></li>
-							<li><a href="../pages/search.jsp" style="line-height:25px;">Inquire Mission</a></li>
+							<li><a id="m" href="#" onclick="window.open('/HeroJDBC/pages/mission.jsp', 'Mission', config='height=825,width=430',flowover=hidden);" style="line-height:25px;">Release Mission</a></li>
+							<li><a style="line-height:25px;" href="/HeroJDBC/missionMem.do">Accept Mission</a></li>
+							<li><a href="../pages/search.jsp" style="line-height:25px;">Search For Mission</a></li>
 						</ul>
 					</li>
-					<li class="s2"><a href="#"><span>Hero Market</span></a>
+					<li class="s2"><a href="#" style="line-height:25px;"><span>Shopping<br>Center</span></a>
 					<ul class="p3 a5">
-							<li><a href="pages/shop.jsp">Buy Hero</a></li>
+							<li><a href="/HeroJDBC/pages/shop.jsp">Purchase<br>Heros</a></li>
 						</ul>
 					</li>
-					<li class="s2"><a href="#url" style="line-height:20px;"><span>Reward Mission</span></a>
+					<li class="s2"><a href="#url"><span>Others</span></a>
 					<ul class="p3 a6">
-							<li><a href="#" onclick="window.open('http://localhost:8080/HeroJDBC/chatRoom/chat.jsp', 'chatroom', config='height=380,width=340',flowover=hidden);" style="line-height:25px;">Reward<br>Mission</br> List</a></li>
+							<li><a href="HeroJDBC/pages/report.jsp" style="line-height:25px;">Report<br>a<br>Problem</a></li>
+						    <li><a href="/HeroJDBC/pages/backend.jsp" style="line-height:25px;">Supervisor</a></li>
+						
 						</ul>
 					</li>
 				</ul>
 			</li>
 		</ul>
 	</div>
-</div>
+</div>>
 </body>
 </html>

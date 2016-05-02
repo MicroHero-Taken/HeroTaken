@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import _08MissionMem.MissionMemBean;
+
 
 public class MissionService {
 	private MissionDAO missionDAO = new MissionDAO_JDBC();
@@ -18,6 +20,22 @@ public class MissionService {
 		
 		List<MissionBean> beans = service.select(bean);
 		System.out.println("beans= " + beans);
+	}
+//	============================================================================================================	
+	public List<MissionBean> selectByName(MissionBean bean) {
+		List<MissionBean> result = null;
+		if(bean != null && bean.getMemberName() != null){
+			List<MissionBean> temp =  missionDAO.selectName(bean.getMemberName());
+			if(temp != null){
+				result = new ArrayList<MissionBean>();
+				result.addAll(temp);
+			}	
+		}else{
+			result = missionDAO.selectName1(null);
+			System.out.println(result);
+		}
+		return result;
+		
 	}
 //	============================================================================================================
 	public MissionBean selectByNo(int missionNo){

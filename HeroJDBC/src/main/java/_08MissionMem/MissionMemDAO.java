@@ -15,4 +15,8 @@ public interface MissionMemDAO {
 //	public abstract MissionMemBean selectMissionEnd(java.sql.Timestamp missionEnd);
 //	public abstract MissionMemBean selectMissionStatusNo(int missionStatusNo);
 	public abstract List<MissionMemBean> select();
+
+	public abstract List<MissionMemBean> selectNO_3(int memberNo);
+
+	public abstract List<MissionMemBean> selectNO_2(int memberNo);
 }

@@ -7,8 +7,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Taken</title>
 <link rel="stylesheet" type="text/css" href="../css/default.css" />
-<!-- custom demo style -->
-
 <link rel="stylesheet" type="text/css" href="../css/demo.css" />
 <link href="../css/css.css" rel="stylesheet" type="text/css">
 <link href="../css/progression.min.css" rel="stylesheet" type="text/css">
@@ -62,21 +60,21 @@ input, textarea {
 
 
 
-		<div>
-			<label for="">commentary:</label> 
-				<input
-					data-progression type="text"
-					data-helper="Tracks users progress when filling in forms"
-					name="commentary" value="" placeholder="">
-		</div>
+<!-- 		<div> -->
+<!-- 			<label for="">commentary:</label>  -->
+<!-- 				<input -->
+<!-- 					data-progression type="text" -->
+<!-- 					data-helper="Tracks users progress when filling in forms" -->
+<!-- 					name="commentary" value="" placeholder=""> -->
+<!-- 		</div> -->
 
 		<div id="demo5" class="demo" style="display:block; margin:10px; padding:10px; ">
 
-			<span class="ratyli" data-rate="" data-ratemax="5"></span>
+			<span id="rate" class="ratyli" data-rate="" data-ratemax="5"></span>
 		
 		</div>
 		<div>
-			<input type="submit" class="button" name="" value="OK !"
+			<input id="ok" type="submit" class="button" name="" value="OK !"
 				placeholder="" >
 		</div>
 
@@ -90,7 +88,12 @@ input, textarea {
 	<script src="../js/jquery.ratyli.js"></script>
 	<script src="../js/demo.js"></script>
 
-	
+	<script type="text/javascript">
+	$("#rate").click(function(){
+		var rate = $("#rate").attr('data-rate');
+		console.log(rate);
+	})
+	</script>
 
 </body>
 </html>

@@ -31,10 +31,10 @@ public class LoginServlet extends HttpServlet {
 				Map<String, String> error = new HashMap<String, String>();
 				request.setAttribute("error", error);
 
-				if( email==null ||  email.length()==0) {
+				if( email==null ||  email.trim().length()==0) {
 					error.put("email", "未輸入Email");
 				}
-				if(password==null || password.length()==0) {
+				if(password==null || password.trim().length()==0) {
 					error.put("password", "未輸入Password");
 				}
 				
@@ -45,7 +45,7 @@ public class LoginServlet extends HttpServlet {
 				}
 				
 		//呼叫Model
-				MemberBean bean = service.login( email, password);
+				MemberBean bean = service.login(email, password);
 				MemberBean LoginBean = service.selectByEmail(email);
 				String memberName = LoginBean.getMemberName();
 		//根據Model執行結果顯示View

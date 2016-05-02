@@ -480,7 +480,7 @@ function Buildkey(num) {
 	document.CodeForm.subtype.length=ctr;
 	document.CodeForm.subtype.options[0].selected=true;
 } 
-<!-- <==============================Google Map function Start==============================> -->
+// <!-- <==============================Google Map function Start==============================> -->
 function codeAddress(){
 	var add = document.getElementById("address");
 	var Longitude = document.getElementById("Longitude");

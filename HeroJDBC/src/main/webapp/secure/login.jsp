@@ -61,13 +61,13 @@ if(x=="http://localhost:8080/HeroJDBC/register/Register.do"){
 <body>                                                                          
 <div id="login">                                         
    <center>                                     
-		<br><a href="https://accounts.google.com/o/oauth2/auth?response_type=code&client_id=226465592315-jnveboc4pda9qkp3kms665bu2n3rebp7.apps.googleusercontent.com&redirect_uri=http://127.0.0.1:8080/HeroJDBC/Oauth2callback&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email"><img width="90%" height="10%" src="${pageContext.servletContext.contextPath}/Img/sign-in-with-google.jpg"></a>
+		<br><a href="https://accounts.google.com/o/oauth2/auth?response_type=code&client_id=741121189982-s31fn0jqa15u6nlfsuq5ug1r0m9hk0qo.apps.googleusercontent.com&redirect_uri=http://eeit84hero.cloudapp.net:8080/HeroJDBC/Oauth2callback&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email"><img width="90%" height="10%" src="${pageContext.servletContext.contextPath}/Img/sign-in-with-google.jpg"></a>
 <div style="font-size:25px">─────or─────</div>
 	   	Use your email address
 	    <form action="<c:url value="/LoginServlet"/>" method="get" ><br>
 			<input type="text"   name="email" value="${param.email}" placeholder="Email Address"><br>
 			<font  color='red'    size='-1'>${error.email}</font><br>
-			<input type="text"    name="password" value="${param.password}" placeholder="Password"><br>
+			<input type="password"    name="password" value="${param.password}" placeholder="Password"><br>
 			<font  color='red'    size='-1'>${error.password}</font><br>
 			<input type="submit"  value="Sign in"><br><br>
 			<img href="#" src="${pageContext.servletContext.contextPath}/Img/deco1.png" width="35%" height="10%" id="deco">

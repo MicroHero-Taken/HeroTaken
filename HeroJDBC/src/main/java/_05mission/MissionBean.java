@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Date;
 
+import com.sun.tools.javac.resources.javac;
+
 
 public class MissionBean implements Serializable{
 	private static final long serialVersionUID = 1L;
@@ -27,10 +29,28 @@ public class MissionBean implements Serializable{
 	private Integer missionStatusNo;
 	private String latitude;
 	private String longitude;
-	public MissionBean() {
-	
-	}
+//	public MissionBean(String memberName, String missionTitle, String missionDesc,
+//			java.util.Date missionStrt, String missionExcuteTime, String address,
+//			String missionStatus) {
+//		super();
+//		this.memberName = memberName;
+//		this.missionTitle = missionTitle;
+//		this.missionDesc = missionDesc;
+//		this.missionStrt = missionStrt;
+//		this.missionExcuteTime = missionExcuteTime;
+//		this.address = address;
+//		this.missionStatus = missionStatus;
+//	}
 
+	public MissionBean(){
+		
+	}
+	
+	public MissionBean(Integer missionNo, Integer missionStatusNo) {
+	super();
+	this.missionNo = missionNo;
+	this.missionStatusNo = missionStatusNo;
+}
 
 	public MissionBean(Integer memberNo, String missionTitle,
 			String missionDesc, Integer missionPeople, 

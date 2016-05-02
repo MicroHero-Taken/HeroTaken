@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-		<meta http-equiv="refresh" content="6;url=${pageContext.request.contextPath}/pages/missionDisplay.jsp">
+		<meta http-equiv="refresh" content="6";url(${pageContext.servletContext.contextPath}/pages/missionDisplay.jsp)>
 		<title>Taken</title>
 		<link rel="stylesheet" type="text/css" href="css/defaults.css" />
 		<link rel="stylesheet" type="text/css" href="css/component.css" />

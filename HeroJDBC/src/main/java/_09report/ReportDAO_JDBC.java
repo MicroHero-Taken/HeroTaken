@@ -83,7 +83,7 @@ public class ReportDAO_JDBC implements ReportDAO {
 				
 				result.setMemberNo(bean.getMemberNo());
 				result.setEmail(bean.getEmail());
-				result.setDetail(bean.getEmail());
+				result.setDetail(bean.getDetail());
 				
 				if(i == 1){
 					return result;

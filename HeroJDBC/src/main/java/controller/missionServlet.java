@@ -40,6 +40,7 @@ public class missionServlet extends HttpServlet {
 		request.setAttribute("ErrMsg", errorMsgs);
 		
 		try {
+			String memberName = "";
 			String memberNoStr;
 			int memberNo = 0; 
 			String missionTitle = "";
@@ -202,6 +203,8 @@ public class missionServlet extends HttpServlet {
 				session2.setAttribute("missionReward",missionRewardBean);
 				HttpSession session3 = request.getSession();
 				session3.setAttribute("missionNo", noBean);
+				HttpSession session4 = request.getSession();
+				session4.setAttribute("memberName", memberName);
 				
 				String contextPath = request.getContextPath();
 				response.sendRedirect(contextPath + "/temporary.jsp");

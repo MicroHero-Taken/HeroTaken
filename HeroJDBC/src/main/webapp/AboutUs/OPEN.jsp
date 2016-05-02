@@ -503,10 +503,11 @@ body {
 <div class="buttons">
   <label for="retrigger--1" class="button button--1">PLAY AGAIN</label>
   <label for="retrigger--2" class="button button--2">PLAY AGAIN</label>
+  <label ><a href="/HeroJDBC/secure/login.jsp">ENTER</a></label>
+  
 </div>
 <div class="pane">
   <div class="rotate">
-   <div class="logo">TAKEN</div>
    <div class="logo">TAKEN</div>
    <div class="logo">TAKEN</div>
    <div class="logo">TAKEN</div>
