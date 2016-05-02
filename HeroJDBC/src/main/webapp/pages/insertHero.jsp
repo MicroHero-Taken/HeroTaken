@@ -92,7 +92,7 @@ transform:rotate(18deg);
 }
 /*-----------------------------------------------------------------------------*/
 
-.menuHolder .a6 li:nth-of-type(2) > a {background:#0000AA; /*懸賞任務*/
+.menuHolder .a6 li:nth-of-type(3) > a {background:#0000AA; /*懸賞任務*/
 -webkit-transform:rotate(0deg);                 /*藍色02*/
 -moz-transform:rotateZ(0deg);
 -ms-transform:rotate(0deg);
@@ -504,7 +504,7 @@ a {line-height:20px;}
 					</li>
 					<li class="s2"><a href="#url"><span>Others</span></a>
 					<ul class="p3 a6">
-							<li><a href="HeroJDBC/pages/report.jsp" style="line-height:25px;">Report<br>a<br>Problem</a></li>
+							<li><a onclick="window.open('/HeroJDBC/pages/report.jsp', 'Mission', config='height=825,width=430',flowover=hidden);" style="line-height:25px;">Report<br>a<br>Problem</a></li>
 						    <li><a href="/HeroJDBC/pages/backend.jsp" style="line-height:25px;">Supervisor</a></li>
 						
 						</ul>

@@ -366,9 +366,31 @@ transform:rotate(5deg);
 			<div id="tab3" class="tab_content">
 				<h2>回報系統</h2>
 				<div style="position:absolute;left:2%;"><h3>回報處理</h3></div><!-- 44444444444444444444444444444444444444444444444444444444444444444444444444444444444444444 -->
-				</div>
+				<br><br><br><br>
+	    <table id="testtt">
+		<thead>
+		    <tr>
+		    <th>會員編號:</th>
+		    <th>會員帳號:</th>
+		    <th>回報內容:</th>
+		    </tr>
+		</thead>
+		
+		<tbody>
+		<c:forEach var="bean" items="${beans}" begin="1" end="20" step="1">
+		
+		 <tr>
+			<td><input type="hidden" name="no" value="${bean.getMemberNo}">${bean.getEmail}</td>
+			<td>${bean.getMemberNo}</td>
+			<td>${bean.getEmail}</td>
+			<td>${bean.getDetail}</td>
+		</tr>
+		</c:forEach>
+		</tbody>
+	</table>
 		</div>
-	</div>
+		</div>
+		</div>
 	<!-- */*/*/*/*/*/*/*//*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/**/*/*//*/*/*/*/*/*/*/*//*/*/*/*//*///*/*/*/*/*/*/*/*/*/*/*/*/*/*/* -->
 <div class="menuHolder" >
 	<div class="menuWindow">
@@ -404,7 +426,7 @@ transform:rotate(5deg);
 					</li>
 					<li class="s2"><a href="#url"><span>Others</span></a>
 					<ul class="p3 a6">
-							<li><a href="HeroJDBC/pages/report.jsp" style="line-height:25px;">Report<br>a<br>Problem</a></li>
+							<li><a onclick="window.open('/HeroJDBC/pages/report.jsp', 'Mission', config='height=825,width=430',flowover=hidden);" style="line-height:25px;">Report<br>a<br>Problem</a></li>
 						    <li><a href="#" style="line-height:25px;">Supervisor</a></li>
 						</ul>
 					</li>
