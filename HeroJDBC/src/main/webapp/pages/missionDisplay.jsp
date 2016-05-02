@@ -21,7 +21,7 @@
     }
 </style>
 <script type="text/javascript">
-	var websocket = new WebSocket("ws://localhost:8080/HeroJDBC/chatroomServerEndpoint");
+	var websocket = new WebSocket("ws://eeit84hero.cloudapp.net:8080/HeroJDBC/chatroomServerEndpoint");
 		websocket.onmessage = function processMessage(message){
 			var jsonData = JSON.parse(message.data);
 			if(jsonData.message != null)messageTextArea.value += jsonData.message + "\n" ;
