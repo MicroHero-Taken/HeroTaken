@@ -8,7 +8,7 @@ public interface MissionDAO {
 	public abstract List<MissionBean> select();
 
 	public abstract List<MissionBean> selectName(String memberName);
-
+	
 	public abstract List<MissionBean> selectArea(String missionArea);
 
 	public abstract MissionBean insert(MissionBean bean);
@@ -26,5 +26,6 @@ public interface MissionDAO {
 
 	public abstract MissionBean selectNo(int missionNo);
 
+	public abstract List<MissionBean> selectName1(String memberName);
 
 }

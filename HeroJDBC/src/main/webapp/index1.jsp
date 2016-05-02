@@ -94,6 +94,13 @@ transform:rotate(45deg);
 -o-transform:rotate(90deg);
 transform:rotate(90deg);
 }
+.menuHolder .a6 li:nth-of-type(2) > a {background:#0000AA;
+-webkit-transform:rotate(45deg);
+-moz-transform:rotateZ(45deg);
+-ms-transform:rotate(45deg);
+-o-transform:rotate(45deg);
+transform:rotate(45deg);
+}
 
 /*------------------------------------------------------------------------------*/
 .menuHolder .a5 li:nth-of-type(2) > a {background:#0000AA; /*商城*/
@@ -472,9 +479,11 @@ $(".menuHolder").click(function(){   //滑入上方白條後=收
 					</li>
 					<li class="s2"><a href="#"><span>Missions</span></a>
 					<ul class="p3 a4">
+
 							<li><a id="m" href="#" onclick="window.open('/HeroJDBC/pages/mission.jsp', 'Mission', config='height=825,width=430',flowover=hidden);" style="line-height:25px;">Release Mission</a></li>
 							<li><a style="line-height:25px;" href="/HeroJDBC/missionMem.do">Accept Mission</a></li>
 							<li><a href="/HeroJDBC/pages/search.jsp" style="line-height:25px;">Search For Mission</a></li>
+
 						</ul>
 					</li>
 					<li class="s2"><a href="#" style="line-height:25px;"><span>Shopping<br>Center</span></a>
@@ -484,9 +493,11 @@ $(".menuHolder").click(function(){   //滑入上方白條後=收
 					</li>
 					<li class="s2"><a href="#url"><span>Others</span></a>
 					<ul class="p3 a6">
+
 							<li><a href="HeroJDBC/pages/report.jsp" style="line-height:25px;">Report<br>a<br>Problem</a></li>
 						    <li><a href="/HeroJDBC/pages/backend.jsp" style="line-height:25px;">Supervisor</a></li>
 						
+
 						</ul>
 					</li>
 				</ul>

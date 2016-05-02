@@ -1,6 +1,7 @@
 package _08MissionMem;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -31,22 +32,20 @@ public class MissionMemDAO_JDBC implements MissionMemDAO{
 	
 	public static void main(String[] args) {
 		MissionMemDAO_JDBC dao = new MissionMemDAO_JDBC();
-		List<MissionMemBean> bean = dao.select();
+		List<MissionMemBean> bean = dao.selectNO_2(1);
+		System.out.println(bean);
 	}
 
-	// private static final String SELECT_ALL =
-	// "select mm.missionNo, m.memberNo, m.nickName, m.gender, m.experience from MissionMem mm  FULL OUTER JOIN Member m ON mm.memberNo = m.memberNo";
-	private static final String SELECT_ALL = "SELECT MissionStatus.missionStatus, Mission.*, Member.given_name"
+private static final String SELECT_ALL = "SELECT MissionStatus.missionStatus, Mission.*, Member.given_name"
 											+" FROM Member INNER JOIN"
 											+" Mission ON Member.memberNo = Mission.memberNo INNER JOIN"
 											+" MissionStatus ON Mission.missionStatusNo = MissionStatus.missionStatusNo"
-											+" WHERE MissionStatus.missionStatusNo != 3";
-
+											+" WHERE MissionStatus.missionStatusNo =1";
+	@Override
 	public List<MissionMemBean> select() {
 		List<MissionMemBean> result = null;
 		try (
-//				Connection conn = DriverManager.getConnection(URL, USERNAME,
-//				PASSWORD);
+				//Connection conn = DriverManager.getConnection(URL, USERNAME,PASSWORD);
 				Connection conn = dataSource.getConnection();
 				PreparedStatement stmt = conn.prepareStatement(SELECT_ALL);) {
 
@@ -76,5 +75,92 @@ public class MissionMemDAO_JDBC implements MissionMemDAO{
 		}
 		return result;
 	}
+//	=====================================================================================================
+	private static final String SELECT_BY_NO_AND_3 = "SELECT	Mission.*, Member.given_name, MissionStatus.missionStatus"
+														+" FROM	Member INNER JOIN"
+														+" Mission ON Member.memberNo = Mission.memberNo INNER JOIN"
+														+" MissionStatus ON Mission.missionStatusNo = MissionStatus.missionStatusNo"
+														+" WHERE Mission.memberNo=? and Mission.missionStatusNo=3"; 
+	@Override
+	public List<MissionMemBean> selectNO_3(int memberNo){
+		List<MissionMemBean> result = null;
+		ResultSet rset = null;
+		try (	//Connection conn = DriverManager.getConnection(URL,USERNAME,PASSWORD);
+				Connection conn = dataSource.getConnection();
+				PreparedStatement pstmt = conn.prepareStatement(SELECT_BY_NO_AND_3);
+				){
+			pstmt.setInt(1, memberNo);
+			rset = pstmt.executeQuery();
+			result = new ArrayList<MissionMemBean>();
+			while(rset.next()){
+				MissionMemBean bean = new MissionMemBean();
+				bean.setMissionNo(rset.getInt("missionNo"));
+				bean.setMissionTitle(rset.getString("missionTitle"));
+				bean.setMissionDesc(rset.getString("missionDesc"));
+				bean.setGiven_name(rset.getString("given_name"));
+				bean.setMissionPeople(rset.getInt("missionPeople"));
+				bean.setMissionGender(rset.getString("missionGender"));
+				bean.setMissionExcuteTime(rset.getTimestamp("missionExcuteTime"));
+				bean.setMissionArea(rset.getString("missionArea"));
+				bean.setAddress(rset.getString("address"));
+				bean.setMissionStrt(rset.getTimestamp("missionStrt"));
+				bean.setMissionEnd(rset.getTimestamp("missionEnd"));
+				bean.setMissionStatusNo(rset.getInt("missionStatusNo"));
+				bean.setMissionStatus(rset.getString("missionStatus"));
+				result.add(bean);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+//	=====================================================================================================
+	private static final String SELECT_BY_NO_AND_2 = "SELECT	Mission.*, Member.given_name, MissionStatus.missionStatus"
+													+" FROM	Member INNER JOIN"
+													+" Mission ON Member.memberNo = Mission.memberNo INNER JOIN"
+													+" MissionStatus ON Mission.missionStatusNo = MissionStatus.missionStatusNo"
+													+" WHERE Mission.memberNo=? and Mission.missionStatusNo=2";
 
+	@Override
+	public List<MissionMemBean> selectNO_2(int memberNo) {
+		List<MissionMemBean> result = null;
+		ResultSet rset = null;
+		try (   //Connection conn =DriverManager.getConnection(URL,USERNAME,PASSWORD);
+				Connection conn = dataSource.getConnection();
+				PreparedStatement pstmt = conn.prepareStatement(SELECT_BY_NO_AND_2);
+				){
+			pstmt.setInt(1, memberNo);
+			rset = pstmt.executeQuery();
+			result = new ArrayList<MissionMemBean>();
+			while (rset.next()) {
+				MissionMemBean bean = new MissionMemBean();
+				bean.setMissionNo(rset.getInt("missionNo"));
+				bean.setMissionTitle(rset.getString("missionTitle"));
+				bean.setMissionDesc(rset.getString("missionDesc"));
+				bean.setGiven_name(rset.getString("given_name"));
+				bean.setMissionPeople(rset.getInt("missionPeople"));
+				bean.setMissionGender(rset.getString("missionGender"));
+				bean.setMissionExcuteTime(rset
+						.getTimestamp("missionExcuteTime"));
+				bean.setMissionArea(rset.getString("missionArea"));
+				bean.setAddress(rset.getString("address"));
+				bean.setMissionStrt(rset.getTimestamp("missionStrt"));
+				bean.setMissionEnd(rset.getTimestamp("missionEnd"));
+				bean.setMissionStatusNo(rset.getInt("missionStatusNo"));
+				bean.setMissionStatus(rset.getString("missionStatus"));
+				result.add(bean);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+	
+//	=====================================================================================================
+
+	
+	
+	
+	
+	
 }

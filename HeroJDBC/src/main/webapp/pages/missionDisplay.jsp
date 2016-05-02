@@ -36,7 +36,7 @@
          }
 </style>
 <script type="text/javascript">
-	var websocket = new WebSocket("ws://localhost:8080/HeroJDBC/chatdoomServerEndpoint");
+	var websocket = new WebSocket("ws://eeit84hero.cloudapp.net:8080/HeroJDBC/chatroomServerEndpoint");
 		websocket.onmessage = function processMessage(message){
 			var jsonData = JSON.parse(message.data);
 			if(jsonData.message != null)messageTextArea.value += jsonData.message + "\n" ;
@@ -83,10 +83,10 @@
     </tr>
 </table>
 </div>
-<div class=chat>
-	<mark style="background:white;font-weight:bold;font-size:150%;">UserName: ${username } </mark><br>
-	<textarea id="messageTextArea" readonly="readonly" rows="30%" cols="33%"></textarea><br>
-	<input 	type="text" id="messageText" size="24"   onkeydown = "if (event.keyCode == 13) document.getElementById('btn').click()"  />
+<div>
+	<mark>UserName: ${username} </mark><br>
+	<textarea id="messageTextArea" readonly="readonly" rows="12" cols="26"></textarea><br>
+	<input 	type="text" id="messageText" size="19"   onkeydown = "if (event.keyCode == 13) document.getElementById('btn').click()"  />
 	<input	type="button" id="btn" value="Send" onclick="sendMessage()"  />
 </div>
 </body>

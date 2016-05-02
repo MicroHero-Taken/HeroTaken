@@ -9,8 +9,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import _01member.MemberBean;
 import _05mission.MissionBean;
 import _05mission.MissionService;
+import _11missionMem02.MissionMem02Service;
+import _11missionMem02.MissionMemBean02;
 
 @WebServlet("/AccessMission")
 public class AccessMission extends HttpServlet {
@@ -32,7 +35,22 @@ public class AccessMission extends HttpServlet {
 		MissionBean missionBean = new MissionBean();
 		MissionService missionService = new MissionService();
 		missionBean = missionService.selectByNo(missionNo);
-		System.out.println("ACC-missionBean= " +missionBean);
+
+		//System.out.println("ACC-missionBean= " +missionBean);
+		
+		//當前會員
+		HttpSession httpSession = request.getSession();
+		MemberBean bean = (MemberBean)httpSession.getAttribute("Login");
+		int memberNo = bean.getMemberNo();
+		//新增至missionMem
+		MissionMem02Service missionMem02Service = new MissionMem02Service();
+		MissionMemBean02 missionMemBean02 = new MissionMemBean02(missionNo,memberNo);
+		missionMem02Service.insert(missionMemBean02);
+		//更改任務狀態為"執行中"
+		MissionBean missionBean2 = new MissionBean(missionNo,2);
+		missionService.updateStatus(missionBean2);
+		
+		
 		HttpSession session = request.getSession();
 		session.setAttribute("mission",missionBean);
 		

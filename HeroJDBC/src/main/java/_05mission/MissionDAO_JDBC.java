@@ -14,6 +14,9 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
+import _08MissionMem.MissionMemBean;
+import _08MissionMem.MissionMemDAO_JDBC;
+
 
 
 public class MissionDAO_JDBC implements MissionDAO {
@@ -34,16 +37,17 @@ public class MissionDAO_JDBC implements MissionDAO {
 public static void main(String[] args){
 	MissionDAO dao = new MissionDAO_JDBC();
 	List<MissionBean> beans = dao.select();
-	System.out.println(beans);
+//	System.out.println(beans);
 	
 	List<MissionBean> beans2 = dao.selectName("Zack");
-	System.out.println(beans2);
+//	System.out.println(beans2);
 	
 	List<MissionBean> beans3 = dao.selectArea("台北市大安區");
-	System.out.println(beans3);
+//	System.out.println(beans3);
 	MissionBean beanssss=dao.selectByMD("摳尼基挖!");
-	System.out.println(beanssss);
+//	System.out.println(beanssss);
 	
+	List<MissionBean> bean4 = dao.selectName1("caca");
 	
 //	MissionBean bean = new MissionBean();
 //	bean.setMemberNo(3);
@@ -213,6 +217,54 @@ public static void main(String[] args){
 		return result;
 	}
 //	----------------------------------------------------------------------------------------------------------
+	private static final String SELECT_BY_NAME1 = "SELECT Member.memberName, Mission.missionTitle, Mission.missionDesc, Mission.missionPeople, Mission.missionStrt, Mission.missionExcuteTime, Mission.address, MissionStatus.missionStatus"
+			+ " FROM Member INNER JOIN Mission ON Member.memberNo = Mission.memberNo"
+			+ " INNER JOIN MissionStatus ON Mission.missionStatusNo = MissionStatus.missionStatusNo"
+			+ " WHERE memberName = ?;";
+
+	public List<MissionBean> selectName1(String memberName){
+		List<MissionBean> result = null;
+		ResultSet rset = null;
+		try(
+//				Connection conn = DriverManager.getConnection(URL,USERNAME,PASSWORD);
+				Connection conn = dataSource.getConnection();
+				PreparedStatement pstmt = conn.prepareStatement(SELECT_BY_NAME1)
+				){
+		
+		pstmt.setString(1, memberName);
+		rset = pstmt.executeQuery();
+		result = new ArrayList<MissionBean>();
+		while(rset.next()){
+			MissionBean bean = new MissionBean();
+			bean.setMemberName(rset.getString("memberName"));
+			bean.setMissionTitle(rset.getString("missionTitle"));
+			bean.setMissionDesc(rset.getString("missionDesc"));
+			bean.setMissionPeople(rset.getInt("missionPeople"));
+			bean.setMissionStrt(rset.getDate("missionStrt"));
+			bean.setMissionExcuteTime(rset.getString("missionExcuteTime"));
+			bean.setAddress(rset.getString("address"));
+			bean.setMissionStatus(rset.getString("missionStatus"));
+//			bean.setGift(rset.getBytes("gift"));
+//			bean.setRewardCoin(rset.getInt("rewardCoin"));
+			result.add(bean);
+//			System.out.println(bean);
+		}
+		
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			if (rset!=null){
+				try {
+					rset.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			}
+		return result;
+	}
+//	----------------------------------------------------------------------------------------------------------
 	private static final String SELECT_BY_AREA = "SELECT Mission.*, MissionStatus.missionStatus, MissionReward.fileName, MissionReward.gift, MissionReward.describe,  MissionReward.rewardCoin, Member.memberNo AS Expr1, Member.memberName"
 			+" FROM Member INNER JOIN"
 			+" Mission ON Member.memberNo = Mission.memberNo INNER JOIN"
@@ -354,7 +406,7 @@ public static void main(String[] args){
 				result.setLongitude(bean.getLongitude());
 				
 				if(i == 1){
-					System.out.println(result);
+//					System.out.println(result);
 					return result;
 				}
 			}

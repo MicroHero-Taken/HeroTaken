@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/missionMem.do")
 public class MissionMemServlet extends HttpServlet{
 	private static final long serialVersionUID = 1L;
-	private MissionMemService missionMemService =new MissionMemService();;
+	private MissionMemService missionMemService =new MissionMemService();
 	public MissionMemServlet(){
 		
 		
