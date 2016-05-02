@@ -62,13 +62,13 @@ input, textarea {
 
 
 
-		<div>
-			<label for="">commentary:</label> 
-				<input
-					data-progression type="text"
-					data-helper="Tracks users progress when filling in forms"
-					name="commentary" value="" placeholder="">
-		</div>
+<!-- 		<div> -->
+<!-- 			<label for="">commentary:</label>  -->
+<!-- 				<input -->
+<!-- 					data-progression type="text" -->
+<!-- 					data-helper="Tracks users progress when filling in forms" -->
+<!-- 					name="commentary" value="" placeholder=""> -->
+<!-- 		</div> -->
 
 		<div id="demo5" class="demo" style="display:block; margin:10px; padding:10px; ">
 
@@ -76,7 +76,7 @@ input, textarea {
 		
 		</div>
 		<div>
-			<input type="submit" class="button" name="" value="OK !"
+			<input id="ok" type="submit" class="button" name="" value="OK !"
 				placeholder="" >
 		</div>
 
