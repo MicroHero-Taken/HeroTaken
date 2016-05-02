@@ -28,7 +28,7 @@ public class MissionMemServlet extends HttpServlet{
 		MissionMemBean bean = new MissionMemBean();
 		List<MissionMemBean> result = missionMemService.select();
 
-		if(result!=null && equals("true")) {
+		if(result!=null) {
 			HttpSession session = request.getSession();
 			session.setAttribute("beans", result);
 			request.getRequestDispatcher(

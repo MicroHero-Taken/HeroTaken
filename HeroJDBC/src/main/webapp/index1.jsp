@@ -365,7 +365,7 @@ form{margin:0%;paddind:0%;background:url(${pageContext.request.contextPath}/imag
                 	
                 	var acmissionpage = "http://www.wibibi.com/"+data.MissionNo;
                 	
-                	infoWindow.setContent('<div style = "width:200px;min-height:40px">' + '任務名稱: '  + data.MissionTitle  + '<br>' + '發起人: ' + data.MemberName + '<br>' + '需求人數: ' + data.MissionPeople + '<br>' + '開始時間: ' + data.MissionStrt + '<br>' + '任務說明: ' + data.MissionDesc + '<br>' + '<input type="button" value="接受任務" onclick="window.location.replace(\''+ acmissionpage + '\')">' + '</div>');
+                	infoWindow.setContent('<div style = "width:200px;min-height:40px">' + '任務名稱: '  + data.MissionTitle  + '<br>' + '發起人: ' + data.MemberName + '<br>' + '需求人數: ' + data.MissionPeople + '<br>' + '需求性別: ' + data.MissionGender + '<br>' + '開始時間: ' + data.MissionStrt + '<br>' + '任務說明: ' + data.MissionDesc + '<br>' + '<input type="button" value="接受任務" onclick="window.location.replace(\''+ acmissionpage + '\')">' + '</div>');
                     infoWindow.open(map, marker);
                 });
             })(marker, data);
@@ -492,7 +492,7 @@ $(".menuHolder").click(function(){   //滑入上方白條後=收
 					<li class="s2"><a href="#"><span>Mission Area</span></a>
 					<ul class="p3 a4">
 							<li><a id="m" href="#" onclick="window.open('pages/mission.jsp', 'Mission', config='height=825,width=430',flowover=hidden);" style="line-height:25px;">Publish Mission</a></li>
-							<li><a href="missionMem.do?accessMission=true" style="line-height:25px;">Accept Mission</a></li>
+							<li><a href="<c:url value="/missionMem.do?" />" style="line-height:25px;">Accept Mission</a></li>
 							<li><a href="pages/search.jsp" style="line-height:25px;">Inquire Mission</a></li>
 						</ul>
 					</li>
