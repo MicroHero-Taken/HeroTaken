@@ -46,11 +46,15 @@ public class SearchServlet extends HttpServlet {
 		MemberBean bean = (MemberBean)httpSession.getAttribute("Login");
 		int memberNo = bean.getMemberNo();
 		
-		List<MissionMemBean> beans1 = missionMemService.slectNO_3(memberNo);
+		List<MissionMemBean> beans3 = missionMemService.slectNO_3(memberNo);
 		List<MissionMemBean> beans2 = missionMemService.slectNO_2(memberNo);
-		request.setAttribute("mission3", beans1);
-		request.setAttribute("mission2", beans2);
-
+		
+//		System.out.println("beans1= " +beans3);
+//		System.out.println("beans2= " +beans2);
+		HttpSession session1 = request.getSession();
+		session1.setAttribute("mission2", beans2);
+		HttpSession session2 = request.getSession();
+		session2.setAttribute("mission3", beans3);
 		
 		String contextPath = request.getContextPath();
 		response.sendRedirect(contextPath + "/pages/search.jsp");

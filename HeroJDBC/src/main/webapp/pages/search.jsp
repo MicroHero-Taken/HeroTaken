@@ -65,9 +65,9 @@ input, textarea {
 			</tr>
 		</thead>
 		<tbody>
-				<c:forEach var="mission2" items="${ mission2 }">
+				<c:forEach var="mission2" items="${mission2}">
 				<tr>
-					<td>${mission2.No}</td>
+					<td>${mission2.missionNo}</td>
 					<td>${mission2.given_name }</td>
 					<td>${mission2.missionTitle }</td>
 					<td>${mission2.missionDesc }</td>
@@ -98,19 +98,19 @@ input, textarea {
 			</tr>
 		</thead>
 		<tbody>
-				
+				<c:forEach var="mission3" items="${mission3}">
 				<tr>
-					<td>1</td>
-					<td>2</td>
-					<td>3</td>
-					<td>4</td>
-					<td>5</td>	
-					<td>6</td>
-					<td>7</td>
-					<td>8</td>
+					<td>${mission3.missionNo}</td>
+					<td>${mission3.given_name }</td>
+					<td>${mission3.missionTitle }</td>
+					<td>${mission3.missionDesc }</td>
+					<td>${mission3.missionPeople }</td>	
+					<td>${mission3.missionExcuteTime }</td>
+					<td>${mission3.missionArea }</td>
+					<td>${mission3.missionStatus}</td>
 					<td></td>
 				</tr>
-				
+				</c:forEach>	
 		</tbody>
 </table>
 
