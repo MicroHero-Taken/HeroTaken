@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -230,7 +231,7 @@ transform:rotate(5deg);
 	}
 	ul.tabs li {
 		float: left;
-		width:24.9%;
+		width:33.24%;
 		height: 83px;
 		line-height: 83px;
 		overflow: hidden;
@@ -272,18 +273,7 @@ transform:rotate(5deg);
 		margin: 0 0 20px;
 	}
 </style>
-<style type="text/css">
-#IH{}
-#heroNo {background-color:rgba(0,0,0,0.7);color:#26FFD9;Font-family:Meiryo; font-size:20px;font-weight:bold;position:absolute; top:25%;left:10%;}
-#heroName {background-color:rgba(0,0,0,0.8);color:#80FF80;Font-family:Meiryo; font-size:20px;font-weight:bold;position:absolute; top:45%;left:10%;}
-#heroPrice {background-color:rgba(0,0,0,0.7);color:#D9FF26;Font-family:Meiryo; font-size:20px;font-weight:bold;position:absolute; top:65%;left:10%;}
-#skin1 {color:#FF2E1A;font-size:1.5em;position:absolute;font-weight:bold;float:right; top:15%;right:10%;} 
-#skin2 {color:#FF2640;font-size:1.5em;position:absolute;font-weight:bold;float:right; top:30%;right:15%;} 
-#skin3 {color:#FF1F66;font-size:1.5em;position:absolute;font-weight:bold;float:right; top:45%;right:20%;} 
-#skin4 {color:#FF178C;font-size:1.5em;position:absolute;font-weight:bold;float:right; top:60%;right:25%;} 
-#skin5 {color:#FF0FB2;font-size:1.5em;position:absolute;font-weight:bold;float:right; top:75%;right:30%;} 
-#button {width:380px;height:40px;bottom:1.875em;float:right;right:5%;position:absolute;}
-</style>
+
 <script type="text/javascript">
 	$(function(){
 		// 預設顯示第一個 Tab
@@ -309,68 +299,14 @@ transform:rotate(5deg);
 		});
 	});
 </script>
-<script type="text/javascript">
-                                                                  //顯示上傳圖
-$(function()
-		{
-			$("#imgInp1").change(function(){
-				if (this.files && this.files[0]) {
-					var reader = new FileReader();			
-					reader.onload = function (e) {
-						$('#blah1').attr('src', e.target.result);
-					}
-					reader.readAsDataURL(this.files[0]);
-				}
-			});
-		}) ;
-		$(function()
-				{
-					$("#imgInp2").change(function(){
-						if (this.files && this.files[0]) {
-							var reader = new FileReader();			
-							reader.onload = function (e) {
-								$('#blah2').attr('src', e.target.result);
-							}				
-							reader.readAsDataURL(this.files[0]);
-						}
-					});
-				}) ;
-		$(function()
-				{
-					$("#imgInp3").change(function(){
-						if (this.files && this.files[0]) {
-							var reader = new FileReader();	
-							reader.onload = function (e) {
-								$('#blah3').attr('src', e.target.result);
-							}	
-							reader.readAsDataURL(this.files[0]);
-						}
-					});
-				}) ;
-		$(function()
-				{
-					$("#imgInp4").change(function(){
-						if (this.files && this.files[0]) {
-							var reader = new FileReader();	
-							reader.onload = function (e) {
-								$('#blah4').attr('src', e.target.result);
-							}	
-							reader.readAsDataURL(this.files[0]);
-						}
-					});
-				}) ;
-		$(function()
-				{
-					$("#imgInp5").change(function(){
-						if (this.files && this.files[0]) {
-							var reader = new FileReader();	
-							reader.onload = function (e) {
-								$('#blah5').attr('src', e.target.result);
-							}
-							reader.readAsDataURL(this.files[0]);
-						}
-					});
-				}) ;
+
+ <script type="text/javascript">
+	$(document).ready(function() {
+		$("#testtt").DataTable({
+			"pageLenght":5,
+			"lengthMenu":[10 , 20, 25, 30 ]
+		});
+	});
 </script>
 </head>
 
@@ -378,110 +314,98 @@ $(function()
 	
 	<div class="abgne_tab">
 		<ul class="tabs">
-			<li><a href="#tab1">商城管理</a></li>
-			<li><a href="#tab2">任務管理</a></li>
-			<li><a href="#tab3">會員帳戶</a></li>
-			<li><a href="#tab4">回報系統</a></li>
+			<li><a href="#tab1">任務管理</a></li>
+			<li><a href="#tab2">商城管理</a></li>
+			<li><a href="#tab3">回報系統</a></li>
 		</ul>
 
 		<div class="tab_container">
+			
+				
 			<div id="tab1" class="tab_content">
-				<h2>商城管理</h2>
-				<div style="position:absolute;left:2%;"><h3>英雄管理</h3></div><!-- 11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111 -->
-			    
-			    <h1 style="color:white">${ErrMsg.action}</h1>
-		<form action="<c:url value='/InsertHero'/>" method="post" enctype="multipart/form-data">
-
-			<div id="heroNo">● 英雄編號:<input type="text"  name="heroNo"  size=18px style="font-family:Microsoft JhengHei; value="${param.heroNo}"  />
-	        <font color='red' size='-1'>${ErrMsg.errHeroNo}</font></div>
-	                    
-	        <div id="heroName">● 英雄名稱:<input type="text"  name="heroName"  size=18px style="font-family:Microsoft JhengHei; value="${param.heroName}"  />
-	        <font color='red' size='-1'>${ErrMsg.errHeroName}</font></div>
-	                    
-	        <div id="heroPrice">● 英雄價格:<input type="text" name="heroPrice"  size=18px style="font-family:Microsoft JhengHei; value="${param.heroPrice}"  />
-	        <font color='red' size='-1'>${ErrMsg.errHeroPrice}</font></div>
-
-	                    
-	                    
-			<div id="skin1">● 英雄SKIN1:
-			<input type="file" name="myfile1" id="imgInp1" size="30" style="width: 200px;"/><img id="blah1" src="#"  width="50" height="50"/></div>
-	                    
-			<div id="skin2">● 英雄SKIN2:
-			<input type="file" name="myfile2" id="imgInp2" size="30" style="width: 200px;"/><img id="blah2" src="#"  width="50" height="50"/></div>
-						
-			<div id="skin3">● 英雄SKIN3:
-			<input type="file" name="myfile3" id="imgInp3" size="30" style="width: 200px;"/><img id="blah3" src="#"  width="50" height="50"/></div>
-						
-			<div id="skin4">● 英雄SKIN4:
-			<input type="file" name="myfile4" id="imgInp4" size="30" style="width: 200px;"/><img id="blah4" src="#"  width="50" height="50"/></div>
-						
-			<div id="skin5">● 英雄SKIN5:
-			<input type="file" name="myfile5" id="imgInp5" size="30" style="width: 200px;"/><img id="blah5" src="#"  width="50" height="50"/></div>
-		    
-			
-			<br>
-			
-				<div id="button"><center>
-				<input type="submit" name="hero" value="Insert" style="width:120px;height:40px;border:3px #D9408C double;font-size:16px;font-weight:bold;color:#0085CC;background-color:#FFFF4D;">
-				<input type="submit" name="hero" value="Update" style="width:120px;height:40px;border:3px #D9408C double;font-size:16px;font-weight:bold;color:#00B280;background-color:#FFFF4D;">
-				<input type="submit" name="hero" value="Delete"" style="width:120px;height:40px;border:3px #D9408C double;font-size:16px;font-weight:bold;color:#00E033;background-color:#FFFF4D;">
-				</center></div>
-			</form>
-			    </div>
-			    
-			<div id="tab2" class="tab_content">
 				<h2>任務管理</h2>
 				<div style="position:absolute;left:2%;"><h3>刪除任務</h3></div><!-- 22222222222222222222222222222222222222222222222222222222222222222222222222222222222222222 -->
+	<br><br><br><br>
+	<table id="testtt">
+		<thead>
+		<tr>
+		    <th>任務No:</th>
+		    <th>任務:</th>
+		    <th>內容:</th>
+		    <th>發起人:</th>
+	    	<th>人數要求:</th>
+	    	<th>執行時間:</th>
+		    <th>地點:</th>
+	    	<th>任務狀態:</th>
+		</tr>
+		</thead>
+		<tbody>
+		<c:forEach var="bean" items="${beans}" begin="1" end="20" step="1">
+		<tr>
+			<td><input type="hidden" name="no" value="${bean.missionNo}">${bean.missionNo}</td>
+			<td>${bean.missionTitle}</td>
+			<td>${bean.missionDesc}</td>
+			<td>${bean.given_name}</td>
+			<td>${bean.missionPeople}</td>	
+			<td>${bean.missionExcuteTime}</td>
+			<td>${bean.missionArea}</td>
+			<td>${bean.missionStatus}</td>
+			<td><input type="submit" value="Delete"></td>
+		</tr>
+		</c:forEach>
+		</tbody>
+	</table>
 				</div>
+			<div id="tab2" class="tab_content">
+			<h2>商城管理</h2>
+				<div style="position:absolute;left:2%;"><h3>英雄管理</h3></div><!-- 11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111 -->
+			    <br><br><br><br>
+			    <input type="button" value="前往管理" onclick="location.href='/HeroJDBC/pages/insertHero.jsp'">
+			    </div>
+			    
 			<div id="tab3" class="tab_content">
-				<h2>會員帳戶</h2>
-				<div style="position:absolute;left:2%;"><h3>更改造型</h3></div><!-- 33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333 -->
-				<div style="position:absolute;left:52%;"><h3>會員停權</h3></div>
-			</div>
-			<div id="tab4" class="tab_content">
 				<h2>回報系統</h2>
 				<div style="position:absolute;left:2%;"><h3>回報處理</h3></div><!-- 44444444444444444444444444444444444444444444444444444444444444444444444444444444444444444 -->
 				</div>
 		</div>
 	</div>
-	
 	<!-- */*/*/*/*/*/*/*//*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/**/*/*//*/*/*/*/*/*/*/*//*/*/*/*//*///*/*/*/*/*/*/*/*/*/*/*/*/*/*/* -->
 <div class="menuHolder" >
 	<div class="menuWindow">
 		<ul class="p1">
 			<li class="s1"><a href="#url">Menu</a>
 				<ul class="p2" style="line-height:20px;">
-					<li class="s2"><a href='<c:url value="/index1.jsp" />'><span>Home</span></a>
+					<li class="s2"><a href='<c:url value="/index1.jsp" />'>Home</a>
 					<ul class="p3 a2">
-							<li><a style="line-height:20px;" href="#">Name: ${memberInfo.memberName}</a></li><!--名字 -->
-							<li><a href="#">$: ${memberInfo.coin}</a></li>
-							<li><a href="#">Rating: ${memberInfo.rating}</a></li>
-							<li><a href='<c:url value="AboutUs/starwars.jsp" />'>AboutUs</a></li>
-							<li><a href='<c:url value="/secure/logOut.jsp" />'>LogOut</a></li>
+							<li><a style="line-height:20px;" href="#">Name: ${Login.memberName}</a></li><!--名字 -->
+							<li><a href="#">$: ${Login.coin}</a></li>
+							<li><a href="#">Rating: ${Login.rating}</a></li>
+							<li><a href="/HeroJDBC/AboutUs/CAST.jsp">AboutUs</a></li>
+							<li><a href="/HeroJDBC/secure/logOut.jsp">LogOut</a></li>
 						</ul>
 					</li>
-					<li class="s2"><a href="#"><span>Members Only</span></a>
+					<li class="s2"><a href="#"><span>Members</span></a>
 					<ul class="p3 a3">
-							<li><a style="line-height:20px;" href='<c:url value="pages/memberHero.jsp" />'>Modify<br>Skin</a></li>
-							<li><a style="line-height:20px;" href='<c:url value="secure/memberchange.jsp" />'>Modify<br>Data</a></li>
+							<li><a style="line-height:20px;" href="/HeroJDBC/pages/memberHero.jsp">Uniforms</a></li>
+							<li><a style="line-height:20px;" href="/HeroJDBC/secure/memberchange.jsp">Edit<br>Profile</a></li>
 						</ul>
 					</li>
-					<li class="s2"><a href="#"><span>Mission Area</span></a>
+					<li class="s2"><a href="#"><span>Missions</span></a>
 					<ul class="p3 a4">
-							<li><a id="m" href="#" onclick="window.open('pages/mission.jsp', 'Mission', config='height=825,width=430',flowover=hidden);" style="line-height:25px;">Publish Mission</a></li>
-							<li><a href='<c:url value="/missionMem.do?" />' style="line-height:25px;">Accept Mission</a></li>
-							<li><a href="#" style="line-height:25px;">Inquire Mission</a></li>
+							<li><a id="m" href="#" onclick="window.open('/HeroJDBC/pages/mission.jsp', 'Mission', config='height=825,width=430',flowover=hidden);" style="line-height:25px;">Release Mission</a></li>
+							<li><a style="line-height:25px;" href="/HeroJDBC/missionMem.do">Accept Mission</a></li>
+							<li><a href="../pages/search.jsp" style="line-height:25px;">Search For Mission</a></li>
 						</ul>
 					</li>
-					<li class="s2"><a href="#"><span>Hero Market</span></a>
+					<li class="s2"><a href="#" style="line-height:25px;"><span>Shopping<br>Center</span></a>
 					<ul class="p3 a5">
-							<li><a href="pages/shop.jsp">Buy Hero</a></li>
+							<li><a href="/HeroJDBC/pages/shop.jsp">Purchase<br>Heros</a></li>
 						</ul>
 					</li>
-					<li class="s2"><a href="#url" style="line-height:20px;"><span>Others</span></a>
+					<li class="s2"><a href="#url"><span>Others</span></a>
 					<ul class="p3 a6">
-							<li><a href="pages/report.jsp" style="line-height:25px;">Report</a></li>
-							<li><a href="#" style="line-height:25px;">Administrator<br>Only</a></li>
+							<li><a href="HeroJDBC/pages/report.jsp" style="line-height:25px;">Report<br>a<br>Problem</a></li>
+						    <li><a href="/HeroJDBC/pages/backend.jsp" style="line-height:25px;">Supervisor</a></li>
 						</ul>
 					</li>
 				</ul>
