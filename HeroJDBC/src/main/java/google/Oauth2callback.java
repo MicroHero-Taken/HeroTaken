@@ -42,9 +42,9 @@ public class Oauth2callback extends HttpServlet {
             // format parameters to post
             String urlParameters = "code="
                     + code
-                    + "&client_id=226465592315-jnveboc4pda9qkp3kms665bu2n3rebp7.apps.googleusercontent.com"
-                    + "&client_secret=MA_xrnwOhIvYO4QhRG2l9z_n"
-                    + "&redirect_uri=http://127.0.0.1:8080/HeroJDBC/Oauth2callback"
+                    + "&client_id=741121189982-s31fn0jqa15u6nlfsuq5ug1r0m9hk0qo.apps.googleusercontent.com"
+                    + "&client_secret=-ROikzFdoq_6_4AKqheTHpLI"
+                    + "&redirect_uri=http://eeit84hero.cloudapp.net:8080/HeroJDBC/Oauth2callback"
                     + "&grant_type=authorization_code";
             
             //post parameters
