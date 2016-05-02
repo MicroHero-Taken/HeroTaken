@@ -72,7 +72,7 @@ input, textarea {
 
 		<div id="demo5" class="demo" style="display:block; margin:10px; padding:10px; ">
 
-			<span class="ratyli" data-rate="" data-ratemax="5"></span>
+			<span id="rate" class="ratyli" data-rate="" data-ratemax="5"></span>
 		
 		</div>
 		<div>
@@ -90,7 +90,12 @@ input, textarea {
 	<script src="../js/jquery.ratyli.js"></script>
 	<script src="../js/demo.js"></script>
 
-	
+	<script type="text/javascript">
+	$("#rate").click(function(){
+		var rate = $("#rate").attr('data-rate');
+		console.log(rate);
+	})
+	</script>
 
 </body>
 </html>
