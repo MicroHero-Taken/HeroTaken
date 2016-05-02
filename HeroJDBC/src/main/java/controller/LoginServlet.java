@@ -64,16 +64,22 @@ public class LoginServlet extends HttpServlet {
 					sessionChatName.setAttribute("username", memberName);
 					
 					String path = request.getContextPath();
-					response.sendRedirect(path + "/index1.jsp");
+					
+					String requestURI=(String)session.getAttribute("requestURI");
+					if(requestURI!=null){
+						if(requestURI.length()==0){
+							requestURI=request.getContextPath();
+						}
+						response.sendRedirect(response.encodeRedirectURL(requestURI));
+						return;
+					}else{
+						response.sendRedirect(response.encodeRedirectURL(path + "/index1.jsp"));
+						return;
+					}				
+					
 				}
-		
 	}
-
-	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-
 		doGet(request, response);
 	}
-	
 }
