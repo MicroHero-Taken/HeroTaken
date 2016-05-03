@@ -76,7 +76,6 @@ public class LoginServlet extends HttpServlet {
 						response.sendRedirect(response.encodeRedirectURL(path + "/index1.jsp"));
 						return;
 					}				
-					
 				}
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
