@@ -325,15 +325,19 @@ form{margin:0%;paddind:0%;background:url(${pageContext.request.contextPath}/imag
         };
         var infoWindow = new google.maps.InfoWindow();
         var latlngbounds = new google.maps.LatLngBounds();
+        var initialLocation;
+        var taipei = new google.maps.LatLng(25.09108, 121.5598);
+        var browserSupportFlag =  new Boolean();
         var map = new google.maps.Map(document.getElementById("Map"), mapOptions);
 //迴圈帶出 Marker 進行多點標記 
         for (var i = 0; i < markers.length; i++) {
             var data = markers[i]
+            //標記上按鈕點選後連結網址
+            var acmissionpage = "http://www.wibibi.com/?missionNo="+data.MissionNo;
             var myLatlng = new google.maps.LatLng(data.Latitude, data.Longitude);
             var image = {
             	    url: data.icon,
             	  };
-
             var marker = new google.maps.Marker({
                 position: myLatlng,
                 map: map,
@@ -343,9 +347,6 @@ form{margin:0%;paddind:0%;background:url(${pageContext.request.contextPath}/imag
             });
             (function (marker, data) {
                 google.maps.event.addListener(marker, "mouseover", function (e) {
-                	
-                	var acmissionpage = "http://www.wibibi.com/"+data.MissionNo;
-                	
                 	infoWindow.setContent('<div style = "width:200px;min-height:40px">' + '任務名稱: '  + data.MissionTitle  + '<br>' + '發起人: ' + data.MemberName + '<br>' + '需求人數: ' + data.MissionPeople + '<br>' + '需求性別: ' + data.MissionGender + '<br>' + '開始時間: ' + data.MissionStrt + '<br>' + '任務說明: ' + data.MissionDesc + '<br>' + '<input type="button" value="接受任務" onclick="window.location.replace(\''+ acmissionpage + '\')">' + '</div>');
                     infoWindow.open(map, marker);
                 });
