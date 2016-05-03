@@ -30,7 +30,7 @@ body {
 	$(document).ready(function() {
 		$("#testtt").DataTable({
 			"pageLenght":5,
-			"lengthMenu":[10 , 20, 25, 30 ]
+			"lengthMenu":[20, 25, 30 ]
 		});
 	});
 </script>
