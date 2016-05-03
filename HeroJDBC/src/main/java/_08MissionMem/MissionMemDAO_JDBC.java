@@ -13,6 +13,8 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
+import _01member.MemberBean;
+
 
 
 public class MissionMemDAO_JDBC implements MissionMemDAO{
@@ -158,7 +160,40 @@ private static final String SELECT_ALL = "SELECT MissionStatus.missionStatus, Mi
 	
 //	=====================================================================================================
 
+	private static final String DELETE = "Delete from Mission where missionNo=?";
 	
+	@Override
+	public int delete(int number) {
+		int result = 0;
+
+		Connection conn = null;
+		PreparedStatement stmt = null;
+		try {
+			conn = dataSource.getConnection();
+			stmt = conn.prepareStatement(DELETE);
+
+			stmt.setInt(1, number);
+			result = stmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if (stmt != null) {
+				try {
+					stmt.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return result;
+	}
 	
 	
 	

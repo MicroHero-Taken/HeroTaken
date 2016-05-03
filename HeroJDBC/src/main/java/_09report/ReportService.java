@@ -19,7 +19,7 @@ public class ReportService {
 //		System.out.println("beans= " + beans);
 	}
 
-	public List<ReportBean> select(ReportBean bean){
+	public List<ReportBean> select(){
 		List<ReportBean> result = null;
 //		if(bean != null && bean.getMemberNo() != null){
 //			List<ReportBean> temp =  ReportDAO.selectMemberNo(bean.getMemberNo());

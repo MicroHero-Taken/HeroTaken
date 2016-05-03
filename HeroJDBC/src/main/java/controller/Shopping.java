@@ -91,14 +91,14 @@ public class Shopping extends HttpServlet {
 
 			//導向頁面
 			String message = " 購 買 成 功 ! ";
-//			request.setAttribute("message1", message);
-//			RequestDispatcher rd = request.getRequestDispatcher("/pages/shop.jsp");
-//			rd.forward(request, response);
+			request.setAttribute("message1", message);
+			RequestDispatcher rd = request.getRequestDispatcher("/pages/shop.jsp");
+			rd.forward(request, response);
 			
-			HttpSession session2 = request.getSession();
-			session2.setAttribute("message1", message);
-			String path = request.getContextPath();
-			response.sendRedirect(path + "/pages/shop.jsp");
+//			HttpSession session2 = request.getSession();
+//			session2.setAttribute("message1", message);
+//			String path = request.getContextPath();
+//			response.sendRedirect(path + "/pages/shop.jsp");
 		}else{
 			String message = "餘 額 不 足 ! ";
 			request.setAttribute("message2", message);

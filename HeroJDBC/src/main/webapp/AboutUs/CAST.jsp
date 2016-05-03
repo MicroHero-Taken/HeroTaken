@@ -34,7 +34,7 @@ body {
   text-transform: uppercase;
   color: #fff;
   animation: 130s credits linear;
-  animation-duration: 40s;
+  animation-duration: 20s;
 }
 
 .movie {

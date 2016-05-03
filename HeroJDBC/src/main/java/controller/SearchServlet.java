@@ -49,8 +49,8 @@ public class SearchServlet extends HttpServlet {
 		List<MissionMemBean> beans3 = missionMemService.slectNO_3(memberNo);
 		List<MissionMemBean> beans2 = missionMemService.slectNO_2(memberNo);
 		
-//		System.out.println("beans1= " +beans3);
-//		System.out.println("beans2= " +beans2);
+		System.out.println("beans1= " +beans3);
+		System.out.println("beans2= " +beans2);
 		HttpSession session1 = request.getSession();
 		session1.setAttribute("mission2", beans2);
 		HttpSession session2 = request.getSession();

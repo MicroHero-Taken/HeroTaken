@@ -474,7 +474,7 @@ $(".menuHolder").click(function(){   //滑入上方白條後=收
 
 							<li><a id="m" href="#" onclick="window.open('/HeroJDBC/pages/mission.jsp', 'Mission', config='height=825,width=430',flowover=hidden);" style="line-height:25px;">Release Mission</a></li>
 							<li><a style="line-height:25px;" href="/HeroJDBC/missionMem.do">Accept Mission</a></li>
-							<li><a href="/HeroJDBC/pages/search.jsp" style="line-height:25px;">Search For Mission</a></li>
+							<li><a href="/HeroJDBC/search.do" style="line-height:25px;">Search For Mission</a></li>
 
 						</ul>
 					</li>

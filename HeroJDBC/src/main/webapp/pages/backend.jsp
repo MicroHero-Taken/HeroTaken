@@ -276,6 +276,10 @@ transform:rotate(5deg);
 
 <script type="text/javascript">
 	$(function(){
+		
+		$('.number').hide();
+		
+		
 		// 預設顯示第一個 Tab
 		var _showTab = 0;
 		var $defaultLi = $('ul.tabs li').eq(_showTab).addClass('active');
@@ -340,18 +344,20 @@ transform:rotate(5deg);
 		</tr>
 		</thead>
 		<tbody>
-		<c:forEach var="bean" items="${beans}" begin="1" end="20" step="1">
+		<c:forEach var="mission" items="${mission}" begin="1" end="20" step="1">
+		
 		<tr>
-			<td><input type="hidden" name="no" value="${bean.missionNo}">${bean.missionNo}</td>
-			<td>${bean.missionTitle}</td>
-			<td>${bean.missionDesc}</td>
-			<td>${bean.given_name}</td>
-			<td>${bean.missionPeople}</td>	
-			<td>${bean.missionExcuteTime}</td>
-			<td>${bean.missionArea}</td>
-			<td>${bean.missionStatus}</td>
-			<td><input type="submit" value="Delete"></td>
-		</tr>
+			<td><input type="hidden" name="no" value="${mission.missionNo}">${mission.missionNo}</td>
+			<td>${mission.missionTitle}</td>
+			<td>${mission.missionDesc}</td>
+			<td>${mission.given_name}</td>
+			<td>${mission.missionPeople}</td>	
+			<td>${mission.missionExcuteTime}</td>
+			<td>${mission.missionArea}</td>
+			<td>${mission.missionStatus}</td>
+			<td><form action="/HeroJDBC/missionMemDelete.do"><input class="number" type="text" name="deleteNo" value="${mission.missionNo}"><input type="submit" value="Delete"></form></td>
+		</tr> 
+		
 		</c:forEach>
 		</tbody>
 	</table>
@@ -377,13 +383,13 @@ transform:rotate(5deg);
 		</thead>
 		
 		<tbody>
-		<c:forEach var="bean" items="${beans}" begin="1" end="20" step="1">
+		<c:forEach var="report" items="${report}" begin="1" end="20" step="1">
 		
 		 <tr>
-			<td><input type="hidden" name="no" value="${bean.getMemberNo}">${bean.getEmail}</td>
-			<td>${bean.getMemberNo}</td>
-			<td>${bean.getEmail}</td>
-			<td>${bean.getDetail}</td>
+			<td><input type="hidden" name="no" value="${report.memberNo}">${report.memberNo}</td>
+			<td>${report.memberNo}</td>
+			<td>${report.email}</td>
+			<td>${report.detail}</td>
 		</tr>
 		</c:forEach>
 		</tbody>

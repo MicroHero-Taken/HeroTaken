@@ -275,7 +275,7 @@ a {line-height:20px;}
 					<ul class="p3 a4">
 							<li><a id="m" href="#" onclick="window.open('/HeroJDBC/pages/mission.jsp', 'Mission', config='height=825,width=430',flowover=hidden);" style="line-height:25px;">Release Mission</a></li>
 							<li><a style="line-height:25px;" href="/HeroJDBC/missionMem.do">Accept Mission</a></li>
-							<li><a href="../pages/search.jsp" style="line-height:25px;">Search For Mission</a></li>
+							<li><a href="/HeroJDBC/search.do" style="line-height:25px;">Search For Mission</a></li>
 						</ul>
 					</li>
 					<li class="s2"><a href="#" style="line-height:25px;"><span>Shopping<br>Center</span></a>

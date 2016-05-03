@@ -54,4 +54,13 @@ public class MissionMemService {
 		return result;
 	}
 	
+	
+	
+//	========================================================================================
+	
+	public void delete(int number){
+		missionMemDAO.delete(number);
+	}
+	
+	
 }

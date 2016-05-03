@@ -19,4 +19,6 @@ public interface MissionMemDAO {
 	public abstract List<MissionMemBean> selectNO_3(int memberNo);
 
 	public abstract List<MissionMemBean> selectNO_2(int memberNo);
+
+	public int delete(int number);
 }
