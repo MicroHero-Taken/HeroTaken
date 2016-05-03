@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>aLLiNoNE</title>
+<title>HomePage</title>
 <script src="js/mission.js"></script> <!--發布任務 -->
 <style type="text/css">
 *{-webkit-print-color-adjust:exact;}

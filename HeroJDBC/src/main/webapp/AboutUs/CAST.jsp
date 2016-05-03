@@ -33,8 +33,8 @@ body {
   text-align: center;
   text-transform: uppercase;
   color: #fff;
-  animation: 100s credits linear infinite;
-  animation-duration: 30s;
+  animation: 130s credits linear;
+  animation-duration: 40s;
 }
 
 .movie {
@@ -60,11 +60,10 @@ body {
     top: -500%;
   }
 }
-
 </style>
 <body>
 <div class='wrapper'>
-  <div class='movie' font-weight="bold">T A K E N</div>
+  <div class='movie' font-weight="bold" style="color:orange;">T A K E N</div>
   <div class='job'>組長</div>
   <div class='name'>蘇賢庭</div>
   <div class='job'>組員</div>
@@ -78,103 +77,91 @@ body {
   <div class='job'>指導老師</div>
   <div class='name'>馬全德</div>
   <div class='job'></div>
-  <div class='name'>特別感謝 <div class='job'>教師</div></div>
+  <div class='name'>特別感謝 <div class='job'>教師群</div></div>
   <div class='job'></div>
-  <div class='name'>王憲春 老師</div>
+  <div class='name'>王憲春  邱華傑  紀宜昕</div>
   <div class='job'></div>
-  <div class='name'>邱華傑 老師</div>
+  <div class='name'>潘麗珍  蘇國鈞  吳永志</div>
   <div class='job'></div>
-  <div class='name'>紀宜昕 老師</div>
+  <div class='name'>陳銀華  劉翰卿  陳其元 </div>
   <div class='job'></div>
-  <div class='name'>潘麗珍 老師</div>
-  <div class='job'></div>
-  <div class='name'>蘇國鈞 老師</div>
-  <div class='job'></div>
-  <div class='name'>吳永志 老師</div>
-  <div class='job'></div>
-  <div class='name'>陳銀華 老師</div>
-  <div class='job'></div>
-  <div class='name'>劉翰卿 老師</div>
-  <div class='job'></div>
-  <div class='name'> 陳其元  老師</div>
-  <div class='job'></div>
-  <div class='name'>余中平  老師</div>
-  <div class='job'></div>
+   <div class='name'>余中平</div>
+     <div class='job'></div>
    <div class='name'>特別感謝 <div class='job'>行政人員</div></div>
   <div class='name'>劉菊秋 小姐</div>
   <div class='job'></div>
   <div class='name'>羅秀燕 小姐</div>
   <div class='name'>以及</div>
-  <div class='job'>01</div>
-  <div class='name'>廖千惠</div>
-  <div class='job'>02</div>
-  <div class='name'>彭煊文</div>
-  <div class='job'>03</div>
-  <div class='name'>許誌中</div>
-  <div class='job'>04</div>
-  <div class='name'>陳昱華</div>
-  <div class='job'>05</div>
-  <div class='name'>陳勃翰</div>
-  <div class='job'>06</div>
-  <div class='name'>陳冠廷</div>
-  <div class='job'>08</div>
-  <div class='name'>劉嘉澄</div>
-  <div class='job'>10</div>
-  <div class='name'>陳資文</div>
-  <div class='job'>11</div>
-  <div class='name'>林宗保</div>
-  <div class='job'>12</div>
-  <div class='name'>陳宗傑</div>
-  <div class='job'>13</div>
-  <div class='name'>蕭雅勵</div>
-  <div class='job'>14</div>
-  <div class='name'>葉婉容</div>
-  <div class='job'>15</div>
-  <div class='name'>陳穎軒</div>
-  <div class='job'>16</div>
-  <div class='name'>張博翔</div>
-  <div class='job'>18</div>
-  <div class='name'>宋申文</div>
-  <div class='job'>19</div>
-  <div class='name'>黃鉅樺</div>
-  <div class='job'>20</div>
-  <div class='name'>陳姵吟</div>
-  <div class='job'>21</div>
-  <div class='name'>司歐立文</div>
-  <div class='job'>22</div>
-  <div class='name'>陳柏安</div>
-  <div class='job'>23</div>
-  <div class='name'>張碩文</div>
-  <div class='job'>24</div>
-  <div class='name'>鄭士均</div>
-  <div class='job'>25</div>
-  <div class='name'>趙育伸</div>
-  <div class='job'>26</div>
-  <div class='name'>林昭懿</div>
-  <div class='job'>28</div>
-  <div class='name'>陳泳君</div>
-  <div class='job'>29</div>
-  <div class='name'>林澤筠</div>
-  <div class='job'>30</div>
-  <div class='name'>陳昱穎</div>
-  <div class='job'>31</div>
-  <div class='name'>張秀維</div>
-  <div class='job'>32</div>
-  <div class='name'>張庭瑜</div>
-  <div class='job'>33</div>
-  <div class='name'>陳勁宇</div>
-  <div class='job'>34</div>
-  <div class='name'>王子誠</div>
-  <div class='job'>35</div>
-  <div class='name'>吳信賢</div>
-  <div class='job'>36</div>
-  <div class='name'>林大喻</div>
-  <div class='job'>37</div>
-  <div class='name'>謝明澄</div>
-  <div class='job'>39</div>
-  <div class='name'>黃胤凱</div>
-  <div class='job'>40</div>
-  <div class='name'>林倩郁</div>
+  
+  <div class='name'><div class='job'>01</div>廖千惠</div>
+ 
+  <div class='name'><div class='job'>02</div>彭煊文</div>
+
+  <div class='name'>  <div class='job'>03</div>許誌中</div>
+
+  <div class='name'>  <div class='job'>04</div>陳昱華</div>
+
+  <div class='name'>  <div class='job'>05</div>陳勃翰</div>
+
+  <div class='name'>  <div class='job'>06</div>陳冠廷</div>
+
+  <div class='name'>  <div class='job'>08</div>劉嘉澄</div>
+
+  <div class='name'>  <div class='job'>10</div>陳資文</div>
+
+  <div class='name'>  <div class='job'>11</div>林宗保</div>
+
+  <div class='name'>  <div class='job'>12</div>陳宗傑</div>
+
+  <div class='name'>  <div class='job'>13</div>蕭雅勵</div>
+
+  <div class='name'>  <div class='job'>14</div>葉婉容</div>
+
+  <div class='name'>  <div class='job'>15</div>陳穎軒</div>
+
+  <div class='name'>  <div class='job'>16</div>張博翔</div>
+
+  <div class='name'>  <div class='job'>18</div>宋申文</div>
+
+  <div class='name'>  <div class='job'>19</div>黃鉅樺</div>
+ 
+  <div class='name'> <div class='job'>20</div>陳姵吟</div>
+
+  <div class='name'>  <div class='job'>21</div>司歐立文</div>
+
+  <div class='name'>  <div class='job'>22</div>陳柏安</div>
+
+  <div  class='name' style="color:yellow;">  <div class='job' style="color:yellow;">23</div>張碩文</div>
+
+  <div class='name'>  <div class='job'>24</div>鄭士均</div>
+
+  <div class='name'>  <div class='job'>25</div>趙育伸</div>
+
+  <div class='name'>  <div class='job'>26</div>林昭懿</div>
+
+  <div class='name'>  <div class='job'>28</div>陳泳君</div>
+
+  <div class='name'>  <div class='job'>29</div>林澤筠</div>
+
+  <div class='name'>  <div class='job'>30</div>陳昱穎</div>
+
+  <div class='name'>  <div class='job'>31</div>張秀維</div>
+
+  <div class='name'>  <div class='job'>32</div>張庭瑜</div>
+
+  <div class='name'>  <div class='job'>33</div>陳勁宇</div>
+
+  <div class='name'>  <div class='job'>34</div>王子誠</div>
+
+  <div class='name'>  <div class='job'>35</div>吳信賢</div>
+
+  <div class='name'>  <div class='job'>36</div>林大喻</div>
+
+  <div class='name'>  <div class='job'>37</div>謝明澄</div>
+
+  <div class='name'>  <div class='job'>39</div>黃胤凱</div>
+
+  <div class='name'>  <div class='job'>40</div>林倩郁</div>
 
 
 </div>

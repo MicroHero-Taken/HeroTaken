@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class MissionMemBean implements Serializable{
 	private static final long serialVersionUID = 1L;
 private Integer missionNo;
-//private Integer memberNo;
+private Integer memberNo;
 //private String nickName;
 //private String gender;
 //private Integer experience;
@@ -27,7 +27,7 @@ public MissionMemBean(Integer memberNo, String missionTitle, String given_name,
 		String missionDesc, Integer missionPeople, 
 		String missionGender, java.sql.Timestamp missionExcuteTime, String missionArea, String address, java.sql.Timestamp missionStrt, java.sql.Timestamp missionEnd, Integer missionStatusNo) {
 	super();
-//	this.memberNo = memberNo;
+	this.memberNo = memberNo;
 	this.missionTitle = missionTitle;
 	this.given_name = given_name;
 	this.missionDesc = missionDesc;
@@ -50,14 +50,14 @@ public String toString() {
 }
 
 
-//public Integer getMemberNo() {
-//	return memberNo;
-//}
-//
-//
-//public void setMemberNo(Integer memberNo) {
-//	this.memberNo = memberNo;
-//}
+public Integer getMemberNo() {
+	return memberNo;
+}
+
+
+public void setMemberNo(Integer memberNo) {
+	this.memberNo = memberNo;
+}
 
 
 public String getMissionTitle() {

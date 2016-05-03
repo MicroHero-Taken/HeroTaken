@@ -5,7 +5,7 @@
 <html>
 
     <head>
-        <title>Taken</title>
+        <title>Shopping Center</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="description" content="Merging Image Boxes with jQuery" />
         <meta name="keywords" content="jquery, merge, effect, images, photos, animation, background-image"/>

@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-<title>利用 jQuery 來製作網頁頁籤(Tab)</title>
+<title>管理者專用</title>
 <style type="text/css">
     body {flowover:hidden;background:url(${pageContext.request.contextPath}/Img/lighting.jpg);}
     /*==============================================================================================================*/
@@ -231,7 +231,7 @@ transform:rotate(5deg);
 	}
 	ul.tabs li {
 		float: left;
-		width:33.24%;
+		width:33.24%;→
 		height: 83px;
 		line-height: 83px;
 		overflow: hidden;
