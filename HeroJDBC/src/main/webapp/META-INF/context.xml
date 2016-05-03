@@ -5,9 +5,4 @@
 		driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
  		url="jdbc:sqlserver://ugdtmx7lmn.database.windows.net:1433;database=Hero"
  		username="eeit84taken@ugdtmx7lmn" password="Qwerty20160504" />
-	<!-- ================================= Local DataBase ================================= -->
-	<!--<Resource name="jdbc/xxx" auth="Container" type="javax.sql.DataSource"
-		maxTotal="100" maxIdle="30" maxWaitMillis="10000" username="sa"
-		password="passw0rd" driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
-		url="jdbc:sqlserver://localhost:1433;database=Hero" />-->
 </Context>

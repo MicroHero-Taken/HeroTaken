@@ -69,7 +69,7 @@ if(x=="http://localhost:8080/HeroJDBC/register/Register.do"){
 	    <form action="<c:url value="/LoginServlet"/>" method="get" ><br>
 			<input type="text"   name="email" value="${param.email}" placeholder="Email Address"><br>
 			<font  color='red'    size='-1'>${error.email}</font><br>
-			<input type="text"    name="password" value="${param.password}" placeholder="Password"><br>
+			<input type="password"    name="password" value="${param.password}" placeholder="Password"><br>
 			<font  color='red'    size='-1'>${error.password}</font><br>
 			<input type="submit"  value="Sign in"><br><br>
 			<img href="#" src="${pageContext.servletContext.contextPath}/Img/deco1.png" width="35%" height="10%" id="deco">

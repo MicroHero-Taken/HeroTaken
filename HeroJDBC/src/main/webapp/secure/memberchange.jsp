@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Edit Profile</title>
 </head>
 <style>
 .menuHolder {width:100px; height:100px; margin:0px 0 250px 0px; position:fiexd;z-index:4;}/*選單為網頁最上層*/
@@ -77,11 +78,18 @@ transform:rotate(18deg);
 /*-----------------------------------------------------------------------------*/
 
 .menuHolder .a6 li:nth-of-type(2) > a {background:#0000AA; /*懸賞任務*/
--webkit-transform:rotate(90deg);                 /*藍色02*/
--moz-transform:rotateZ(90deg);
--ms-transform:rotate(90deg);
--o-transform:rotate(90deg);
-transform:rotate(90deg);
+-webkit-transform:rotate(45deg);                 /*藍色02*/
+-moz-transform:rotateZ(45deg);
+-ms-transform:rotate(45deg);
+-o-transform:rotate(45deg);
+transform:rotate(45deg);
+}
+.menuHolder .a6 li:nth-of-type(3) > a {background:#0000AA; /*懸賞任務*/
+-webkit-transform:rotate(0deg);                 /*藍色02*/
+-moz-transform:rotateZ(0deg);
+-ms-transform:rotate(0deg);
+-o-transform:rotate(0deg);
+transform:rotate(0deg);
 }
 /*------------------------------------------------------------------------------*/
 .menuHolder .a5 li:nth-of-type(2) > a {background:#0000AA; /*商城*/
@@ -313,7 +321,7 @@ input[type="text"]:focus, .style-3 input[type="text"].focus {
 					</li>
 					<li class="s2"><a href="#url"><span>Others</span></a>
 					<ul class="p3 a6">
-							<li><a href="HeroJDBC/pages/report.jsp" style="line-height:25px;">Report<br>a<br>Problem</a></li>
+							<li><a onclick="window.open('/HeroJDBC/pages/report.jsp', 'Mission', config='height=825,width=430',flowover=hidden);" style="line-height:25px;">Report<br>a<br>Problem</a></li>
 						    <li><a href="/HeroJDBC/pages/backend.jsp" style="line-height:25px;">Supervisor</a></li>
 						</ul>
 					</li>
