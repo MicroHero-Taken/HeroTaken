@@ -57,34 +57,31 @@ public class Shopping extends HttpServlet {
 		//System.out.println(bean2.getCoin());
 		//System.out.println(price);
 		
+		//判斷選取的圖片是否為空的
+		if(heroName == null && priceStr == null){
+			String message = " 英雄未上架 ! ";
+			request.setAttribute("message4", message);
+			RequestDispatcher rd = request.getRequestDispatcher("/pages/shop.jsp");
+			rd.forward(request, response);
+			return;
+		}
+	
 
-		
-
-		
-		//判斷是否夠錢買造型
-		if( bean2.getCoin() >= price  ){
-			//判斷選取的圖片是否為空的
-			if(heroName == null && priceStr == null){
-				String message = " 英雄未上架 ! ";
-				request.setAttribute("message4", message);
+		//判斷是該會員是否已經購買過此英雄
+		List<MemberHeroBean> heros = MemberHeroService.select(memberNo);
+		for(MemberHeroBean beanHero :heros){
+			//System.out.println(beanHero.getHeroNo());
+			if(beanHero.getHeroNo() == heroNo){
+				String message = " 已擁有此英雄 ! ";
+				request.setAttribute("message3", message);
 				RequestDispatcher rd = request.getRequestDispatcher("/pages/shop.jsp");
 				rd.forward(request, response);
 				return;
 			}
-			
-			//判斷是該會員是否已經購買過此英雄
-			List<MemberHeroBean> heros = MemberHeroService.select(memberNo);
-			for(MemberHeroBean beanHero :heros){
-				//System.out.println(beanHero.getHeroNo());
-				if(beanHero.getHeroNo() == heroNo){
-					String message = " 已擁有此英雄 ! ";
-					request.setAttribute("message3", message);
-					RequestDispatcher rd = request.getRequestDispatcher("/pages/shop.jsp");
-					rd.forward(request, response);
-					return;
-				}
-			}
-			
+		}
+		
+		//判斷是否夠錢買造型
+		if( bean2.getCoin() >= price  ){		
 			//新增至倉庫
 			MemberHeroBean memberHeroBean = new MemberHeroBean(memberNo, heroNo);
 			MemberHeroService.insert(memberHeroBean);

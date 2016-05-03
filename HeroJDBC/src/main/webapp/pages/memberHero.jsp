@@ -211,38 +211,59 @@ a {line-height:20px;}
              <div id="Garage">Garage</div>        
       
               
-       <div class="pss_main"> <!-- main parallax scrolling slider object -->
-       <div class="pss_main"> <!-- main parallax scrolling slider object -->
-              <input id="r_1" type="radio" name="p" class="sel_page_1" style="display: none" checked="checked" /> <!-- hidden radios -->
-              <input id="r_2" type="radio" name="p" class="sel_page_2" style="display: none" />
-              <input id="r_3" type="radio" name="p" class="sel_page_3" style="display: none" />
-             <input id="r_4" type="radio" name="p" class="sel_page_4" style="display: none" />
-             <input id="r_5" type="radio" name="p" class="sel_page_5" style="display: none" />
-              <input id="r_6" type="radio" name="p" class="sel_page_6" style="display: none" />
-              <input id="r_7" type="radio" name="p" class="sel_page_7" style="display: none" />
-  
+        <div class="pss_main"> <!-- main parallax scrolling slider object -->
+            <input id="r_1" type="radio" name="p" class="sel_page_1" style="display: none" checked="checked" /> <!-- hidden radios -->
+            <input id="r_2" type="radio" name="p" class="sel_page_2" style="display: none" />
+            <input id="r_3" type="radio" name="p" class="sel_page_3" style="display: none" />
+            <input id="r_4" type="radio" name="p" class="sel_page_4" style="display: none" />
+            <input id="r_5" type="radio" name="p" class="sel_page_5" style="display: none" />
+            <input id="r_6" type="radio" name="p" class="sel_page_6" style="display: none" />
+            <input id="r_7" type="radio" name="p" class="sel_page_7" style="display: none" />
+            <input id="r_8" type="radio" name="p" class="sel_page_8" style="display: none" />
+            <input id="r_9" type="radio" name="p" class="sel_page_9" style="display: none" />
+            <input id="r_10" type="radio" name="p" class="sel_page_10" style="display: none" />
+            <input id="r_11" type="radio" name="p" class="sel_page_11" style="display: none" />
+            <input id="r_12" type="radio" name="p" class="sel_page_12" style="display: none" />
+            <input id="r_13" type="radio" name="p" class="sel_page_13" style="display: none" />
+            <input id="r_14" type="radio" name="p" class="sel_page_14" style="display: none" />
+            <input id="r_15" type="radio" name="p" class="sel_page_15" style="display: none" />
+            <input id="r_16" type="radio" name="p" class="sel_page_16" style="display: none" />
+            <input id="r_17" type="radio" name="p" class="sel_page_17" style="display: none" />
+            <input id="r_18" type="radio" name="p" class="sel_page_18" style="display: none" />
+            <input id="r_19" type="radio" name="p" class="sel_page_19" style="display: none" />
+            <input id="r_20" type="radio" name="p" class="sel_page_20" style="display: none" />
+            <input id="r_21" type="radio" name="p" class="sel_page_21" style="display: none" />
+            <input id="r_22" type="radio" name="p" class="sel_page_22" style="display: none" />
+            <input id="r_23" type="radio" name="p" class="sel_page_23" style="display: none" />
+            <input id="r_24" type="radio" name="p" class="sel_page_24" style="display: none" />
 
- 
-              
-              <c:forEach var="i" begin="1" end="${count}">
-              	<label for="r_${i}" class="pss_contr c${i}"></label>
-             </c:forEach>
-           
-             <div class="pss_slides">
-                 <div class="pss_background"></div>
-                 <ul> <!-- slides -->
-                 <c:forEach var="memberHero" items="${memberHero}">
-                 	<li><img src="${pageContext.request.contextPath}/Garage?heroNo=${memberHero.heroNo}"  />
-                         <form action="<c:url value="/ChangeHeroSkin"/>">
-                         	<div>Name: <input type="hidden" name="heroName" value="${memberHero.heroName}">${memberHero.heroName} <br><br>
-                         	<input type="submit" style="width: 100px"  value="Replace" id="replace"/>
-                         </form>
-                         </div>
-                     </li>
-                 </c:forEach>    
-                  </ul>
-            </div>
+<!--             <label for="r_1" class="pss_contr c1"></label> controls -->
+<!--             <label for="r_2" class="pss_contr c2"></label> -->
+<!--             <label for="r_3" class="pss_contr c3"></label> -->
+<!--             <label for="r_4" class="pss_contr c4"></label> -->
+<!--             <label for="r_5" class="pss_contr c5"></label>  -->
+<!--             <label for="r_6" class="pss_contr c6"></label> -->
+<!--             <label for="r_7" class="pss_contr c7"></label> -->
+            
+            <c:forEach var="i" begin="1" end="${count}">
+            	<label for="r_${i}" class="pss_contr c${i}"></label>
+            </c:forEach>
+          
+            <div class="pss_slides">
+                <div class="pss_background"></div>
+                <ul> <!-- slides -->
+                <c:forEach var="memberHero" items="${memberHero}">
+                	<li><img src="${pageContext.request.contextPath}/Garage?heroNo=${memberHero.heroNo}"  />
+                        <form action="<c:url value="/ChangeHeroSkin"/>">
+                        	<div>Name: <input type="hidden" name="heroName" value="${memberHero.heroName}">${memberHero.heroName} <br><br>
+                        	<input type="submit" style="width: 100px"  value="Replace" id="replace"/>
+                        </form>
+                        </div>
+                    </li>
+                </c:forEach>    
+                </ul>
           </div>
+        </div>
         <div class="menuHolder" >
 	<div class="menuWindow">
 		<ul class="p1">
